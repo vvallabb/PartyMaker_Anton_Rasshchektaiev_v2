@@ -11,7 +11,7 @@
 		EC24C1621E44AC6B007558B1 /* Party.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1611E44AC6B007558B1 /* Party.m */; };
 		EC24C1651E44B13C007558B1 /* PartyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1641E44B13C007558B1 /* PartyTableViewCell.m */; };
 		EC24C1691E44BB79007558B1 /* PLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1681E44BB79007558B1 /* PLViewController.m */; };
-		EC2FEF9C1E3F728E0035F778 /* XIBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2FEF9A1E3F728E0035F778 /* XIBViewController.m */; };
+		EC2FEF9C1E3F728E0035F778 /* CreatePartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2FEF9A1E3F728E0035F778 /* CreatePartyViewController.m */; };
 		EC79FB631E3B80550061B6AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC79FB621E3B80550061B6AC /* AppDelegate.m */; };
 		EC79FB691E3B80550061B6AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB671E3B80550061B6AC /* Main.storyboard */; };
 		EC79FB6B1E3B80550061B6AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB6A1E3B80550061B6AC /* Assets.xcassets */; };
@@ -24,6 +24,8 @@
 		EC79FB8B1E3E538D0061B6AC /* Christmas Tree-100.png in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB851E3E538D0061B6AC /* Christmas Tree-100.png */; };
 		EC79FB8C1E3E538D0061B6AC /* Coconut Cocktail-100.png in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB861E3E538D0061B6AC /* Coconut Cocktail-100.png */; };
 		EC79FB8D1E3E538D0061B6AC /* No Alcohol-100.png in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB871E3E538D0061B6AC /* No Alcohol-100.png */; };
+		EC9C02D01E48A89C006E1A65 /* login_background.png in Resources */ = {isa = PBXBuildFile; fileRef = EC9C02CF1E48A89C006E1A65 /* login_background.png */; };
+		EC9C02D41E48ACC0006E1A65 /* LoginScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9C02D31E48ACC0006E1A65 /* LoginScreenViewController.m */; };
 		ECB2707F1E40DE020032E0EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB2707E1E40DE020032E0EF /* main.m */; };
 		ECB270851E40E2990032E0EF /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB270841E40E2990032E0EF /* settings.png */; };
 		ECB270871E40E2A20032E0EF /* cocktail.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB270861E40E2A20032E0EF /* cocktail.png */; };
@@ -38,9 +40,9 @@
 		EC24C1641E44B13C007558B1 /* PartyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyTableViewCell.m; sourceTree = "<group>"; };
 		EC24C1671E44BB79007558B1 /* PLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLViewController.h; sourceTree = "<group>"; };
 		EC24C1681E44BB79007558B1 /* PLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLViewController.m; sourceTree = "<group>"; };
-		EC2FEF991E3F728E0035F778 /* XIBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XIBViewController.h; sourceTree = "<group>"; };
-		EC2FEF9A1E3F728E0035F778 /* XIBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XIBViewController.m; sourceTree = "<group>"; };
-		EC79FB5B1E3B80550061B6AC /* TestUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC2FEF991E3F728E0035F778 /* CreatePartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatePartyViewController.h; sourceTree = "<group>"; };
+		EC2FEF9A1E3F728E0035F778 /* CreatePartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatePartyViewController.m; sourceTree = "<group>"; };
+		EC79FB5B1E3B80550061B6AC /* Party Maker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Party Maker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC79FB611E3B80550061B6AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EC79FB621E3B80550061B6AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EC79FB681E3B80550061B6AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +57,9 @@
 		EC79FB851E3E538D0061B6AC /* Christmas Tree-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Christmas Tree-100.png"; sourceTree = "<group>"; };
 		EC79FB861E3E538D0061B6AC /* Coconut Cocktail-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Coconut Cocktail-100.png"; sourceTree = "<group>"; };
 		EC79FB871E3E538D0061B6AC /* No Alcohol-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "No Alcohol-100.png"; sourceTree = "<group>"; };
+		EC9C02CF1E48A89C006E1A65 /* login_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_background.png; sourceTree = "<group>"; };
+		EC9C02D21E48ACC0006E1A65 /* LoginScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginScreenViewController.h; sourceTree = "<group>"; };
+		EC9C02D31E48ACC0006E1A65 /* LoginScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginScreenViewController.m; sourceTree = "<group>"; };
 		ECB2707E1E40DE020032E0EF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ECB270841E40E2990032E0EF /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		ECB270861E40E2A20032E0EF /* cocktail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cocktail.png; sourceTree = "<group>"; };
@@ -98,6 +103,7 @@
 				ECB270861E40E2A20032E0EF /* cocktail.png */,
 				ECD9C2331E475E4D008A7BD7 /* add.png */,
 				453DF8C91E47BA54007019A5 /* delete.png */,
+				EC9C02CF1E48A89C006E1A65 /* login_background.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -105,8 +111,8 @@
 		EC2FEF981E3F72120035F778 /* Create party VC */ = {
 			isa = PBXGroup;
 			children = (
-				EC2FEF991E3F728E0035F778 /* XIBViewController.h */,
-				EC2FEF9A1E3F728E0035F778 /* XIBViewController.m */,
+				EC2FEF991E3F728E0035F778 /* CreatePartyViewController.h */,
+				EC2FEF9A1E3F728E0035F778 /* CreatePartyViewController.m */,
 			);
 			name = "Create party VC";
 			sourceTree = "<group>";
@@ -114,7 +120,7 @@
 		EC79FB521E3B80550061B6AC = {
 			isa = PBXGroup;
 			children = (
-				EC79FB5D1E3B80550061B6AC /* TestUIKit */,
+				EC79FB5D1E3B80550061B6AC /* Party Maker */,
 				EC79FB5C1E3B80550061B6AC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -122,17 +128,18 @@
 		EC79FB5C1E3B80550061B6AC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EC79FB5B1E3B80550061B6AC /* TestUIKit.app */,
+				EC79FB5B1E3B80550061B6AC /* Party Maker.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EC79FB5D1E3B80550061B6AC /* TestUIKit */ = {
+		EC79FB5D1E3B80550061B6AC /* Party Maker */ = {
 			isa = PBXGroup;
 			children = (
+				EC9C02D51E48BBB3006E1A65 /* Party Model */,
+				EC9C02D11E48ACA8006E1A65 /* Login Screen */,
 				EC24C1661E44BB54007558B1 /* PartyList */,
 				EC2FEF981E3F72120035F778 /* Create party VC */,
-				EC2FEF961E3F71400035F778 /* Images */,
 				ECB2707D1E40DCAE0032E0EF /* Supporting Files */,
 				EC79FB611E3B80550061B6AC /* AppDelegate.h */,
 				EC79FB621E3B80550061B6AC /* AppDelegate.m */,
@@ -140,16 +147,34 @@
 				EC79FB6A1E3B80550061B6AC /* Assets.xcassets */,
 				EC79FB6C1E3B80550061B6AC /* LaunchScreen.storyboard */,
 				EC79FB6F1E3B80550061B6AC /* Info.plist */,
+				EC2FEF961E3F71400035F778 /* Images */,
 			);
+			name = "Party Maker";
 			path = TestUIKit;
+			sourceTree = "<group>";
+		};
+		EC9C02D11E48ACA8006E1A65 /* Login Screen */ = {
+			isa = PBXGroup;
+			children = (
+				EC9C02D21E48ACC0006E1A65 /* LoginScreenViewController.h */,
+				EC9C02D31E48ACC0006E1A65 /* LoginScreenViewController.m */,
+			);
+			name = "Login Screen";
+			sourceTree = "<group>";
+		};
+		EC9C02D51E48BBB3006E1A65 /* Party Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC24C1601E44AC6B007558B1 /* Party.h */,
+				EC24C1611E44AC6B007558B1 /* Party.m */,
+			);
+			name = "Party Model";
 			sourceTree = "<group>";
 		};
 		ECB2707D1E40DCAE0032E0EF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				ECB2707E1E40DE020032E0EF /* main.m */,
-				EC24C1601E44AC6B007558B1 /* Party.h */,
-				EC24C1611E44AC6B007558B1 /* Party.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -157,9 +182,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EC79FB5A1E3B80550061B6AC /* TestUIKit */ = {
+		EC79FB5A1E3B80550061B6AC /* Party Maker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC79FB721E3B80550061B6AC /* Build configuration list for PBXNativeTarget "TestUIKit" */;
+			buildConfigurationList = EC79FB721E3B80550061B6AC /* Build configuration list for PBXNativeTarget "Party Maker" */;
 			buildPhases = (
 				EC79FB571E3B80550061B6AC /* Sources */,
 				EC79FB581E3B80550061B6AC /* Frameworks */,
@@ -169,9 +194,9 @@
 			);
 			dependencies = (
 			);
-			name = TestUIKit;
+			name = "Party Maker";
 			productName = TestUIKit;
-			productReference = EC79FB5B1E3B80550061B6AC /* TestUIKit.app */;
+			productReference = EC79FB5B1E3B80550061B6AC /* Party Maker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -189,7 +214,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EC79FB561E3B80550061B6AC /* Build configuration list for PBXProject "TestUIKit" */;
+			buildConfigurationList = EC79FB561E3B80550061B6AC /* Build configuration list for PBXProject "Party Maker" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -202,7 +227,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EC79FB5A1E3B80550061B6AC /* TestUIKit */,
+				EC79FB5A1E3B80550061B6AC /* Party Maker */,
 			);
 		};
 /* End PBXProject section */
@@ -227,6 +252,7 @@
 				EC79FB891E3E538D0061B6AC /* Birthday Cake-100.png in Resources */,
 				EC79FB8A1E3E538D0061B6AC /* Champagne-100.png in Resources */,
 				EC79FB881E3E538D0061B6AC /* Beer-100.png in Resources */,
+				EC9C02D01E48A89C006E1A65 /* login_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,8 +267,9 @@
 				ECB2707F1E40DE020032E0EF /* main.m in Sources */,
 				EC24C1651E44B13C007558B1 /* PartyTableViewCell.m in Sources */,
 				EC24C1621E44AC6B007558B1 /* Party.m in Sources */,
+				EC9C02D41E48ACC0006E1A65 /* LoginScreenViewController.m in Sources */,
 				EC24C1691E44BB79007558B1 /* PLViewController.m in Sources */,
-				EC2FEF9C1E3F728E0035F778 /* XIBViewController.m in Sources */,
+				EC2FEF9C1E3F728E0035F778 /* CreatePartyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +410,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EC79FB561E3B80550061B6AC /* Build configuration list for PBXProject "TestUIKit" */ = {
+		EC79FB561E3B80550061B6AC /* Build configuration list for PBXProject "Party Maker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC79FB701E3B80550061B6AC /* Debug */,
@@ -392,7 +419,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC79FB721E3B80550061B6AC /* Build configuration list for PBXNativeTarget "TestUIKit" */ = {
+		EC79FB721E3B80550061B6AC /* Build configuration list for PBXNativeTarget "Party Maker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC79FB731E3B80550061B6AC /* Debug */,

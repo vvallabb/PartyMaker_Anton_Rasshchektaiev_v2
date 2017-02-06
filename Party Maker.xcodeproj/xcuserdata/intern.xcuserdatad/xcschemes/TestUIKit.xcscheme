@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EC79FB5A1E3B80550061B6AC"
-               BuildableName = "TestUIKit.app"
-               BlueprintName = "TestUIKit"
-               ReferencedContainer = "container:TestUIKit.xcodeproj">
+               BuildableName = "Party Maker.app"
+               BlueprintName = "Party Maker"
+               ReferencedContainer = "container:Party Maker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EC79FB5A1E3B80550061B6AC"
-            BuildableName = "TestUIKit.app"
-            BlueprintName = "TestUIKit"
-            ReferencedContainer = "container:TestUIKit.xcodeproj">
+            BuildableName = "Party Maker.app"
+            BlueprintName = "Party Maker"
+            ReferencedContainer = "container:Party Maker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EC79FB5A1E3B80550061B6AC"
-            BuildableName = "TestUIKit.app"
-            BlueprintName = "TestUIKit"
-            ReferencedContainer = "container:TestUIKit.xcodeproj">
+            BuildableName = "Party Maker.app"
+            BlueprintName = "Party Maker"
+            ReferencedContainer = "container:Party Maker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EC79FB5A1E3B80550061B6AC"
-            BuildableName = "TestUIKit.app"
-            BlueprintName = "TestUIKit"
-            ReferencedContainer = "container:TestUIKit.xcodeproj">
+            BuildableName = "Party Maker.app"
+            BlueprintName = "Party Maker"
+            ReferencedContainer = "container:Party Maker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

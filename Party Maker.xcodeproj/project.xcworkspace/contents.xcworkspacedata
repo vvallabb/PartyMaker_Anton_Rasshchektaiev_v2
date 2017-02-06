@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TestUIKit.xcodeproj">
+      location = "self:/Users/intern/Desktop/PartyMaker/Party Maker.xcodeproj">
    </FileRef>
 </Workspace>

@@ -6,7 +6,7 @@
 //  Copyright © 2017 intern. All rights reserved.
 //
 
-#import "XIBViewController.h"
+#import "CreatePartyViewController.h"
 
 @interface XIBViewController ()
 
@@ -209,12 +209,12 @@
 
 - (void)keyboardDidShow:(NSNotification *)notification
 {
-    }
+    
+}
 
 -(void)keyboardDidHide:(NSNotification *)notification
 {
     
-
 }
 
 // sut up the Save button action
