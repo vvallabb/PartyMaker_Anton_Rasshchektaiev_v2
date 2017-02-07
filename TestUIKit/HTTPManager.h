@@ -25,8 +25,8 @@
                                 password: (NSString*) password
                                     name: (NSString*) name;
 
-// send the creator_id request
-- (void) sendTheGetCreator_idRequestWithCreatorID: (NSString*) creator_id;
+// send the party request
+- (void) sendTheGetPartyRequestWithCreatorID: (NSString*) creator_id;
 
 // send the addParty request
 - (void) sendTheAddPartyRequestWithDictionary: (NSDictionary*) dictionary;
@@ -34,6 +34,9 @@
 // send the deleteParty request
 - (void) sendTheDeletePartyRequestWithParty_id: (NSString*) party_id
                                     creator_id: (NSString*) creator_id;
+
+// send the allUsers request
+- (void) sendTheGetAllUsersRequest;
 
 // serialization
 - (NSData*) serializationWithDictionary: (NSDictionary *) dictionary;

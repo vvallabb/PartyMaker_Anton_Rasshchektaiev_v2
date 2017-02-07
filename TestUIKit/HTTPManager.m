@@ -96,7 +96,7 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
 }
 
 // send the creator_id request
-- (void) sendTheGetCreator_idRequestWithCreatorID: (NSString*) creator_id {
+- (void) sendTheGetPartyRequestWithCreatorID: (NSString*) creator_id {
     NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:creator_id, @"creator_id", nil];
     NSMutableURLRequest *request = [self getRequestWithType:@"GET" headers:nil method:@"party" params:params];
     NSURLSessionDataTask *getDataTask = [self.defaultSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -131,7 +131,16 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
     [getDataTask resume];
 }
 
-
+// send the allUsers request
+- (void) sendTheGetAllUsersRequest {
+    NSMutableURLRequest *request = [self getRequestWithType:@"GET" headers:nil method:@"allUsers" params:nil];
+    NSURLSessionDataTask *getDataTask = [self.defaultSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
+        NSLog(@"%@", dictionaryFromResponse);
+    }];
+    
+    [getDataTask resume];
+}
 
 // serialization
 - (NSData*) serializationWithDictionary: (NSDictionary *) dictionary {
@@ -144,7 +153,6 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
 // deserialization
 - (NSDictionary*) deserializationWithData: (NSData *) data {
     NSError *error = nil;
-    
     NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:(NSData *)data options:NSJSONReadingAllowFragments error:&error];
     
     return dataDictionary;
