@@ -13,6 +13,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *textFieldLogin;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldPassword;
 
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintContentViewTopSpace;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintContentViewBottomSpace;
+
 @end
 
 @implementation LoginScreenViewController
@@ -53,10 +57,12 @@
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     
-    
     if (textField == self.textFieldPassword) {
+        [self.constraintContentViewTopSpace setConstant:-20];
+        [self.constraintContentViewBottomSpace setConstant:20];
+        
         [UIView animateWithDuration:0.3f animations:^{
-            [self.view setFrame:CGRectMake(0,-20,self.view.frame.size.width, self.view.frame.size.height)];
+            [self.view layoutIfNeeded];
         }];
     }
     
@@ -67,9 +73,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
     
     if (textField == self.textFieldPassword) {
-        [UIView animateWithDuration:0.3f animations:^{
-            [self.view setFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height)];
-        }];
+        [self.constraintContentViewTopSpace setConstant:0];
+        [self.constraintContentViewBottomSpace setConstant:0];
     }
     
     [self.view endEditing:YES];

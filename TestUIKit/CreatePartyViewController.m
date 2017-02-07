@@ -43,6 +43,11 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UIToolbar *datePickerToolbarButtonDone;
 
+// outlets related to constraints
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintChooseDateButtonTopSpace;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintDescriptionViewContainerBottomSpace;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintFocusCircleTopSpace;
+
 @property (weak, nonatomic) IBOutlet UIView *leftPanelView;
 
 @property (strong, nonatomic) NSString *currDescriptionValue;
@@ -55,6 +60,13 @@
     [super viewDidLoad];
     [self setUpTextFieldPartyName];
     [self setUpTextViewDescription];
+    [self subscribeForKeyboardNotifications];
+}
+
+- (void)subscribeForKeyboardNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -64,6 +76,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 // set up the buttonChooseDateAction
@@ -184,25 +200,19 @@
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
     self.currDescriptionValue = self.textViewDescription.text;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     
-    [UIView animateWithDuration:0.3f animations:^{
-            [self.view setFrame:CGRectMake(0,-201,self.view.frame.size.width, self.view.frame.size.height)];
+    self.constraintChooseDateButtonTopSpace.constant -= self.view.frame.size.height / 3;
+    self.constraintDescriptionViewContainerBottomSpace.constant += self.view.frame.size.height / 3;
+    [UIView animateWithDuration:0.25f animations:^{
+        [self.view layoutIfNeeded];
     }];
 
-    
-    [self moveFocusCircleOnY: textView.superview.center.y];
+    [self moveFocusCircleOnY: textView.superview.center.y + self.view.frame.size.height / 3];
     
     return YES;
 }
 
 -(BOOL)textViewShouldEndEditing:(UITextView *)textView {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
-    
-    [UIView animateWithDuration:0.3f animations:^{
-        [self.view setFrame:CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height)];
-    }];
-    
     [self.view endEditing:YES];
     return YES;
 }
@@ -212,9 +222,16 @@
     
 }
 
--(void)keyboardDidHide:(NSNotification *)notification
+-(void)keyboardWillHide:(NSNotification *)notification
 {
+    if ([self.textViewDescription isFirstResponder]) {
+        self.constraintChooseDateButtonTopSpace.constant += self.view.frame.size.height / 3;
+        self.constraintDescriptionViewContainerBottomSpace.constant -= self.view.frame.size.height / 3;
     
+        [UIView animateWithDuration:0.25f animations:^{
+            [self.view layoutIfNeeded];
+        }];
+    }
 }
 
 // sut up the Save button action
@@ -258,8 +275,12 @@
 
 // moving focus circle on left panel
 - (void) moveFocusCircleOnY: (NSInteger) y {
+    NSInteger navigationBarTotalHeight = self.navigationController.navigationBar.frame.size.height + self.navigationController.navigationBar.frame.origin.y;
+    
+    self.constraintFocusCircleTopSpace.constant = y - self.focusCircle.frame.size.height / 2 - navigationBarTotalHeight;
+    
     [UIView animateWithDuration:0.3f animations:^{
-        [self.focusCircle setFrame:CGRectMake(self.focusCircle.frame.origin.x, y - self.focusCircle.frame.size.height / 2 - self.leftPanelView.frame.origin.y, self.focusCircle.frame.size.width, self.focusCircle.frame.size.height)];
+        [self.view layoutIfNeeded];
     }];
 }
 
@@ -273,21 +294,13 @@
         minutes -=60;
     }
     
-    NSString *stringHours = [NSString stringWithFormat:@"%i", hours];
-    if (hours < 10) {
-        stringHours = [NSString stringWithFormat:@"0%i", hours];
-    }
-    
-    NSString *stringMinutes = [NSString stringWithFormat:@"%i", minutes];
-    if (minutes < 10) {
-        stringMinutes = [NSString stringWithFormat:@"0%i", minutes];
-    }
+    NSString *stringHours = [NSString stringWithFormat:@"%02i", hours];
+    NSString *stringMinutes = [NSString stringWithFormat:@"%02i", minutes];
     
     NSString *time = [NSString stringWithFormat:@"%@:%@", stringHours, stringMinutes];
     
     return time;
 }
-
 
 /*
 #pragma mark - Navigation
