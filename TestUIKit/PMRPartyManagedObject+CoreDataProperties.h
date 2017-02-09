@@ -2,25 +2,31 @@
 //  PMRPartyManagedObject+CoreDataProperties.h
 //  Party Maker
 //
-//  Created by intern on 2/8/17.
+//  Created by intern on 2/9/17.
 //  Copyright © 2017 intern. All rights reserved.
 //
 
-#import <CoreData/CoreData.h>
 #import "PMRPartyManagedObject.h"
 
-@interface PMRPartyManagedObject(CoreDataProperties)
 
-@property (nonatomic, readwrite) NSString *partyID;
-@property (nonatomic, readwrite) NSDate *startDate;
-@property (nonatomic, readwrite) NSDate *endDate;
-@property (nonatomic, readwrite) NSString *name;
-@property (nonatomic, readwrite) NSString *logoImageName;
-@property (nonatomic, readwrite) NSString *descriptionText;
-@property (nonatomic, readwrite) NSDate *creationDate;
-@property (nonatomic, readwrite) NSDate *modificationDate;
-@property (nonatomic, readwrite) NSString *creatorID;
-@property (nonatomic, readwrite) NSString *latitude;
-@property (nonatomic, readwrite) NSString *longtitude;
+NS_ASSUME_NONNULL_BEGIN
+
+@interface PMRPartyManagedObject (CoreDataProperties)
+
++ (NSFetchRequest<PMRPartyManagedObject *> *)fetchRequest;
+
+@property (nullable, nonatomic, copy) NSString *name;
+@property (nullable, nonatomic, copy) NSString *partyID;
+@property (nullable, nonatomic, copy) NSDate *startDate;
+@property (nullable, nonatomic, copy) NSDate *endDate;
+@property (nullable, nonatomic, copy) NSString *logoImageName;
+@property (nullable, nonatomic, copy) NSString *descriptionText;
+@property (nullable, nonatomic, copy) NSDate *creationDate;
+@property (nullable, nonatomic, copy) NSDate *modificationDate;
+@property (nullable, nonatomic, copy) NSString *creatorID;
+@property (nullable, nonatomic, copy) NSString *latitude;
+@property (nullable, nonatomic, copy) NSString *longtitude;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -2,24 +2,28 @@
 //  PMRPartyManagedObject+CoreDataProperties.m
 //  Party Maker
 //
-//  Created by intern on 2/8/17.
+//  Created by intern on 2/9/17.
 //  Copyright © 2017 intern. All rights reserved.
 //
 
 #import "PMRPartyManagedObject+CoreDataProperties.h"
 
-@implementation PMRPartyManagedObject(CoreDataProperties)
+@implementation PMRPartyManagedObject (CoreDataProperties)
+
++ (NSFetchRequest<PMRPartyManagedObject *> *)fetchRequest {
+	return [[NSFetchRequest alloc] initWithEntityName:@"PMRPartyManagedObject"];
+}
 
 @dynamic name;
+@dynamic partyID;
+@dynamic startDate;
 @dynamic endDate;
+@dynamic logoImageName;
+@dynamic descriptionText;
+@dynamic creationDate;
 @dynamic modificationDate;
 @dynamic creatorID;
-@dynamic longtitude;
-@dynamic descriptionText;
-@dynamic partyID;
 @dynamic latitude;
-@dynamic logoImageName;
-@dynamic startDate;
-@dynamic creationDate;
+@dynamic longtitude;
 
 @end
