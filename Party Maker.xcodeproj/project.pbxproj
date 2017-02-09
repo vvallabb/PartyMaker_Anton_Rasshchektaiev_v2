@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		453DF8CA1E47BA54007019A5 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 453DF8C91E47BA54007019A5 /* delete.png */; };
+		EC17163D1E4C9FC2005FFC61 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFC91E4BD8C300BE5FB1 /* Model.xcdatamodeld */; };
 		EC24C1621E44AC6B007558B1 /* Party.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1611E44AC6B007558B1 /* Party.m */; };
 		EC24C1651E44B13C007558B1 /* PartyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1641E44B13C007558B1 /* PartyTableViewCell.m */; };
 		EC24C1691E44BB79007558B1 /* PLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1681E44BB79007558B1 /* PLViewController.m */; };
@@ -38,7 +39,6 @@
 		ECE0FFC51E4BD8AA00BE5FB1 /* PMRParty+initWithDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFBB1E4BD8AA00BE5FB1 /* PMRParty+initWithDictionary.m */; };
 		ECE0FFC61E4BD8AA00BE5FB1 /* PMRParty+initWithManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFBD1E4BD8AA00BE5FB1 /* PMRParty+initWithManagedObject.m */; };
 		ECE0FFC81E4BD8AA00BE5FB1 /* PMRPersistanceStore.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFC11E4BD8AA00BE5FB1 /* PMRPersistanceStore.m */; };
-		ECE0FFCB1E4BD8C300BE5FB1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFC91E4BD8C300BE5FB1 /* Model.xcdatamodeld */; };
 		ECE0FFD41E4BDA9A00BE5FB1 /* PMRPartyManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFD31E4BDA9A00BE5FB1 /* PMRPartyManagedObject.m */; };
 /* End PBXBuildFile section */
 
@@ -106,15 +106,82 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EC24C1661E44BB54007558B1 /* PartyList */ = {
+		EC1716351E4C9E57005FFC61 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EC1716361E4C9E5F005FFC61 /* Login Screen VC */,
+				EC1716381E4C9EA8005FFC61 /* Party List VC */,
+				EC1716371E4C9E7A005FFC61 /* Create Party VC */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EC1716361E4C9E5F005FFC61 /* Login Screen VC */ = {
+			isa = PBXGroup;
+			children = (
+				EC9C02D21E48ACC0006E1A65 /* LoginScreenViewController.h */,
+				EC9C02D31E48ACC0006E1A65 /* LoginScreenViewController.m */,
+			);
+			name = "Login Screen VC";
+			sourceTree = "<group>";
+		};
+		EC1716371E4C9E7A005FFC61 /* Create Party VC */ = {
+			isa = PBXGroup;
+			children = (
+				EC2FEF991E3F728E0035F778 /* CreatePartyViewController.h */,
+				EC2FEF9A1E3F728E0035F778 /* CreatePartyViewController.m */,
+			);
+			name = "Create Party VC";
+			sourceTree = "<group>";
+		};
+		EC1716381E4C9EA8005FFC61 /* Party List VC */ = {
 			isa = PBXGroup;
 			children = (
 				EC24C1671E44BB79007558B1 /* PLViewController.h */,
 				EC24C1681E44BB79007558B1 /* PLViewController.m */,
+				EC1716391E4C9EB0005FFC61 /* Party TableViewCell */,
+			);
+			name = "Party List VC";
+			sourceTree = "<group>";
+		};
+		EC1716391E4C9EB0005FFC61 /* Party TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
 				EC24C1631E44B13C007558B1 /* PartyTableViewCell.h */,
 				EC24C1641E44B13C007558B1 /* PartyTableViewCell.m */,
 			);
-			name = PartyList;
+			name = "Party TableViewCell";
+			sourceTree = "<group>";
+		};
+		EC17163A1E4C9F1B005FFC61 /* Core Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				ECE0FFB41E4BD8AA00BE5FB1 /* PMRCoreDataManager.h */,
+				ECE0FFB51E4BD8AA00BE5FB1 /* PMRCoreDataManager.m */,
+				ECE0FFB61E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.h */,
+				ECE0FFB71E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.m */,
+			);
+			name = "Core Data Manager";
+			sourceTree = "<group>";
+		};
+		EC17163B1E4C9F2D005FFC61 /* Persistance Store */ = {
+			isa = PBXGroup;
+			children = (
+				ECE0FFC01E4BD8AA00BE5FB1 /* PMRPersistanceStore.h */,
+				ECE0FFC11E4BD8AA00BE5FB1 /* PMRPersistanceStore.m */,
+			);
+			name = "Persistance Store";
+			sourceTree = "<group>";
+		};
+		EC17163C1E4C9F3E005FFC61 /* Party Managed Object */ = {
+			isa = PBXGroup;
+			children = (
+				ECE0FFD21E4BDA9A00BE5FB1 /* PMRPartyManagedObject.h */,
+				ECE0FFD31E4BDA9A00BE5FB1 /* PMRPartyManagedObject.m */,
+				EC87B8B61E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.h */,
+				EC87B8B71E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.m */,
+			);
+			name = "Party Managed Object";
 			sourceTree = "<group>";
 		};
 		EC2FEF961E3F71400035F778 /* Images */ = {
@@ -137,18 +204,11 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		EC2FEF981E3F72120035F778 /* Create party VC */ = {
-			isa = PBXGroup;
-			children = (
-				EC2FEF991E3F728E0035F778 /* CreatePartyViewController.h */,
-				EC2FEF9A1E3F728E0035F778 /* CreatePartyViewController.m */,
-			);
-			name = "Create party VC";
-			sourceTree = "<group>";
-		};
 		EC54907F1E4C66CE00D52872 /* Model_deprecated */ = {
 			isa = PBXGroup;
 			children = (
+				EC24C1601E44AC6B007558B1 /* Party.h */,
+				EC24C1611E44AC6B007558B1 /* Party.m */,
 			);
 			name = Model_deprecated;
 			sourceTree = "<group>";
@@ -181,14 +241,12 @@
 		EC79FB5D1E3B80550061B6AC /* Party Maker */ = {
 			isa = PBXGroup;
 			children = (
-				EC54907F1E4C66CE00D52872 /* Model_deprecated */,
-				ECE0FFB31E4BD89000BE5FB1 /* Received Files */,
+				EC1716351E4C9E57005FFC61 /* View Controllers */,
+				ECE0FFB31E4BD89000BE5FB1 /* Core Data */,
 				EC7609651E49D222001D7BF7 /* HTTP */,
 				EC9C02D51E48BBB3006E1A65 /* Party Model */,
-				EC9C02D11E48ACA8006E1A65 /* Login Screen */,
-				EC24C1661E44BB54007558B1 /* PartyList */,
-				EC2FEF981E3F72120035F778 /* Create party VC */,
 				ECB2707D1E40DCAE0032E0EF /* Supporting Files */,
+				EC54907F1E4C66CE00D52872 /* Model_deprecated */,
 				EC79FB611E3B80550061B6AC /* AppDelegate.h */,
 				EC79FB621E3B80550061B6AC /* AppDelegate.m */,
 				EC79FB671E3B80550061B6AC /* Main.storyboard */,
@@ -201,20 +259,15 @@
 			path = TestUIKit;
 			sourceTree = "<group>";
 		};
-		EC9C02D11E48ACA8006E1A65 /* Login Screen */ = {
-			isa = PBXGroup;
-			children = (
-				EC9C02D21E48ACC0006E1A65 /* LoginScreenViewController.h */,
-				EC9C02D31E48ACC0006E1A65 /* LoginScreenViewController.m */,
-			);
-			name = "Login Screen";
-			sourceTree = "<group>";
-		};
 		EC9C02D51E48BBB3006E1A65 /* Party Model */ = {
 			isa = PBXGroup;
 			children = (
-				EC24C1601E44AC6B007558B1 /* Party.h */,
-				EC24C1611E44AC6B007558B1 /* Party.m */,
+				ECE0FFB81E4BD8AA00BE5FB1 /* PMRParty.h */,
+				ECE0FFB91E4BD8AA00BE5FB1 /* PMRParty.m */,
+				ECE0FFBA1E4BD8AA00BE5FB1 /* PMRParty+initWithDictionary.h */,
+				ECE0FFBB1E4BD8AA00BE5FB1 /* PMRParty+initWithDictionary.m */,
+				ECE0FFBC1E4BD8AA00BE5FB1 /* PMRParty+initWithManagedObject.h */,
+				ECE0FFBD1E4BD8AA00BE5FB1 /* PMRParty+initWithManagedObject.m */,
 				ECE0FFC91E4BD8C300BE5FB1 /* Model.xcdatamodeld */,
 			);
 			name = "Party Model";
@@ -228,27 +281,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		ECE0FFB31E4BD89000BE5FB1 /* Received Files */ = {
+		ECE0FFB31E4BD89000BE5FB1 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				ECE0FFB41E4BD8AA00BE5FB1 /* PMRCoreDataManager.h */,
-				ECE0FFB51E4BD8AA00BE5FB1 /* PMRCoreDataManager.m */,
-				ECE0FFB61E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.h */,
-				ECE0FFB71E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.m */,
-				ECE0FFB81E4BD8AA00BE5FB1 /* PMRParty.h */,
-				ECE0FFB91E4BD8AA00BE5FB1 /* PMRParty.m */,
-				ECE0FFBA1E4BD8AA00BE5FB1 /* PMRParty+initWithDictionary.h */,
-				ECE0FFBB1E4BD8AA00BE5FB1 /* PMRParty+initWithDictionary.m */,
-				ECE0FFBC1E4BD8AA00BE5FB1 /* PMRParty+initWithManagedObject.h */,
-				ECE0FFBD1E4BD8AA00BE5FB1 /* PMRParty+initWithManagedObject.m */,
-				ECE0FFC01E4BD8AA00BE5FB1 /* PMRPersistanceStore.h */,
-				ECE0FFC11E4BD8AA00BE5FB1 /* PMRPersistanceStore.m */,
-				ECE0FFD21E4BDA9A00BE5FB1 /* PMRPartyManagedObject.h */,
-				ECE0FFD31E4BDA9A00BE5FB1 /* PMRPartyManagedObject.m */,
-				EC87B8B61E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.h */,
-				EC87B8B71E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.m */,
+				EC17163A1E4C9F1B005FFC61 /* Core Data Manager */,
+				EC17163B1E4C9F2D005FFC61 /* Persistance Store */,
+				EC17163C1E4C9F3E005FFC61 /* Party Managed Object */,
 			);
-			name = "Received Files";
+			name = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,11 +383,11 @@
 				ECE0FFD41E4BDA9A00BE5FB1 /* PMRPartyManagedObject.m in Sources */,
 				EC7609681E49D23F001D7BF7 /* HTTPManager.m in Sources */,
 				ECE0FFC81E4BD8AA00BE5FB1 /* PMRPersistanceStore.m in Sources */,
+				EC17163D1E4C9FC2005FFC61 /* Model.xcdatamodeld in Sources */,
 				EC24C1621E44AC6B007558B1 /* Party.m in Sources */,
 				EC9C02D41E48ACC0006E1A65 /* LoginScreenViewController.m in Sources */,
 				ECE0FFC61E4BD8AA00BE5FB1 /* PMRParty+initWithManagedObject.m in Sources */,
 				EC87B8B81E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.m in Sources */,
-				ECE0FFCB1E4BD8C300BE5FB1 /* Model.xcdatamodeld in Sources */,
 				EC24C1691E44BB79007558B1 /* PLViewController.m in Sources */,
 				EC2FEF9C1E3F728E0035F778 /* CreatePartyViewController.m in Sources */,
 				ECE0FFC41E4BD8AA00BE5FB1 /* PMRParty.m in Sources */,
