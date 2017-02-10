@@ -27,7 +27,7 @@
     static PMRCoreDataManager *shareInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        shareInstance = [[PMRCoreDataManager alloc] initWithModelName:@"model" andStoreLocation:[PMRCoreDataManager defaultStoreURL]];
+        shareInstance = [[PMRCoreDataManager alloc] initWithModelName:@"Model" andStoreLocation:[PMRCoreDataManager defaultStoreURL]];
     });
     return shareInstance;
 }

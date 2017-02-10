@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "HTTPManager.h"
 
 @interface AppDelegate ()
 
@@ -23,22 +22,6 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     //[[UINavigationBar appearance] setTranslucent:NO];
-    
-    // HTTP homework testing
-    //-----------------------------------------------------------------------------------------------------------------
-    HTTPManager *httpManager = [HTTPManager sharedInstance];
-    [httpManager sendTheRegisterRequestWithEmail:@"anton11131113gmail.com" password:@"myPass" name:@"anton1113"];
-    [httpManager sendTheLoginRequestWithName:@"anton1113" password:@"myPass"];
-    
-    NSArray *keys = @[@"party_id", @"name", @"start_time", @"end_time", @"logo_id", @"comment", @"creator_id", @"latitude", @"longitude"];
-    NSArray *objects = @[@"1113", @"partyhard", @"13 00", @"04 00", @"1", @"no comments", @"422", @"nil", @"anotherNil"];
-    NSDictionary *dict = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
-    [httpManager sendTheAddPartyRequestWithDictionary:dict];
-    
-    [httpManager sendTheGetPartyRequestWithCreatorID:@"426"];
-    [httpManager sendTheDeletePartyRequestWithParty_id:@"1113" creator_id:@"422"];
-    [httpManager sendTheGetAllUsersRequest];
-    //------------------------------------------------------------------------------------------------------------------
     
     return YES;
 }

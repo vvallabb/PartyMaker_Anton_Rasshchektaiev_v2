@@ -34,7 +34,8 @@
 
 // for UITableViewDelegate protocol
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [Party deserializePartyList].count;
+    NSArray *parties = [[PMRCoreDataManager sharedStore] getParties];
+    return parties.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -42,16 +43,15 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    // not implemented!!!
     PartyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[PartyTableViewCell reuseIdentifier]];
     
     if (!cell) {
         cell = [[PartyTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[PartyTableViewCell reuseIdentifier]];
     }
-        
-    Party *party = [[Party deserializePartyList] objectAtIndex:indexPath.row];
-        
-    [cell configureWithLogo:party.partyLogoNumber partyName:party.partyName partyStartTime:party.partyStartTime partyDate:party.partyDate];
+    
+    NSArray *parties = [[PMRCoreDataManager sharedStore] getParties];
+    [cell configureWithParty:[parties objectAtIndex:indexPath.row]];
     
     return cell;
 }

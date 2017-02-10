@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		453DF8CA1E47BA54007019A5 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 453DF8C91E47BA54007019A5 /* delete.png */; };
-		EC17163D1E4C9FC2005FFC61 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFC91E4BD8C300BE5FB1 /* Model.xcdatamodeld */; };
-		EC24C1621E44AC6B007558B1 /* Party.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1611E44AC6B007558B1 /* Party.m */; };
 		EC24C1651E44B13C007558B1 /* PartyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1641E44B13C007558B1 /* PartyTableViewCell.m */; };
 		EC24C1691E44BB79007558B1 /* PLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1681E44BB79007558B1 /* PLViewController.m */; };
 		EC2FEF9C1E3F728E0035F778 /* CreatePartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2FEF9A1E3F728E0035F778 /* CreatePartyViewController.m */; };
@@ -32,7 +30,9 @@
 		ECB2707F1E40DE020032E0EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB2707E1E40DE020032E0EF /* main.m */; };
 		ECB270851E40E2990032E0EF /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB270841E40E2990032E0EF /* settings.png */; };
 		ECB270871E40E2A20032E0EF /* cocktail.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB270861E40E2A20032E0EF /* cocktail.png */; };
+		ECBF52A51E4CA37A00E0D7B1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECBF52A21E4CA35300E0D7B1 /* Model.xcdatamodeld */; };
 		ECD9C2341E475E4D008A7BD7 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = ECD9C2331E475E4D008A7BD7 /* add.png */; };
+		ECDFE3C51E4DDF720007FBB8 /* TestCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDFE3C41E4DDF720007FBB8 /* TestCoreData.m */; };
 		ECE0FFC21E4BD8AA00BE5FB1 /* PMRCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFB51E4BD8AA00BE5FB1 /* PMRCoreDataManager.m */; };
 		ECE0FFC31E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFB71E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.m */; };
 		ECE0FFC41E4BD8AA00BE5FB1 /* PMRParty.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFB91E4BD8AA00BE5FB1 /* PMRParty.m */; };
@@ -44,8 +44,6 @@
 
 /* Begin PBXFileReference section */
 		453DF8C91E47BA54007019A5 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = delete.png; path = TestUIKit/delete.png; sourceTree = SOURCE_ROOT; };
-		EC24C1601E44AC6B007558B1 /* Party.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Party.h; sourceTree = "<group>"; };
-		EC24C1611E44AC6B007558B1 /* Party.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Party.m; sourceTree = "<group>"; };
 		EC24C1631E44B13C007558B1 /* PartyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyTableViewCell.h; sourceTree = "<group>"; };
 		EC24C1641E44B13C007558B1 /* PartyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyTableViewCell.m; sourceTree = "<group>"; };
 		EC24C1671E44BB79007558B1 /* PLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLViewController.h; sourceTree = "<group>"; };
@@ -77,7 +75,10 @@
 		ECB2707E1E40DE020032E0EF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ECB270841E40E2990032E0EF /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		ECB270861E40E2A20032E0EF /* cocktail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cocktail.png; sourceTree = "<group>"; };
+		ECBF52A31E4CA35300E0D7B1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		ECD9C2331E475E4D008A7BD7 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		ECDFE3C31E4DDF720007FBB8 /* TestCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCoreData.h; sourceTree = "<group>"; };
+		ECDFE3C41E4DDF720007FBB8 /* TestCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCoreData.m; sourceTree = "<group>"; };
 		ECE0FFB41E4BD8AA00BE5FB1 /* PMRCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMRCoreDataManager.h; sourceTree = "<group>"; };
 		ECE0FFB51E4BD8AA00BE5FB1 /* PMRCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMRCoreDataManager.m; sourceTree = "<group>"; };
 		ECE0FFB61E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PMRCoreDataManager+Party.h"; sourceTree = "<group>"; };
@@ -90,7 +91,6 @@
 		ECE0FFBD1E4BD8AA00BE5FB1 /* PMRParty+initWithManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PMRParty+initWithManagedObject.m"; sourceTree = "<group>"; };
 		ECE0FFC01E4BD8AA00BE5FB1 /* PMRPersistanceStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMRPersistanceStore.h; sourceTree = "<group>"; };
 		ECE0FFC11E4BD8AA00BE5FB1 /* PMRPersistanceStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMRPersistanceStore.m; sourceTree = "<group>"; };
-		ECE0FFCA1E4BD8C300BE5FB1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		ECE0FFD21E4BDA9A00BE5FB1 /* PMRPartyManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMRPartyManagedObject.h; sourceTree = "<group>"; };
 		ECE0FFD31E4BDA9A00BE5FB1 /* PMRPartyManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMRPartyManagedObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,15 +204,6 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		EC54907F1E4C66CE00D52872 /* Model_deprecated */ = {
-			isa = PBXGroup;
-			children = (
-				EC24C1601E44AC6B007558B1 /* Party.h */,
-				EC24C1611E44AC6B007558B1 /* Party.m */,
-			);
-			name = Model_deprecated;
-			sourceTree = "<group>";
-		};
 		EC7609651E49D222001D7BF7 /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,7 +237,6 @@
 				EC7609651E49D222001D7BF7 /* HTTP */,
 				EC9C02D51E48BBB3006E1A65 /* Party Model */,
 				ECB2707D1E40DCAE0032E0EF /* Supporting Files */,
-				EC54907F1E4C66CE00D52872 /* Model_deprecated */,
 				EC79FB611E3B80550061B6AC /* AppDelegate.h */,
 				EC79FB621E3B80550061B6AC /* AppDelegate.m */,
 				EC79FB671E3B80550061B6AC /* Main.storyboard */,
@@ -254,6 +244,8 @@
 				EC79FB6C1E3B80550061B6AC /* LaunchScreen.storyboard */,
 				EC79FB6F1E3B80550061B6AC /* Info.plist */,
 				EC2FEF961E3F71400035F778 /* Images */,
+				ECDFE3C31E4DDF720007FBB8 /* TestCoreData.h */,
+				ECDFE3C41E4DDF720007FBB8 /* TestCoreData.m */,
 			);
 			name = "Party Maker";
 			path = TestUIKit;
@@ -268,7 +260,7 @@
 				ECE0FFBB1E4BD8AA00BE5FB1 /* PMRParty+initWithDictionary.m */,
 				ECE0FFBC1E4BD8AA00BE5FB1 /* PMRParty+initWithManagedObject.h */,
 				ECE0FFBD1E4BD8AA00BE5FB1 /* PMRParty+initWithManagedObject.m */,
-				ECE0FFC91E4BD8C300BE5FB1 /* Model.xcdatamodeld */,
+				ECBF52A21E4CA35300E0D7B1 /* Model.xcdatamodeld */,
 			);
 			name = "Party Model";
 			sourceTree = "<group>";
@@ -379,12 +371,12 @@
 				ECB2707F1E40DE020032E0EF /* main.m in Sources */,
 				EC24C1651E44B13C007558B1 /* PartyTableViewCell.m in Sources */,
 				ECE0FFC21E4BD8AA00BE5FB1 /* PMRCoreDataManager.m in Sources */,
+				ECDFE3C51E4DDF720007FBB8 /* TestCoreData.m in Sources */,
 				ECE0FFC51E4BD8AA00BE5FB1 /* PMRParty+initWithDictionary.m in Sources */,
 				ECE0FFD41E4BDA9A00BE5FB1 /* PMRPartyManagedObject.m in Sources */,
 				EC7609681E49D23F001D7BF7 /* HTTPManager.m in Sources */,
 				ECE0FFC81E4BD8AA00BE5FB1 /* PMRPersistanceStore.m in Sources */,
-				EC17163D1E4C9FC2005FFC61 /* Model.xcdatamodeld in Sources */,
-				EC24C1621E44AC6B007558B1 /* Party.m in Sources */,
+				ECBF52A51E4CA37A00E0D7B1 /* Model.xcdatamodeld in Sources */,
 				EC9C02D41E48ACC0006E1A65 /* LoginScreenViewController.m in Sources */,
 				ECE0FFC61E4BD8AA00BE5FB1 /* PMRParty+initWithManagedObject.m in Sources */,
 				EC87B8B81E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.m in Sources */,
@@ -553,12 +545,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		ECE0FFC91E4BD8C300BE5FB1 /* Model.xcdatamodeld */ = {
+		ECBF52A21E4CA35300E0D7B1 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				ECE0FFCA1E4BD8C300BE5FB1 /* Model.xcdatamodel */,
+				ECBF52A31E4CA35300E0D7B1 /* Model.xcdatamodel */,
 			);
-			currentVersion = ECE0FFCA1E4BD8C300BE5FB1 /* Model.xcdatamodel */;
+			currentVersion = ECBF52A31E4CA35300E0D7B1 /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

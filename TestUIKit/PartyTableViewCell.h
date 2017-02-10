@@ -7,15 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Party.h"
+#import "PMRParty.h"
+#import "PMRCoreDataManager.h"
+#import "PMRCoreDataManager+Party.h"
 
 @interface PartyTableViewCell : UITableViewCell
 
 + (NSString*)reuseIdentifier;
 
-- (void)configureWithLogo: (NSInteger) logoNumber
-                partyName: (NSString*) partyName
-           partyStartTime: (NSString*) partyStartTime
-                partyDate: (NSDate*) date;
+- (void)configureWithParty: (PMRParty*) party;
 
 @end

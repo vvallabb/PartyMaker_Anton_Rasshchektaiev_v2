@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Party.h"
+#import "PMRParty.h"
+#import "PMRCoreDataManager.h"
+#import "PMRCoreDataManager+Party.h"
 
 @interface XIBViewController : UIViewController <UIScrollViewDelegate, UITextFieldDelegate, UITextViewDelegate>
 @end

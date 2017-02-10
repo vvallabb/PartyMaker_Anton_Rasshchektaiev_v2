@@ -158,7 +158,7 @@
 // set up the scrollViewLogo and pageControlLogo
 - (void) setUpScrollViewLogo {
     NSMutableArray *imageViews = [[NSMutableArray alloc] init];
-    NSArray *imageNames = [Party getImageNamesArray];
+    NSArray *imageNames = [self getImageNamesArray];
     CGRect frame = self.scrollViewContainer.frame;
     
     for (int i = 0; i < imageNames.count; i++) {
@@ -260,15 +260,17 @@
 }
 
 - (void) doTheSaveAction {
-    NSMutableArray *partyList = [Party deserializePartyList];
     
-    Party *currentParty = [[Party alloc] initWithPartyDate:[self.datePicker date]
-                                                 partyName:[self.textFieldPartyName text]
-                                            partyStartTime:[self.labelStartTime text]
-                                           partyLogoNumber:[self.pageControlLogo currentPage]];
     
-    [partyList addObject:currentParty];
-    [Party serializePartyList:partyList];
+    
+    NSString *logoImageName = [[self getImageNamesArray] objectAtIndex:self.pageControlLogo.currentPage];
+    
+    PMRParty *party = [[PMRParty alloc] initWithPartyID:@"ID" name:self.textFieldPartyName.text startDate:[self getDateWithSlider:self.sliderStartTime] endDate:[self getDateWithSlider:self.sliderEndTime] logoImageName:logoImageName descriptionText:self.textViewDescription.text creationDate:[[NSDate alloc] init] modificationDate:nil creatorID:@"my id" latitude:@"latitude" longtitude:@"longtitude"];
+    
+    PMRCoreDataManager *coreDataManager = [PMRCoreDataManager sharedStore];
+    [coreDataManager addNewParty:party completion:^(BOOL success) {
+        NSLog(@"A new party has been added to the context!");
+    }];
     
     [self performSegueWithIdentifier:@"segueToPartyList" sender:self];
 }
@@ -300,6 +302,26 @@
     NSString *time = [NSString stringWithFormat:@"%@:%@", stringHours, stringMinutes];
     
     return time;
+}
+
+// supporting method to get NSDate according to the slider value of time
+- (NSDate*) getDateWithSlider:(UISlider*) slider {
+    NSDate *date = self.datePicker.date;
+    
+    unsigned int flags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* components = [calendar components:flags fromDate:date];
+    date = [calendar dateFromComponents:components];
+    
+    NSDate *dateWithTimeFromSlider = [date dateByAddingTimeInterval:slider.value * 60];
+    return dateWithTimeFromSlider;
+}
+
+// supporting method to get an array of image names
+- (NSArray *)getImageNamesArray {
+    NSArray *imageNamesArray = @[@"No Alcohol-100.png", @"Coconut Cocktail-100.png", @"Christmas Tree-100.png", @"Champagne-100.png", @"Birthday Cake-100.png", @"Beer-100.png"];
+    
+    return imageNamesArray;
 }
 
 /*
