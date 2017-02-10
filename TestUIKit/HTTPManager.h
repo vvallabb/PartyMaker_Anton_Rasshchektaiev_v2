@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LoginScreenViewController.h"
 
 @interface HTTPManager : NSObject
+
+@property (nonatomic, strong) UIViewController *loginScreenVC;
 
 +(instancetype) sharedInstance;
 
@@ -17,7 +20,7 @@
 - (NSString*) makeDateRepresentationForAPICall:(NSDate*) _date;
 
 // send the login request
-- (NSDictionary*) sendTheLoginRequestWithName: (NSString*) name
+- (void) sendTheLoginRequestWithName: (NSString*) name
                                      password: (NSString*) password;
 
 // send the register request

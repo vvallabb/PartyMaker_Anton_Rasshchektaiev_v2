@@ -66,16 +66,6 @@
     [self performSegueWithIdentifier:@"SegueToCreateParty" sender:self];
 }
 
-// temporary
-- (IBAction)onDeleteButtonClicked:(UIBarButtonItem *)sender {
-    NSMutableArray *emptyArray = [[NSMutableArray alloc] init];
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:emptyArray];
-    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"partyList"];
-    
-    [self loadView];
-}
-//-----------------
-
 /*
 #pragma mark - Navigation
 

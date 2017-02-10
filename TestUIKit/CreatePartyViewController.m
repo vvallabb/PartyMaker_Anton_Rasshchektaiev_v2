@@ -7,7 +7,6 @@
 //
 
 #import "CreatePartyViewController.h"
-
 @interface XIBViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *focusCircle;
@@ -16,7 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *textFieldPartyName;
 
-// outlets related to sliders
+#pragma mark - Sliders outlets
 @property (weak, nonatomic) IBOutlet UILabel *labelStartTime;
 @property (weak, nonatomic) IBOutlet UILabel *labelEndTime;
 
@@ -26,24 +25,24 @@
 @property (weak, nonatomic) IBOutlet UIView *sliderStartView;
 @property (weak, nonatomic) IBOutlet UIView *sliderEndView;
 
-// outlets related to scroll view
+#pragma mark - ScrollView outlets
 @property (weak, nonatomic) IBOutlet UIView *scrollViewContainer;
 @property (weak, nonatomic) IBOutlet UIView *scrollViewContent;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollViewLogo;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControlLogo;
 
 
-// outlets related to text view description
+#pragma mark - DescriptionView outlets
 @property (weak, nonatomic) IBOutlet UIView *textViewDescriptionContainer;
 @property (weak, nonatomic) IBOutlet UITextView *textViewDescription;
 @property (strong, nonatomic) IBOutlet UIToolbar *keyboardForDescriptionToolbar;
 
-// outlets related to date picker
+#pragma mark - DatePicker outlets
 @property (weak, nonatomic) IBOutlet UIView *datePickerView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UIToolbar *datePickerToolbarButtonDone;
 
-// outlets related to constraints
+#pragma mark - Constraints outlets
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintChooseDateButtonTopSpace;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintDescriptionViewContainerBottomSpace;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintFocusCircleTopSpace;
@@ -82,7 +81,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-// set up the buttonChooseDateAction
+#pragma mark - ButtonChooseDate handling
 - (IBAction)onButtonChooseDateClick:(UIButton *)sender {
     self.datePickerView.hidden = NO;
     
@@ -113,7 +112,7 @@
     [self onDatePickerToolbarCancel: nil];
 }
 
-// set up the textFieldPartyName
+#pragma mark - Set up the TextFieldPartyName
 - (void) setUpTextFieldPartyName {
     UIColor *placeHolderColor = [[UIColor alloc] initWithRed:68/266.f green:72/255.f blue:82/255.f alpha:1.f];
     self.textFieldPartyName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Your party name" attributes:@{NSForegroundColorAttributeName: placeHolderColor}];
@@ -131,7 +130,7 @@
     return YES;
 }
 
-// set up the sliderStartTime action
+#pragma mark - Set up the sliderStartTime action
 - (IBAction)onStartSliderValueChanged:(UISlider *)sender {
     self.labelStartTime.text = [self getTimeStringForSliderLabel:self.sliderStartTime.value];
     
@@ -143,7 +142,7 @@
     [self moveFocusCircleOnY:sender.superview.center.y];
 }
 
-// set up the sliderEndTime action
+#pragma mark - Set up the sliderEndTime action
 - (IBAction)onEndSliderValueChanged:(UISlider *)sender {
     self.labelEndTime.text = [self getTimeStringForSliderLabel:self.sliderEndTime.value];
     
@@ -155,7 +154,7 @@
     [self moveFocusCircleOnY:sender.superview.center.y];
 }
 
-// set up the scrollViewLogo and pageControlLogo
+#pragma mark - Set up the scrollViewLogo and pageControlLogo
 - (void) setUpScrollViewLogo {
     NSMutableArray *imageViews = [[NSMutableArray alloc] init];
     NSArray *imageNames = [self getImageNamesArray];
@@ -184,7 +183,7 @@
     [self moveFocusCircleOnY:self.scrollViewContainer.center.y];
 }
 
-// set up the textViewDescriptionAction
+#pragma mark - set up the TextViewDescription action
 - (void) setUpTextViewDescription {
     self.textViewDescription.inputAccessoryView = self.keyboardForDescriptionToolbar;
 }
@@ -234,7 +233,7 @@
     }
 }
 
-// sut up the Save button action
+#pragma mark - Set up the Save Button action
 - (IBAction)onSaveButtonClicked:(UIBarButtonItem *)sender {
     BOOL dateIsSelected = ![self.buttonChooseDate.titleLabel.text isEqualToString:@"CHOOSE DATE"];
     BOOL nameIsSelected = ![self.textFieldPartyName.text isEqualToString:@""];
@@ -260,18 +259,17 @@
 }
 
 - (void) doTheSaveAction {
-    
-    
-    
     NSString *logoImageName = [[self getImageNamesArray] objectAtIndex:self.pageControlLogo.currentPage];
     
     PMRParty *party = [[PMRParty alloc] initWithPartyID:@"ID" name:self.textFieldPartyName.text startDate:[self getDateWithSlider:self.sliderStartTime] endDate:[self getDateWithSlider:self.sliderEndTime] logoImageName:logoImageName descriptionText:self.textViewDescription.text creationDate:[[NSDate alloc] init] modificationDate:nil creatorID:@"my id" latitude:@"latitude" longtitude:@"longtitude"];
     
     PMRCoreDataManager *coreDataManager = [PMRCoreDataManager sharedStore];
     [coreDataManager addNewParty:party completion:^(BOOL success) {
-        NSLog(@"A new party has been added to the context!");
+    
     }];
     
+    [NSNotification createLocalNotification:party];
+
     [self performSegueWithIdentifier:@"segueToPartyList" sender:self];
 }
 

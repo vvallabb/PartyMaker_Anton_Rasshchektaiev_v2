@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Dgp-Jr-auh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Dgp-Jr-auh">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,6 +14,7 @@
         <scene sceneID="34M-8D-VPQ">
             <objects>
                 <tabBarController id="cNc-cS-nYU" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Aon-c1-pAt"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="1M8-UI-Lmt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -614,7 +615,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GE1-Ji-fF3" id="cDR-CE-Wps">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFb-PZ-i79" userLabel="ImageViewContainer">
@@ -694,12 +695,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="y8n-Rf-S0N">
-                        <barButtonItem key="leftBarButtonItem" image="delete.png" id="SF0-R9-Hdi">
-                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="onDeleteButtonClicked:" destination="84u-SP-8UL" id="r1t-RR-0Rs"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="add.png" id="V2E-e4-MwJ">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -709,7 +704,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="deleteButton" destination="SF0-R9-Hdi" id="bCy-AB-ZJA"/>
                         <outlet property="rightBarButtonItem" destination="V2E-e4-MwJ" id="c2v-TQ-enj"/>
                         <outlet property="tableViewPartyList" destination="N8i-aP-OMN" id="N6J-92-WLo"/>
                     </connections>
@@ -778,6 +772,9 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5.4"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <segue destination="cNc-cS-nYU" kind="show" id="DTU-JG-uZh"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYL-HS-d16">
                                                         <rect key="frame" x="60" y="286" width="178" height="30"/>
@@ -790,22 +787,32 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5.4"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <segue destination="cNc-cS-nYU" kind="show" id="J8J-iu-QTM"/>
+                                                            <action selector="onSignInButtonClicked:" destination="Dgp-Jr-auh" eventType="touchUpInside" id="29x-X6-BPd"/>
                                                         </connections>
                                                     </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eE-u2-eye" userLabel="Label Incorrect Input">
+                                                        <rect key="frame" x="0.0" y="92" width="298" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.17592325806617737" green="0.19176435470581055" blue="0.21671903133392334" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="IYL-HS-d16" firstAttribute="leading" secondItem="Rhp-Ob-dv0" secondAttribute="leading" constant="60" id="39A-6l-0dS"/>
                                                     <constraint firstItem="iDB-M8-iYB" firstAttribute="top" secondItem="Rhp-Ob-dv0" secondAttribute="top" constant="126" id="6HP-yE-uMI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4eE-u2-eye" secondAttribute="trailing" id="72R-H4-Z4e"/>
+                                                    <constraint firstItem="4eE-u2-eye" firstAttribute="leading" secondItem="Rhp-Ob-dv0" secondAttribute="leading" id="84h-Z6-UEa"/>
                                                     <constraint firstAttribute="trailing" secondItem="MwE-Nh-Cpl" secondAttribute="trailing" constant="20" id="8Ei-RK-CZG"/>
                                                     <constraint firstItem="AOF-sq-Axk" firstAttribute="width" secondItem="Rhp-Ob-dv0" secondAttribute="width" multiplier="1:2" id="Fc7-Sy-8cE"/>
                                                     <constraint firstItem="MwE-Nh-Cpl" firstAttribute="top" secondItem="iDB-M8-iYB" secondAttribute="bottom" constant="20" id="Jvj-KA-oF1"/>
                                                     <constraint firstItem="bY5-bW-ht8" firstAttribute="top" secondItem="MwE-Nh-Cpl" secondAttribute="bottom" constant="30" id="Nxh-us-JCn"/>
                                                     <constraint firstItem="MwE-Nh-Cpl" firstAttribute="leading" secondItem="Rhp-Ob-dv0" secondAttribute="leading" constant="20" id="QhG-gA-cjB"/>
+                                                    <constraint firstItem="4eE-u2-eye" firstAttribute="top" secondItem="AOF-sq-Axk" secondAttribute="bottom" constant="8" id="SWc-jn-kkO"/>
                                                     <constraint firstAttribute="trailing" secondItem="bY5-bW-ht8" secondAttribute="trailing" constant="60" id="YN0-Gp-zVm"/>
                                                     <constraint firstAttribute="trailing" secondItem="iDB-M8-iYB" secondAttribute="trailing" constant="20" id="YnQ-Of-0u1"/>
                                                     <constraint firstAttribute="trailing" secondItem="IYL-HS-d16" secondAttribute="trailing" constant="60" id="ZzM-bL-d2D"/>
+                                                    <constraint firstItem="iDB-M8-iYB" firstAttribute="top" secondItem="4eE-u2-eye" secondAttribute="bottom" constant="13" id="aKY-hk-B30"/>
                                                     <constraint firstItem="bY5-bW-ht8" firstAttribute="leading" secondItem="Rhp-Ob-dv0" secondAttribute="leading" constant="60" id="eGy-gx-AbO"/>
                                                     <constraint firstItem="AOF-sq-Axk" firstAttribute="height" secondItem="Rhp-Ob-dv0" secondAttribute="height" multiplier="1:10" id="ja2-dJ-KYS"/>
                                                     <constraint firstItem="AOF-sq-Axk" firstAttribute="centerX" secondItem="Rhp-Ob-dv0" secondAttribute="centerX" id="jgR-W5-KyG"/>
@@ -850,8 +857,10 @@
                         <outlet property="constraintContentViewBottomSpace" destination="SdX-cM-SAh" id="cpv-mk-7c9"/>
                         <outlet property="constraintContentViewTopSpace" destination="ZhZ-sy-lS3" id="UPh-P5-IPw"/>
                         <outlet property="labelHello" destination="AOF-sq-Axk" id="62E-kA-YxM"/>
+                        <outlet property="labelIncorrectInput" destination="4eE-u2-eye" id="P6r-gq-eR7"/>
                         <outlet property="textFieldLogin" destination="iDB-M8-iYB" id="FPR-aX-38O"/>
                         <outlet property="textFieldPassword" destination="MwE-Nh-Cpl" id="WCp-fz-6nn"/>
+                        <segue destination="cNc-cS-nYU" kind="presentation" identifier="SegueFromLoginScreen" modalTransitionStyle="flipHorizontal" id="lc5-id-KvJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OP5-gP-iyM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -883,13 +892,13 @@
     <resources>
         <image name="add.png" width="24" height="24"/>
         <image name="cocktail.png" width="24" height="24"/>
-        <image name="delete.png" width="24" height="24"/>
         <image name="leftSliderImg.png" width="88" height="62"/>
         <image name="login_background.png" width="640" height="1136"/>
         <image name="rightSliderImg.png" width="84" height="65"/>
         <image name="settings.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="lc5-id-KvJ"/>
         <segue reference="Xjl-xw-hNH"/>
     </inferredMetricsTieBreakers>
 </document>

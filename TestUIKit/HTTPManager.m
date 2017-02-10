@@ -66,18 +66,24 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
 //-----------------------------------------------------------------------
 
 // send the login request
-- (NSDictionary*) sendTheLoginRequestWithName: (NSString*) name password: (NSString*) password {
+- (void) sendTheLoginRequestWithName: (NSString*) name password: (NSString*) password {
     NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:name, @"name", password, @"password", nil];
     
     NSMutableURLRequest *request = [self getRequestWithType:@"GET" headers:nil method:@"login" params:params];
     NSURLSessionDataTask *getDataTask = [self.defaultSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
-        NSLog(@"%@", dictionaryFromResponse);
+        
+        BOOL isCorrectLogin = [[dictionaryFromResponse objectForKey:@"name"] isEqualToString:name];
+        BOOL isCorrectPass = [[dictionaryFromResponse objectForKey:@"password"] isEqualToString:password];
+        
+        if (isCorrectLogin) {
+            dispatch_async(dispatch_get_main_queue(), ^(void){
+                [self.loginScreenVC performSegueWithIdentifier:@"SegueFromLoginScreen" sender:self];
+            });
+        }
     }];
     
     [getDataTask resume];
-    
-    return nil;
 }
 
 // send the register reguest

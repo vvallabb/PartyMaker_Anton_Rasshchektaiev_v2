@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NSNotification+Utility.h"
 
 @interface AppDelegate ()
 
@@ -22,6 +23,8 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     //[[UINavigationBar appearance] setTranslucent:NO];
+    
+    [NSNotification setUpLocalNotifications];
     
     return YES;
 }

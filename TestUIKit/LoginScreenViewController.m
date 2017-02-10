@@ -10,6 +10,8 @@
 
 @interface LoginScreenViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *labelHello;
+@property (weak, nonatomic) IBOutlet UILabel *labelIncorrectInput;
+
 @property (weak, nonatomic) IBOutlet UITextField *textFieldLogin;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldPassword;
 
@@ -87,6 +89,18 @@
 
 - (void) keyboardDidShow:(NSNotification*) notification {
     
+}
+
+- (IBAction)onSignInButtonClicked:(UIButton *)sender {
+    NSString *login = self.textFieldLogin.text;
+    NSString *password = self.textFieldPassword.text;
+    
+    [[HTTPManager sharedInstance] setLoginScreenVC:self];
+    [[HTTPManager sharedInstance] sendTheLoginRequestWithName:login password:password];
+}
+
+- (void)setLabelIncorrectInoutText:(NSString *)text {
+    self.labelIncorrectInput.text = text;
 }
 
 /*
