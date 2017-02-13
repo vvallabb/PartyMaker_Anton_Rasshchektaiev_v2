@@ -74,7 +74,7 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
         NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
         
         BOOL isCorrectLogin = [[dictionaryFromResponse objectForKey:@"name"] isEqualToString:name];
-        BOOL isCorrectPass = [[dictionaryFromResponse objectForKey:@"password"] isEqualToString:password];
+        //BOOL isCorrectPass = [[dictionaryFromResponse objectForKey:@"password"] isEqualToString:password];
         
         if (isCorrectLogin) {
             dispatch_async(dispatch_get_main_queue(), ^(void){

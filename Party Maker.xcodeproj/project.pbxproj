@@ -25,11 +25,11 @@
 		EC79FB8C1E3E538D0061B6AC /* Coconut Cocktail-100.png in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB861E3E538D0061B6AC /* Coconut Cocktail-100.png */; };
 		EC79FB8D1E3E538D0061B6AC /* No Alcohol-100.png in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB871E3E538D0061B6AC /* No Alcohol-100.png */; };
 		EC87B8B81E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = EC87B8B71E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.m */; };
-		EC9C02D41E48ACC0006E1A65 /* LoginScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9C02D31E48ACC0006E1A65 /* LoginScreenViewController.m */; };
 		ECB2707F1E40DE020032E0EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB2707E1E40DE020032E0EF /* main.m */; };
 		ECB270851E40E2990032E0EF /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB270841E40E2990032E0EF /* settings.png */; };
 		ECB270871E40E2A20032E0EF /* cocktail.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB270861E40E2A20032E0EF /* cocktail.png */; };
 		ECBC9EDB1E51F15100E40610 /* login_background.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC9EDA1E51F15100E40610 /* login_background.png */; };
+		ECBC9EDE1E51F36C00E40610 /* LoginScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBC9EDD1E51F36C00E40610 /* LoginScreenViewController.m */; };
 		ECBF52A51E4CA37A00E0D7B1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECBF52A21E4CA35300E0D7B1 /* Model.xcdatamodeld */; };
 		ECD9C2341E475E4D008A7BD7 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = ECD9C2331E475E4D008A7BD7 /* add.png */; };
 		ECDFE3C81E4E0F700007FBB8 /* NSNotification+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDFE3C71E4E0F700007FBB8 /* NSNotification+Utility.m */; };
@@ -69,12 +69,12 @@
 		EC79FB871E3E538D0061B6AC /* No Alcohol-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "No Alcohol-100.png"; sourceTree = "<group>"; };
 		EC87B8B61E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PMRPartyManagedObject+CoreDataProperties.h"; sourceTree = "<group>"; };
 		EC87B8B71E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PMRPartyManagedObject+CoreDataProperties.m"; sourceTree = "<group>"; };
-		EC9C02D21E48ACC0006E1A65 /* LoginScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginScreenViewController.h; sourceTree = "<group>"; };
-		EC9C02D31E48ACC0006E1A65 /* LoginScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginScreenViewController.m; sourceTree = "<group>"; };
 		ECB2707E1E40DE020032E0EF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ECB270841E40E2990032E0EF /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		ECB270861E40E2A20032E0EF /* cocktail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cocktail.png; sourceTree = "<group>"; };
 		ECBC9EDA1E51F15100E40610 /* login_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_background.png; sourceTree = "<group>"; };
+		ECBC9EDC1E51F36C00E40610 /* LoginScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginScreenViewController.h; sourceTree = "<group>"; };
+		ECBC9EDD1E51F36C00E40610 /* LoginScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginScreenViewController.m; sourceTree = "<group>"; };
 		ECBF52A31E4CA35300E0D7B1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		ECD9C2331E475E4D008A7BD7 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		ECDFE3C61E4E0F700007FBB8 /* NSNotification+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotification+Utility.h"; sourceTree = "<group>"; };
@@ -119,8 +119,8 @@
 		EC1716361E4C9E5F005FFC61 /* Login Screen VC */ = {
 			isa = PBXGroup;
 			children = (
-				EC9C02D21E48ACC0006E1A65 /* LoginScreenViewController.h */,
-				EC9C02D31E48ACC0006E1A65 /* LoginScreenViewController.m */,
+				ECBC9EDC1E51F36C00E40610 /* LoginScreenViewController.h */,
+				ECBC9EDD1E51F36C00E40610 /* LoginScreenViewController.m */,
 			);
 			name = "Login Screen VC";
 			sourceTree = "<group>";
@@ -367,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECBC9EDE1E51F36C00E40610 /* LoginScreenViewController.m in Sources */,
 				EC79FB631E3B80550061B6AC /* AppDelegate.m in Sources */,
 				ECB2707F1E40DE020032E0EF /* main.m in Sources */,
 				EC24C1651E44B13C007558B1 /* PartyTableViewCell.m in Sources */,
@@ -377,7 +378,6 @@
 				EC7609681E49D23F001D7BF7 /* HTTPManager.m in Sources */,
 				ECE0FFC81E4BD8AA00BE5FB1 /* PMRPersistanceStore.m in Sources */,
 				ECBF52A51E4CA37A00E0D7B1 /* Model.xcdatamodeld in Sources */,
-				EC9C02D41E48ACC0006E1A65 /* LoginScreenViewController.m in Sources */,
 				ECE0FFC61E4BD8AA00BE5FB1 /* PMRParty+initWithManagedObject.m in Sources */,
 				EC87B8B81E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.m in Sources */,
 				EC24C1691E44BB79007558B1 /* PLViewController.m in Sources */,
