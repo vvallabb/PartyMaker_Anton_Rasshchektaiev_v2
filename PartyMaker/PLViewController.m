@@ -22,6 +22,8 @@
     [super viewDidLoad];
     
     self.tableViewPartyList.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    [self.tableViewPartyList setSeparatorColor:[UIColor colorWithRed:68/255.f green:73/255.f blue:83/255.f alpha:1.f]];
+    self.tableViewPartyList.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     
     //[self setUpAddBarButtonItem];
     [self.navigationItem setHidesBackButton:YES];

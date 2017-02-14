@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		453DF8CA1E47BA54007019A5 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 453DF8C91E47BA54007019A5 /* delete.png */; };
+		EC0E18B61E51FAD3001140CA /* TestHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0E18B51E51FAD3001140CA /* TestHTTPManager.m */; };
+		EC0E18B81E532019001140CA /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0E18B71E532019001140CA /* Splash.png */; };
 		EC24C1651E44B13C007558B1 /* PartyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1641E44B13C007558B1 /* PartyTableViewCell.m */; };
 		EC24C1691E44BB79007558B1 /* PLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1681E44BB79007558B1 /* PLViewController.m */; };
 		EC2FEF9C1E3F728E0035F778 /* CreatePartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2FEF9A1E3F728E0035F778 /* CreatePartyViewController.m */; };
@@ -43,7 +44,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		453DF8C91E47BA54007019A5 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = delete.png; path = PartyMaker/delete.png; sourceTree = SOURCE_ROOT; };
+		EC0E18B41E51FAD3001140CA /* TestHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHTTPManager.h; sourceTree = "<group>"; };
+		EC0E18B51E51FAD3001140CA /* TestHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHTTPManager.m; sourceTree = "<group>"; };
+		EC0E18B71E532019001140CA /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
 		EC24C1631E44B13C007558B1 /* PartyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyTableViewCell.h; sourceTree = "<group>"; };
 		EC24C1641E44B13C007558B1 /* PartyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyTableViewCell.m; sourceTree = "<group>"; };
 		EC24C1671E44BB79007558B1 /* PLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLViewController.h; sourceTree = "<group>"; };
@@ -198,8 +201,8 @@
 				ECB270841E40E2990032E0EF /* settings.png */,
 				ECB270861E40E2A20032E0EF /* cocktail.png */,
 				ECD9C2331E475E4D008A7BD7 /* add.png */,
-				453DF8C91E47BA54007019A5 /* delete.png */,
 				ECBC9EDA1E51F15100E40610 /* login_background.png */,
+				EC0E18B71E532019001140CA /* Splash.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -209,6 +212,8 @@
 			children = (
 				EC7609661E49D23F001D7BF7 /* HTTPManager.h */,
 				EC7609671E49D23F001D7BF7 /* HTTPManager.m */,
+				EC0E18B41E51FAD3001140CA /* TestHTTPManager.h */,
+				EC0E18B51E51FAD3001140CA /* TestHTTPManager.m */,
 			);
 			name = HTTP;
 			sourceTree = "<group>";
@@ -344,12 +349,12 @@
 				EC79FB6E1E3B80550061B6AC /* LaunchScreen.storyboard in Resources */,
 				EC79FB6B1E3B80550061B6AC /* Assets.xcassets in Resources */,
 				ECB270851E40E2990032E0EF /* settings.png in Resources */,
-				453DF8CA1E47BA54007019A5 /* delete.png in Resources */,
 				EC79FB811E3D6FE10061B6AC /* rightSliderImg.png in Resources */,
 				EC79FB691E3B80550061B6AC /* Main.storyboard in Resources */,
 				ECB270871E40E2A20032E0EF /* cocktail.png in Resources */,
 				EC79FB8C1E3E538D0061B6AC /* Coconut Cocktail-100.png in Resources */,
 				ECD9C2341E475E4D008A7BD7 /* add.png in Resources */,
+				EC0E18B81E532019001140CA /* Splash.png in Resources */,
 				EC79FB791E3CE7300061B6AC /* leftSliderImg.png in Resources */,
 				EC79FB8B1E3E538D0061B6AC /* Christmas Tree-100.png in Resources */,
 				EC79FB8D1E3E538D0061B6AC /* No Alcohol-100.png in Resources */,
@@ -374,6 +379,7 @@
 				ECE0FFC21E4BD8AA00BE5FB1 /* PMRCoreDataManager.m in Sources */,
 				ECDFE3C81E4E0F700007FBB8 /* NSNotification+Utility.m in Sources */,
 				ECE0FFC51E4BD8AA00BE5FB1 /* PMRParty+initWithDictionary.m in Sources */,
+				EC0E18B61E51FAD3001140CA /* TestHTTPManager.m in Sources */,
 				ECE0FFD41E4BDA9A00BE5FB1 /* PMRPartyManagedObject.m in Sources */,
 				EC7609681E49D23F001D7BF7 /* HTTPManager.m in Sources */,
 				ECE0FFC81E4BD8AA00BE5FB1 /* PMRPersistanceStore.m in Sources */,

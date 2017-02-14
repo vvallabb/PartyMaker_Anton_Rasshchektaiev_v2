@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "NSNotification+Utility.h"
+#import "TestHTTPManager.h"
 
 @interface AppDelegate ()
 
@@ -25,6 +26,9 @@
     //[[UINavigationBar appearance] setTranslucent:NO];
     
     [NSNotification setUpLocalNotifications];
+    
+    TestHTTPManager *test = [[TestHTTPManager alloc] init];
+    [test testHTTP];
     
     return YES;
 }
