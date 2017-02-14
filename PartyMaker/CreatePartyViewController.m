@@ -15,6 +15,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *textFieldPartyName;
 
+@property (weak, nonatomic) IBOutlet UIButton *buttonChooseLocation;
+
 #pragma mark - Sliders outlets
 @property (weak, nonatomic) IBOutlet UILabel *labelStartTime;
 @property (weak, nonatomic) IBOutlet UILabel *labelEndTime;
@@ -275,6 +277,12 @@
     [NSNotification createLocalNotification:party];
 
     [self performSegueWithIdentifier:@"segueToPartyList" sender:self];
+}
+
+# pragma mark - Set up the Choose Location Button action
+- (IBAction)onButtonChooseLocationClicked:(UIButton *)sender {
+    [self moveFocusCircleOnY:sender.center.y];
+    [self performSegueWithIdentifier:@"SequeFromCreatePartyToLocation" sender:self];
 }
 
 // moving focus circle on left panel

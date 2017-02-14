@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		EC0E18B61E51FAD3001140CA /* TestHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0E18B51E51FAD3001140CA /* TestHTTPManager.m */; };
 		EC0E18B81E532019001140CA /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0E18B71E532019001140CA /* Splash.png */; };
+		EC0E18BC1E5329CF001140CA /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0E18BB1E5329CF001140CA /* LocationViewController.m */; };
+		EC0E18BF1E532CA4001140CA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0E18BE1E532CA4001140CA /* MapKit.framework */; };
+		EC0E18C61E533F5A001140CA /* LocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0E18C51E533F5A001140CA /* LocationManagerDelegate.m */; };
+		EC0E18CA1E53475C001140CA /* CLLocationManager+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0E18C91E53475C001140CA /* CLLocationManager+Utility.m */; };
+		EC0E18E11E535A21001140CA /* PartyMakerIcon_40.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0E18DA1E535A21001140CA /* PartyMakerIcon_40.png */; };
+		EC0E18E21E535A21001140CA /* PartyMakerIcon_58.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0E18DB1E535A21001140CA /* PartyMakerIcon_58.png */; };
+		EC0E18E31E535A21001140CA /* PartyMakerIcon_60.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0E18DC1E535A21001140CA /* PartyMakerIcon_60.png */; };
+		EC0E18E41E535A21001140CA /* PartyMakerIcon_80.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0E18DD1E535A21001140CA /* PartyMakerIcon_80.png */; };
+		EC0E18E51E535A21001140CA /* PartyMakerIcon_87.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0E18DE1E535A21001140CA /* PartyMakerIcon_87.png */; };
+		EC0E18E61E535A21001140CA /* PartyMakerIcon_120.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0E18DF1E535A21001140CA /* PartyMakerIcon_120.png */; };
+		EC0E18E71E535A21001140CA /* PartyMakerIcon_180.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0E18E01E535A21001140CA /* PartyMakerIcon_180.png */; };
 		EC24C1651E44B13C007558B1 /* PartyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1641E44B13C007558B1 /* PartyTableViewCell.m */; };
 		EC24C1691E44BB79007558B1 /* PLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1681E44BB79007558B1 /* PLViewController.m */; };
 		EC2FEF9C1E3F728E0035F778 /* CreatePartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2FEF9A1E3F728E0035F778 /* CreatePartyViewController.m */; };
@@ -47,6 +58,20 @@
 		EC0E18B41E51FAD3001140CA /* TestHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHTTPManager.h; sourceTree = "<group>"; };
 		EC0E18B51E51FAD3001140CA /* TestHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHTTPManager.m; sourceTree = "<group>"; };
 		EC0E18B71E532019001140CA /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
+		EC0E18BA1E5329CF001140CA /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		EC0E18BB1E5329CF001140CA /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
+		EC0E18BE1E532CA4001140CA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		EC0E18C41E533F5A001140CA /* LocationManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManagerDelegate.h; sourceTree = "<group>"; };
+		EC0E18C51E533F5A001140CA /* LocationManagerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManagerDelegate.m; sourceTree = "<group>"; };
+		EC0E18C81E53475C001140CA /* CLLocationManager+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocationManager+Utility.h"; sourceTree = "<group>"; };
+		EC0E18C91E53475C001140CA /* CLLocationManager+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocationManager+Utility.m"; sourceTree = "<group>"; };
+		EC0E18DA1E535A21001140CA /* PartyMakerIcon_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PartyMakerIcon_40.png; sourceTree = "<group>"; };
+		EC0E18DB1E535A21001140CA /* PartyMakerIcon_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PartyMakerIcon_58.png; sourceTree = "<group>"; };
+		EC0E18DC1E535A21001140CA /* PartyMakerIcon_60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PartyMakerIcon_60.png; sourceTree = "<group>"; };
+		EC0E18DD1E535A21001140CA /* PartyMakerIcon_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PartyMakerIcon_80.png; sourceTree = "<group>"; };
+		EC0E18DE1E535A21001140CA /* PartyMakerIcon_87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PartyMakerIcon_87.png; sourceTree = "<group>"; };
+		EC0E18DF1E535A21001140CA /* PartyMakerIcon_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PartyMakerIcon_120.png; sourceTree = "<group>"; };
+		EC0E18E01E535A21001140CA /* PartyMakerIcon_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PartyMakerIcon_180.png; sourceTree = "<group>"; };
 		EC24C1631E44B13C007558B1 /* PartyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyTableViewCell.h; sourceTree = "<group>"; };
 		EC24C1641E44B13C007558B1 /* PartyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyTableViewCell.m; sourceTree = "<group>"; };
 		EC24C1671E44BB79007558B1 /* PLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLViewController.h; sourceTree = "<group>"; };
@@ -103,18 +128,70 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC0E18BF1E532CA4001140CA /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC0E18B91E5329A9001140CA /* Location VC */ = {
+			isa = PBXGroup;
+			children = (
+				EC0E18BA1E5329CF001140CA /* LocationViewController.h */,
+				EC0E18BB1E5329CF001140CA /* LocationViewController.m */,
+			);
+			name = "Location VC";
+			sourceTree = "<group>";
+		};
+		EC0E18BD1E532CA3001140CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC0E18BE1E532CA4001140CA /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC0E18C01E533B0B001140CA /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				EC0E18C81E53475C001140CA /* CLLocationManager+Utility.h */,
+				EC0E18C91E53475C001140CA /* CLLocationManager+Utility.m */,
+				EC0E18C71E533FB3001140CA /* Location Manager Delegate */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
+		EC0E18C71E533FB3001140CA /* Location Manager Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				EC0E18C41E533F5A001140CA /* LocationManagerDelegate.h */,
+				EC0E18C51E533F5A001140CA /* LocationManagerDelegate.m */,
+			);
+			name = "Location Manager Delegate";
+			sourceTree = "<group>";
+		};
+		EC0E18CB1E5357D7001140CA /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				EC0E18DA1E535A21001140CA /* PartyMakerIcon_40.png */,
+				EC0E18DB1E535A21001140CA /* PartyMakerIcon_58.png */,
+				EC0E18DC1E535A21001140CA /* PartyMakerIcon_60.png */,
+				EC0E18DD1E535A21001140CA /* PartyMakerIcon_80.png */,
+				EC0E18DE1E535A21001140CA /* PartyMakerIcon_87.png */,
+				EC0E18DF1E535A21001140CA /* PartyMakerIcon_120.png */,
+				EC0E18E01E535A21001140CA /* PartyMakerIcon_180.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
 		EC1716351E4C9E57005FFC61 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				EC1716361E4C9E5F005FFC61 /* Login Screen VC */,
 				EC1716381E4C9EA8005FFC61 /* Party List VC */,
 				EC1716371E4C9E7A005FFC61 /* Create Party VC */,
+				EC0E18B91E5329A9001140CA /* Location VC */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -190,6 +267,7 @@
 		EC2FEF961E3F71400035F778 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				EC0E18CB1E5357D7001140CA /* Icons */,
 				EC79FB871E3E538D0061B6AC /* No Alcohol-100.png */,
 				EC79FB861E3E538D0061B6AC /* Coconut Cocktail-100.png */,
 				EC79FB851E3E538D0061B6AC /* Christmas Tree-100.png */,
@@ -223,6 +301,7 @@
 			children = (
 				EC79FB5D1E3B80550061B6AC /* Party Maker */,
 				EC79FB5C1E3B80550061B6AC /* Products */,
+				EC0E18BD1E532CA3001140CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -239,6 +318,7 @@
 			children = (
 				EC1716351E4C9E57005FFC61 /* View Controllers */,
 				ECE0FFB31E4BD89000BE5FB1 /* Core Data */,
+				EC0E18C01E533B0B001140CA /* Location */,
 				EC7609651E49D222001D7BF7 /* HTTP */,
 				EC9C02D51E48BBB3006E1A65 /* Party Model */,
 				ECB2707D1E40DCAE0032E0EF /* Supporting Files */,
@@ -346,6 +426,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC0E18E41E535A21001140CA /* PartyMakerIcon_80.png in Resources */,
 				EC79FB6E1E3B80550061B6AC /* LaunchScreen.storyboard in Resources */,
 				EC79FB6B1E3B80550061B6AC /* Assets.xcassets in Resources */,
 				ECB270851E40E2990032E0EF /* settings.png in Resources */,
@@ -353,10 +434,16 @@
 				EC79FB691E3B80550061B6AC /* Main.storyboard in Resources */,
 				ECB270871E40E2A20032E0EF /* cocktail.png in Resources */,
 				EC79FB8C1E3E538D0061B6AC /* Coconut Cocktail-100.png in Resources */,
+				EC0E18E51E535A21001140CA /* PartyMakerIcon_87.png in Resources */,
+				EC0E18E11E535A21001140CA /* PartyMakerIcon_40.png in Resources */,
 				ECD9C2341E475E4D008A7BD7 /* add.png in Resources */,
+				EC0E18E31E535A21001140CA /* PartyMakerIcon_60.png in Resources */,
+				EC0E18E71E535A21001140CA /* PartyMakerIcon_180.png in Resources */,
 				EC0E18B81E532019001140CA /* Splash.png in Resources */,
 				EC79FB791E3CE7300061B6AC /* leftSliderImg.png in Resources */,
+				EC0E18E21E535A21001140CA /* PartyMakerIcon_58.png in Resources */,
 				EC79FB8B1E3E538D0061B6AC /* Christmas Tree-100.png in Resources */,
+				EC0E18E61E535A21001140CA /* PartyMakerIcon_120.png in Resources */,
 				EC79FB8D1E3E538D0061B6AC /* No Alcohol-100.png in Resources */,
 				EC79FB891E3E538D0061B6AC /* Birthday Cake-100.png in Resources */,
 				EC79FB8A1E3E538D0061B6AC /* Champagne-100.png in Resources */,
@@ -377,6 +464,7 @@
 				ECB2707F1E40DE020032E0EF /* main.m in Sources */,
 				EC24C1651E44B13C007558B1 /* PartyTableViewCell.m in Sources */,
 				ECE0FFC21E4BD8AA00BE5FB1 /* PMRCoreDataManager.m in Sources */,
+				EC0E18CA1E53475C001140CA /* CLLocationManager+Utility.m in Sources */,
 				ECDFE3C81E4E0F700007FBB8 /* NSNotification+Utility.m in Sources */,
 				ECE0FFC51E4BD8AA00BE5FB1 /* PMRParty+initWithDictionary.m in Sources */,
 				EC0E18B61E51FAD3001140CA /* TestHTTPManager.m in Sources */,
@@ -386,10 +474,12 @@
 				ECBF52A51E4CA37A00E0D7B1 /* Model.xcdatamodeld in Sources */,
 				ECE0FFC61E4BD8AA00BE5FB1 /* PMRParty+initWithManagedObject.m in Sources */,
 				EC87B8B81E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.m in Sources */,
+				EC0E18C61E533F5A001140CA /* LocationManagerDelegate.m in Sources */,
 				EC24C1691E44BB79007558B1 /* PLViewController.m in Sources */,
 				EC2FEF9C1E3F728E0035F778 /* CreatePartyViewController.m in Sources */,
 				ECE0FFC41E4BD8AA00BE5FB1 /* PMRParty.m in Sources */,
 				ECE0FFC31E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.m in Sources */,
+				EC0E18BC1E5329CF001140CA /* LocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
