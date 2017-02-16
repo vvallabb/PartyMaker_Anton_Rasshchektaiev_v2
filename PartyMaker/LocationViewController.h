@@ -10,6 +10,6 @@
 #import <MapKit/MapKit.h>
 #import "CLLocationManager+Utility.h"
 
-@interface LocationViewController : UIViewController <MKMapViewDelegate>
+@interface LocationViewController : UIViewController <MKMapViewDelegate, UIGestureRecognizerDelegate>
 
 @end

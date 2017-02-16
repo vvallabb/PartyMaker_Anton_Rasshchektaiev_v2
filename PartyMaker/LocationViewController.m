@@ -21,31 +21,61 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
-    self.locationManager = [CLLocationManager sharedLocationManager];
-    [self.locationManager requestAlwaysAuthorization];
-    [self startStandardUpdates];
-
+    [self setUpTapGestureRecognizer];
 }
-
-// set up the location manager
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)startStandardUpdates
+//
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
     
-    // Set a movement threshold for new events.
-    self.locationManager.distanceFilter = 500; // meters
+    static NSString *reuseId = @"pin";
+    MKPinAnnotationView *pin = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:reuseId];
+    if (!pin)
+    {
+        pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseId];
+        pin.draggable = YES;
+        pin.canShowCallout = YES;
+        [pin setPinTintColor:[UIColor blueColor]];
+    }
+    else
+    {
+        pin.annotation = annotation;
+    }
     
-    [self.locationManager startUpdatingLocation];
+    return pin;
 }
+
+// set up the tap gesture recognizer
+- (void) setUpTapGestureRecognizer {
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mapClicked:)];
+    tapGestureRecognizer.numberOfTapsRequired = 1;
+    [self.mapView addGestureRecognizer:tapGestureRecognizer];
+}
+
+- (void) mapClicked:(UIGestureRecognizer*) recognizer {
+    CGPoint point = [recognizer locationInView:self.mapView];
+    
+    CLLocationCoordinate2D tapPoint = [self.mapView convertPoint:point toCoordinateFromView:self.mapView];
+    
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    [annotation setCoordinate:tapPoint];
+    [annotation setTitle:@"Annotation"];
+    
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    
+    [self.mapView addAnnotation:annotation];
+}
+
+// geogode annotation
+
 
 /*
 #pragma mark - Navigation
