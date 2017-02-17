@@ -18,8 +18,8 @@
 @property (nonatomic, readonly) NSDate *creationDate;
 @property (nonatomic, readonly) NSDate *modificationDate;
 @property (nonatomic, readonly) NSString *creatorID;
-@property (nonatomic, readonly) NSString *latitude;
-@property (nonatomic, readonly) NSString *longtitude;
+@property (nonatomic, readwrite) NSString *latitude;
+@property (nonatomic, readwrite) NSString *longtitude;
 
 - (instancetype)initWithPartyID:(NSString*)partyID
                            name:(NSString*)name

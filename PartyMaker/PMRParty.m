@@ -19,8 +19,6 @@
 @property (nonatomic, readwrite) NSDate *creationDate;
 @property (nonatomic, readwrite) NSDate *modificationDate;
 @property (nonatomic, readwrite) NSString *creatorID;
-@property (nonatomic, readwrite) NSString *latitude;
-@property (nonatomic, readwrite) NSString *longtitude;
 
 @end
 

@@ -13,4 +13,12 @@
 #import "NSNotification+Utility.h"
 
 @interface XIBViewController : UIViewController <UIScrollViewDelegate, UITextFieldDelegate, UITextViewDelegate>
+
+@property (nonatomic, strong) PMRParty *party;
+
+- (void) setPartyLatitude:(float) latitude
+       andLongtitude:(float) longtitude;
+
+- (void) setChooseLocationButtonTitle:(NSString*) title;
+
 @end

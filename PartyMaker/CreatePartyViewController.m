@@ -59,6 +59,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.party = [[PMRParty alloc] init];
+    
     [self setUpTextFieldPartyName];
     [self setUpTextViewDescription];
     [self subscribeForKeyboardNotifications];
@@ -332,6 +334,15 @@
     NSArray *imageNamesArray = @[@"No Alcohol-100.png", @"Coconut Cocktail-100.png", @"Christmas Tree-100.png", @"Champagne-100.png", @"Birthday Cake-100.png", @"Beer-100.png"];
     
     return imageNamesArray;
+}
+
+-(void)setPartyLatitude:(float)latitude andLongtitude:(float)longtitude {
+    self.party.latitude = [NSString stringWithFormat:@"%f", latitude];
+    self.party.longtitude = [NSString stringWithFormat:@"%f", longtitude];;
+}
+
+- (void) setChooseLocationButtonTitle:(NSString *)title {
+    [self.buttonChooseLocation setTitle:title forState:UIControlStateNormal];
 }
 
 /*
