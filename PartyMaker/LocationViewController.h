@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface LocationViewController : UIViewController <MKMapViewDelegate, UIGestureRecognizerDelegate>
+@interface LocationViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
 @end

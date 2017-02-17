@@ -19,6 +19,7 @@ static double SOFTHEME_LONGTITUDE = 30.518234f;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLGeocoder *geocoder;
 @property (strong, nonatomic) NSString *address;
+@property (strong, nonatomic) CLLocation *currentUserLocation;
 
 @end
 
@@ -26,12 +27,38 @@ static double SOFTHEME_LONGTITUDE = 30.518234f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    //[self setUpLocationManager];
+    
     [self setUpTapGestureRecognizer];
-    [self createInitialAnnotation];
+    //[self createInitialAnnotation];
     [self setUpNavigationItem];
 }
 
+// set up the location manager
+- (void) setUpLocationManager {
+    self.locationManager = [[CLLocationManager alloc] init];
+    [self.locationManager setDelegate:self];
+    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+    
+    [self.locationManager startUpdatingLocation];
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+//- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+//{
+//    self.currentUserLocation = [[CLLocation alloc]initWithLatitude:SOFTHEME_LATITUDE longitude:SOFTHEME_LONGTITUDE];
+//}
+//
+//- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+//{
+//    CLLocation *currentLocation = newLocation;
+//    
+//    if (currentLocation) {
+//        self.currentUserLocation = currentLocation;
+//    }
+//}
 // set up the navigation bar
 - (void) setUpNavigationItem {
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(onDoneButtonClicked:)];
@@ -41,10 +68,13 @@ static double SOFTHEME_LONGTITUDE = 30.518234f;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+
     CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(SOFTHEME_LATITUDE, SOFTHEME_LONGTITUDE);
     MKCoordinateSpan span = MKCoordinateSpanMake(0.1f, 0.1f);
     MKCoordinateRegion region = {coord, span};
     [self.mapView setRegion:region];
+    
+    [self setUpLocationManager];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,6 +85,11 @@ static double SOFTHEME_LONGTITUDE = 30.518234f;
 #pragma mark - Get annotation View
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
+    if (annotation == mapView.userLocation) {
+        self.currentUserLocation = mapView.userLocation.location;
+        [self createInitialAnnotation];
+    }
+    
     if ([annotation isKindOfClass:[MKUserLocation class]]) {
         return nil;
     }
@@ -79,8 +114,9 @@ static double SOFTHEME_LONGTITUDE = 30.518234f;
 #pragma mark - Create an initial annotation
 - (void) createInitialAnnotation {
     MKPointAnnotation *initialAnnotation = [[MKPointAnnotation alloc] init];
-    [initialAnnotation setCoordinate:CLLocationCoordinate2DMake(SOFTHEME_LATITUDE, SOFTHEME_LONGTITUDE)];
+    [initialAnnotation setCoordinate:CLLocationCoordinate2DMake(self.currentUserLocation.coordinate.latitude, self.currentUserLocation.coordinate.longitude)];
     
+    [self makeReverseGeocoding:initialAnnotation.coordinate ForAnnotation:initialAnnotation];
     [self.mapView addAnnotation:initialAnnotation];
     [self.mapView selectAnnotation:initialAnnotation animated:NO];
 }

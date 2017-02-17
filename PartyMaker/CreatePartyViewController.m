@@ -221,6 +221,16 @@
 
 -(BOOL)textViewShouldEndEditing:(UITextView *)textView {
     [self.view endEditing:YES];
+    
+    if ([self.textViewDescription isFirstResponder]) {
+        self.constraintChooseDateButtonTopSpace.constant += self.view.frame.size.height / 3;
+        self.constraintDescriptionViewContainerBottomSpace.constant -= self.view.frame.size.height / 3;
+        
+        [UIView animateWithDuration:0.25f animations:^{
+            [self.view layoutIfNeeded];
+        }];
+    }
+
     return YES;
 }
 
@@ -231,15 +241,7 @@
 
 -(void)keyboardWillHide:(NSNotification *)notification
 {
-    if ([self.textViewDescription isFirstResponder]) {
-        self.constraintChooseDateButtonTopSpace.constant += self.view.frame.size.height / 3;
-        self.constraintDescriptionViewContainerBottomSpace.constant -= self.view.frame.size.height / 3;
-    
-        [UIView animateWithDuration:0.25f animations:^{
-            [self.view layoutIfNeeded];
-        }];
     }
-}
 
 #pragma mark - Set up the Save Button action
 - (IBAction)onSaveButtonClicked:(UIBarButtonItem *)sender {

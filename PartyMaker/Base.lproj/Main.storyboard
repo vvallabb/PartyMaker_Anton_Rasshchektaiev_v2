@@ -726,7 +726,7 @@
                         <outlet property="buttonChooseDate" destination="K35-eN-8wc" id="hhA-DR-d5f"/>
                         <outlet property="buttonChooseLocation" destination="DL7-S2-nE8" id="HhX-F5-LGT"/>
                         <outlet property="constraintChooseDateButtonTopSpace" destination="rJr-sZ-BBD" id="Wo8-yG-kzX"/>
-                        <outlet property="constraintDescriptionViewContainerBottomSpace" destination="qwr-nl-gmo" id="hXy-SK-VMa"/>
+                        <outlet property="constraintDescriptionViewContainerBottomSpace" destination="qwr-nl-gmo" id="lfi-FM-ANi"/>
                         <outlet property="constraintFocusCircleTopSpace" destination="Wxq-g6-aMO" id="WFa-BX-xJE"/>
                         <outlet property="datePicker" destination="pcQ-7R-fyn" id="w7R-vt-xGU"/>
                         <outlet property="datePickerToolbarButtonDone" destination="43k-oA-Grr" id="HY8-L1-dg2"/>
