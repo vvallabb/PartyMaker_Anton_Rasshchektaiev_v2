@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import "CLLocationManager+Utility.h"
 
 @interface LocationViewController : UIViewController <MKMapViewDelegate, UIGestureRecognizerDelegate>
 

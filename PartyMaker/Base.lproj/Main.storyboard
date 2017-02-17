@@ -776,10 +776,10 @@
             </objects>
             <point key="canvasLocation" x="1091.25" y="-448.94366197183098"/>
         </scene>
-        <!--Location View Controller-->
+        <!--Choose party location-->
         <scene sceneID="VPU-Fw-vAq">
             <objects>
-                <viewController id="0pJ-yR-LqI" customClass="LocationViewController" sceneMemberID="viewController">
+                <viewController title="Choose party location" id="0pJ-yR-LqI" customClass="LocationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UEi-TX-cUc"/>
                         <viewControllerLayoutGuide type="bottom" id="PWg-Gz-gMN"/>

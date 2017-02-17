@@ -39,17 +39,6 @@ static double SOFTHEME_LONGTITUDE = 30.518234f;
     self.navigationItem.leftBarButtonItem = doneButton;
 }
 
-- (void) onDoneButtonClicked:(UIBarButtonItem*) sender {
-    NSArray *viewControllers = [self.navigationController viewControllers];
-    XIBViewController *createPartyViewController = [viewControllers objectAtIndex:viewControllers.count - 2];
-    
-    CLLocationCoordinate2D currentPinLocation = [self getPinLocation];
-    [createPartyViewController setPartyLatitude:currentPinLocation.latitude andLongtitude:currentPinLocation.longitude];
-    [createPartyViewController setChooseLocationButtonTitle:self.address];
-    
-    [self.navigationController popToViewController:createPartyViewController animated:YES];
-}
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(SOFTHEME_LATITUDE, SOFTHEME_LONGTITUDE);
@@ -63,16 +52,7 @@ static double SOFTHEME_LONGTITUDE = 30.518234f;
     // Dispose of any resources that can be recreated.
 }
 
-// create an initial annotation
-- (void) createInitialAnnotation {
-    MKPointAnnotation *initialAnnotation = [[MKPointAnnotation alloc] init];
-    [initialAnnotation setCoordinate:CLLocationCoordinate2DMake(SOFTHEME_LATITUDE, SOFTHEME_LONGTITUDE)];
-    
-    [self.mapView addAnnotation:initialAnnotation];
-    [self.mapView selectAnnotation:initialAnnotation animated:YES];
-}
-
-// get the annotationView for annotations
+#pragma mark - Get annotation View
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
     if ([annotation isKindOfClass:[MKUserLocation class]]) {
@@ -96,7 +76,29 @@ static double SOFTHEME_LONGTITUDE = 30.518234f;
     return pin;
 }
 
-// handle the pin drag
+#pragma mark - Create an initial annotation
+- (void) createInitialAnnotation {
+    MKPointAnnotation *initialAnnotation = [[MKPointAnnotation alloc] init];
+    [initialAnnotation setCoordinate:CLLocationCoordinate2DMake(SOFTHEME_LATITUDE, SOFTHEME_LONGTITUDE)];
+    
+    [self.mapView addAnnotation:initialAnnotation];
+    [self.mapView selectAnnotation:initialAnnotation animated:NO];
+}
+
+
+#pragma mark - Handle the Done button
+- (void) onDoneButtonClicked:(UIBarButtonItem*) sender {
+    NSArray *viewControllers = [self.navigationController viewControllers];
+    XIBViewController *createPartyViewController = [viewControllers objectAtIndex:viewControllers.count - 2];
+    
+    CLLocationCoordinate2D currentPinLocation = [self getPinLocation];
+    [createPartyViewController setPartyLatitude:currentPinLocation.latitude andLongtitude:currentPinLocation.longitude];
+    [createPartyViewController setChooseLocationButtonTitle:self.address];
+    
+    [self.navigationController popToViewController:createPartyViewController animated:YES];
+}
+
+#pragma mark - Handle the pin drag
 - (void)mapView:(MKMapView *)mapView
  annotationView:(MKAnnotationView *)annotationView
 didChangeDragState:(MKAnnotationViewDragState)newState
@@ -110,7 +112,7 @@ didChangeDragState:(MKAnnotationViewDragState)newState
     }
 }
 
-// set up the tap gesture recognizer
+#pragma mark - Handle the tap on map
 - (void) setUpTapGestureRecognizer {
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mapClicked:)];
     tapGestureRecognizer.numberOfTapsRequired = 1;
@@ -122,20 +124,15 @@ didChangeDragState:(MKAnnotationViewDragState)newState
     
     CLLocationCoordinate2D tapPoint = [self.mapView convertPoint:point toCoordinateFromView:self.mapView];
     
-    NSLog(@"%lu", (unsigned long)self.mapView.annotations.count);
-    
-    
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-    
     [annotation setCoordinate:tapPoint];
 
     [self makeReverseGeocoding:tapPoint ForAnnotation:annotation];
-    
     [self.mapView removeAnnotations:self.mapView.annotations];
     [self.mapView addAnnotation:annotation];
 }
 
-// geocode annotation
+# pragma mark - Reverse geocoding
 - (void) makeReverseGeocoding:(CLLocationCoordinate2D) location
                 ForAnnotation:(MKPointAnnotation*) annotation {
     if (!self.geocoder) {
@@ -162,6 +159,7 @@ didChangeDragState:(MKAnnotationViewDragState)newState
     }];
 }
 
+// get the annotation title from placemark
 - (NSString*) getAnnotationTitleWith:(CLPlacemark*) placemark {
     NSString *country = placemark.country;
     if (!country) {
@@ -180,6 +178,7 @@ didChangeDragState:(MKAnnotationViewDragState)newState
     return annotationTitle;
 }
 
+// get the annotation subtitle from placemark
 - (NSString*) getAnnotationSubtitleWith:(CLPlacemark*) placemark {
     NSString *subLocality = placemark.subLocality;
     if (!subLocality) {
@@ -198,6 +197,23 @@ didChangeDragState:(MKAnnotationViewDragState)newState
     }
     
     return annotationSubtitle;
+}
+
+#pragma mark - Other methods
+- (void) mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray<MKAnnotationView *> *)views {
+    [self performSelector:@selector(selectAnnotation) withObject:nil afterDelay:0.5f];
+}
+
+- (void) selectAnnotation {
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    
+    for (int i = 0; i < self.mapView.annotations.count; i++) {
+        if ([self.mapView.annotations[i] isKindOfClass:[MKPointAnnotation class]]) {
+            annotation = self.mapView.annotations[i];
+        }
+    }
+    
+    [self.mapView selectAnnotation:annotation animated:YES];
 }
 
 - (CLLocationCoordinate2D) getPinLocation {
