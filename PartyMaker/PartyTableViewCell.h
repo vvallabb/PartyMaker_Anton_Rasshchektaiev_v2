@@ -13,6 +13,8 @@
 
 @interface PartyTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) PMRParty *party;
+
 + (NSString*)reuseIdentifier;
 
 - (void)configureWithParty: (PMRParty*) party;

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PartyTableViewCell.h"
+#import "PartyInfoViewController.h"
 
 @interface PLViewController : UIViewController
 

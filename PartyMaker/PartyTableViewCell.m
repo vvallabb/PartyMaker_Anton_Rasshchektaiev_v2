@@ -42,6 +42,7 @@
     self.labelPartyName.text = party.name;
     self.labelPartyStartTime.text = stringFromDate;
     
+    self.party = party;
     }
 
 - (void)prepareForReuse {

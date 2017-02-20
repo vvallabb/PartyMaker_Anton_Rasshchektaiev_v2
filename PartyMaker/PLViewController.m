@@ -68,6 +68,20 @@
     [self performSegueWithIdentifier:@"SegueToCreateParty" sender:self];
 }
 
+// set up the row selection
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    PartyInfoViewController *partyInfoVC = segue.destinationViewController;
+    
+    NSIndexPath *selectedPath = [self.tableViewPartyList indexPathForSelectedRow];
+    PartyTableViewCell *cell = [self.tableViewPartyList cellForRowAtIndexPath:selectedPath];
+    
+    [partyInfoVC setParty:[cell party]];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"SegueFromPartyListToPartyInfo" sender:nil];
+}
+
 /*
 #pragma mark - Navigation
 

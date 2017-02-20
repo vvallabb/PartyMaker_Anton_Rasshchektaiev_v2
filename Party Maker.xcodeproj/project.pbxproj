@@ -23,6 +23,7 @@
 		EC24C1651E44B13C007558B1 /* PartyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1641E44B13C007558B1 /* PartyTableViewCell.m */; };
 		EC24C1691E44BB79007558B1 /* PLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1681E44BB79007558B1 /* PLViewController.m */; };
 		EC2FEF9C1E3F728E0035F778 /* CreatePartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2FEF9A1E3F728E0035F778 /* CreatePartyViewController.m */; };
+		EC5517C41E5B031A002B3067 /* PartyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5517C31E5B031A002B3067 /* PartyInfoViewController.m */; };
 		EC7609681E49D23F001D7BF7 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7609671E49D23F001D7BF7 /* HTTPManager.m */; };
 		EC79FB631E3B80550061B6AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC79FB621E3B80550061B6AC /* AppDelegate.m */; };
 		EC79FB691E3B80550061B6AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB671E3B80550061B6AC /* Main.storyboard */; };
@@ -78,6 +79,8 @@
 		EC24C1681E44BB79007558B1 /* PLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLViewController.m; sourceTree = "<group>"; };
 		EC2FEF991E3F728E0035F778 /* CreatePartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatePartyViewController.h; sourceTree = "<group>"; };
 		EC2FEF9A1E3F728E0035F778 /* CreatePartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatePartyViewController.m; sourceTree = "<group>"; };
+		EC5517C21E5B031A002B3067 /* PartyInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyInfoViewController.h; sourceTree = "<group>"; };
+		EC5517C31E5B031A002B3067 /* PartyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyInfoViewController.m; sourceTree = "<group>"; };
 		EC7609661E49D23F001D7BF7 /* HTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPManager.h; sourceTree = "<group>"; };
 		EC7609671E49D23F001D7BF7 /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPManager.m; sourceTree = "<group>"; };
 		EC79FB5B1E3B80550061B6AC /* Party Maker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Party Maker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +193,7 @@
 			children = (
 				EC1716361E4C9E5F005FFC61 /* Login Screen VC */,
 				EC1716381E4C9EA8005FFC61 /* Party List VC */,
+				EC5517C11E5B02EA002B3067 /* Party Info VC */,
 				EC1716371E4C9E7A005FFC61 /* Create Party VC */,
 				EC0E18B91E5329A9001140CA /* Location VC */,
 			);
@@ -283,6 +287,15 @@
 				EC0E18B71E532019001140CA /* Splash.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		EC5517C11E5B02EA002B3067 /* Party Info VC */ = {
+			isa = PBXGroup;
+			children = (
+				EC5517C21E5B031A002B3067 /* PartyInfoViewController.h */,
+				EC5517C31E5B031A002B3067 /* PartyInfoViewController.m */,
+			);
+			name = "Party Info VC";
 			sourceTree = "<group>";
 		};
 		EC7609651E49D222001D7BF7 /* HTTP */ = {
@@ -472,6 +485,7 @@
 				EC7609681E49D23F001D7BF7 /* HTTPManager.m in Sources */,
 				ECE0FFC81E4BD8AA00BE5FB1 /* PMRPersistanceStore.m in Sources */,
 				ECBF52A51E4CA37A00E0D7B1 /* Model.xcdatamodeld in Sources */,
+				EC5517C41E5B031A002B3067 /* PartyInfoViewController.m in Sources */,
 				ECE0FFC61E4BD8AA00BE5FB1 /* PMRParty+initWithManagedObject.m in Sources */,
 				EC87B8B81E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.m in Sources */,
 				EC0E18C61E533F5A001140CA /* LocationManagerDelegate.m in Sources */,
