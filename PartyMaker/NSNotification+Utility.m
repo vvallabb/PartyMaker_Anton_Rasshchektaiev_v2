@@ -35,7 +35,11 @@
     
     localNotification.alertBody = @"Party time!";
     localNotification.alertAction = [NSString stringWithFormat:@"%@ is about to begin!", party.name];
-    localNotification.fireDate = [party.startDate dateByAddingTimeInterval:-3600];
+    
+    NSInteger startDateSecondsAmount = [party.startDate integerValue];
+    startDateSecondsAmount -= 3600;
+
+    localNotification.fireDate = [NSDate dateWithTimeIntervalSince1970:startDateSecondsAmount];
     localNotification.userInfo = @{ @"party_id" : party.partyID };
     localNotification.soundName = @"soundName";
     localNotification.repeatInterval = 0; //NSCalendarUnitMonth

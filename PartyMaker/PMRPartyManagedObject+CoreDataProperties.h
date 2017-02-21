@@ -16,16 +16,14 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSFetchRequest<PMRPartyManagedObject *> *)fetchRequest;
 
 @property (nullable, nonatomic, copy) NSString *name;
-@property (nullable, nonatomic, copy) NSString *partyID;
-@property (nullable, nonatomic, copy) NSDate *startDate;
-@property (nullable, nonatomic, copy) NSDate *endDate;
-@property (nullable, nonatomic, copy) NSString *logoImageName;
+@property (nullable, nonatomic, copy) NSNumber *partyID;
+@property (nullable, nonatomic, copy) NSNumber *startDate;
+@property (nullable, nonatomic, copy) NSNumber *endDate;
+@property (nullable, nonatomic, copy) NSNumber *logoImageNumber;
 @property (nullable, nonatomic, copy) NSString *descriptionText;
-@property (nullable, nonatomic, copy) NSDate *creationDate;
-@property (nullable, nonatomic, copy) NSDate *modificationDate;
-@property (nullable, nonatomic, copy) NSString *creatorID;
-@property (nullable, nonatomic, copy) NSString *latitude;
-@property (nullable, nonatomic, copy) NSString *longtitude;
+@property (nullable, nonatomic, copy) NSNumber *creatorID;
+@property (nullable, nonatomic, copy) NSNumber *latitude;
+@property (nullable, nonatomic, copy) NSNumber *longtitude;
 
 @end
 

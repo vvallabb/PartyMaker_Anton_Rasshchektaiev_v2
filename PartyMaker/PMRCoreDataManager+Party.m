@@ -26,10 +26,8 @@
             partyObject.name = party.name;
             partyObject.startDate = party.startDate;
             partyObject.endDate = party.endDate;
-            partyObject.logoImageName = party.logoImageName;
+            partyObject.logoImageNumber = party.logoImageNumber;
             partyObject.descriptionText = party.descriptionText;
-            partyObject.creationDate = party.creationDate;
-            partyObject.modificationDate = party.modificationDate;
             partyObject.creatorID = party.creatorID;
             partyObject.longtitude = party.longtitude;
             partyObject.latitude = party.latitude;
