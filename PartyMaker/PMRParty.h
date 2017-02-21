@@ -9,28 +9,24 @@
 
 @interface PMRParty : NSObject <NSCoding>
 
-@property (nonatomic, readonly) NSString *partyID;
-@property (nonatomic, readonly) NSDate *startDate;
-@property (nonatomic, readonly) NSDate *endDate;
+@property (nonatomic, readonly) NSNumber *partyID;
+@property (nonatomic, readonly) NSNumber *startDate;
+@property (nonatomic, readonly) NSNumber *endDate;
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) NSString *logoImageName;
+@property (nonatomic, readonly) NSNumber *logoImageNumber;
 @property (nonatomic, readonly) NSString *descriptionText;
-@property (nonatomic, readonly) NSDate *creationDate;
-@property (nonatomic, readonly) NSDate *modificationDate;
-@property (nonatomic, readonly) NSString *creatorID;
-@property (nonatomic, readwrite) NSString *latitude;
-@property (nonatomic, readwrite) NSString *longtitude;
+@property (nonatomic, readonly) NSNumber *creatorID;
+@property (nonatomic, readwrite) NSNumber *latitude;
+@property (nonatomic, readwrite) NSNumber *longtitude;
 
-- (instancetype)initWithPartyID:(NSString*)partyID
+- (instancetype)initWithPartyID:(NSNumber*)partyID
                            name:(NSString*)name
-                      startDate:(NSDate*)startDate
-                        endDate:(NSDate*)endDate
-                  logoImageName:(NSString*)logoImageName
+                      startDate:(NSNumber*)startDate
+                        endDate:(NSNumber*)endDate
+                logoImageNumber:(NSNumber*)logoImageNumber
                 descriptionText:(NSString*)descriptionText
-                   creationDate:(NSDate*)creationDate
-               modificationDate:(NSDate*)modificationDate
-                      creatorID:(NSString*)creatorID
-                       latitude:(NSString*)latitude
-                     longtitude:(NSString*)longtitude;
+                      creatorID:(NSNumber*)creatorID
+                       latitude:(NSNumber*)latitude
+                     longtitude:(NSNumber*)longtitude;
 
 @end

@@ -10,23 +10,16 @@
 
 NSString *APIURLLink;
 
-@interface HTTPManager()
-
-@property (nonatomic, strong) NSURLSession *defaultSession;
-
-@end
-
 @implementation HTTPManager
 
-// configure the session
+#pragma mark - Make configurations for the session
 - (void) makeSessionConfigurations {
     NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     self.defaultSession = [NSURLSession sessionWithConfiguration:sessionConfig];
-    APIURLLink = @"http://itworks.in.ua/party/";
+    APIURLLink = @"https://partymaker-softheme.herokuapp.com";
 }
 
-// received methods
-//----------------------------------------------------------------------
+#pragma mark - Request configurators
 - (NSMutableURLRequest*) getRequestWithType:(NSString*) _type headers:(NSArray *) headers method:(NSString*) _method params:(NSDictionary*) _params {
     NSURL *url = [NSURL URLWithString:GetBaseEncodedUrlWithPath(_method)];
     NSMutableURLRequest *req = [[NSMutableURLRequest alloc] initWithURL:url];
@@ -63,91 +56,8 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
     notEncoded = [notEncoded stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     return [notEncoded stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
 }
-//-----------------------------------------------------------------------
 
-// send the login request
-- (void) sendTheLoginRequestWithName: (NSString*) name password: (NSString*) password {
-    NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:name, @"name", password, @"password", nil];
-    
-    NSMutableURLRequest *request = [self getRequestWithType:@"GET" headers:nil method:@"login" params:params];
-    NSURLSessionDataTask *getDataTask = [self.defaultSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
-        
-        BOOL isCorrectLogin = [[dictionaryFromResponse objectForKey:@"name"] isEqualToString:name];
-        //BOOL isCorrectPass = [[dictionaryFromResponse objectForKey:@"password"] isEqualToString:password];
-        
-        if (isCorrectLogin) {
-            dispatch_async(dispatch_get_main_queue(), ^(void){
-                [self.loginScreenVC performSegueWithIdentifier:@"SegueFromLoginScreen" sender:self];
-            });
-        }
-    }];
-    
-    [getDataTask resume];
-}
-
-// send the register reguest
-- (void) sendTheRegisterRequestWithEmail: (NSString*) email
-                                password: (NSString*) password
-                                    name: (NSString*) name {
-    
-    NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:email, @"email", password, @"password", name, @"name", nil];
-    NSMutableURLRequest *request = [self getRequestWithType:@"POST" headers:nil method:@"register" params:params];
-    NSURLSessionDataTask *postDataTask = [self.defaultSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
-        NSLog(@"%@", dictionaryFromResponse);
-    }];
-    
-    [postDataTask resume];
-}
-
-// send the creator_id request
-- (void) sendTheGetPartyRequestWithCreatorID: (NSString*) creator_id {
-    NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:creator_id, @"creator_id", nil];
-    NSMutableURLRequest *request = [self getRequestWithType:@"GET" headers:nil method:@"party" params:params];
-    NSURLSessionDataTask *getDataTask = [self.defaultSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
-        NSLog(@"%@", dictionaryFromResponse);
-    }];
-    
-    [getDataTask resume];
-}
-
-// send the addParty request
-- (void) sendTheAddPartyRequestWithDictionary: (NSDictionary*) dictionary {
-    NSMutableURLRequest *request = [self getRequestWithType:@"POST" headers:nil method:@"addParty" params:dictionary];
-    NSURLSessionDataTask *postDataTask = [self.defaultSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
-        NSLog(@"&%@", dictionaryFromResponse);
-    }];
-    
-    [postDataTask resume];
-}
-
-// send the deleteParty request
-- (void) sendTheDeletePartyRequestWithParty_id: (NSString*) party_id
-                                    creator_id: (NSString*) creator_id {
-    NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:party_id, @"party_id", creator_id, @"creator_id", nil];
-    NSMutableURLRequest *request = [self getRequestWithType:@"GET" headers:nil method:@"deleteParty" params:params];
-    NSURLSessionDataTask *getDataTask = [self.defaultSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
-        NSLog(@"%@", dictionaryFromResponse);
-    }];
-    
-    [getDataTask resume];
-}
-
-// send the allUsers request
-- (void) sendTheGetAllUsersRequest {
-    NSMutableURLRequest *request = [self getRequestWithType:@"GET" headers:nil method:@"allUsers" params:nil];
-    NSURLSessionDataTask *getDataTask = [self.defaultSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
-        NSLog(@"%@", dictionaryFromResponse);
-    }];
-    
-    [getDataTask resume];
-}
-
+#pragma mark - Supporting methods
 // serialization
 - (NSData*) serializationWithDictionary: (NSDictionary *) dictionary {
     NSError *error = nil;
@@ -174,6 +84,19 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
     
     return sharedeHTTPManager;
 }
+
+// get access token from User Defaults
+- (NSString *)getAccessToken {
+    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"accessToken"];
+    NSString *accessToken = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    
+    return accessToken;
+}
+
+
+
+
+
 
 
 @end

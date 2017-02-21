@@ -10,31 +10,27 @@
 
 @interface PMRParty()
 
-@property (nonatomic, readwrite) NSString *partyID;
-@property (nonatomic, readwrite) NSDate *startDate;
-@property (nonatomic, readwrite) NSDate *endDate;
+@property (nonatomic, readwrite) NSNumber *partyID;
+@property (nonatomic, readwrite) NSNumber *startDate;
+@property (nonatomic, readwrite) NSNumber *endDate;
 @property (nonatomic, readwrite) NSString *name;
-@property (nonatomic, readwrite) NSString *logoImageName;
+@property (nonatomic, readwrite) NSNumber *logoImageNumber;
 @property (nonatomic, readwrite) NSString *descriptionText;
-@property (nonatomic, readwrite) NSDate *creationDate;
-@property (nonatomic, readwrite) NSDate *modificationDate;
-@property (nonatomic, readwrite) NSString *creatorID;
+@property (nonatomic, readwrite) NSNumber *creatorID;
 
 @end
 
 @implementation PMRParty
 
-- (instancetype)initWithPartyID:(NSString*)partyID
+- (instancetype)initWithPartyID:(NSNumber*)partyID
                            name:(NSString*)name
-                      startDate:(NSDate*)startDate
-                        endDate:(NSDate*)endDate
-                  logoImageName:(NSString*)logoImageName
+                      startDate:(NSNumber*)startDate
+                        endDate:(NSNumber*)endDate
+                logoImageNumber:(NSNumber*)logoImageNumber
                 descriptionText:(NSString*)descriptionText
-                   creationDate:(NSDate*)creationDate
-               modificationDate:(NSDate*)modificationDate
-                      creatorID:(NSString*)creatorID
-                       latitude:(NSString*)latitude
-                     longtitude:(NSString*)longtitude
+                      creatorID:(NSNumber*)creatorID
+                       latitude:(NSNumber*)latitude
+                     longtitude:(NSNumber*)longtitude
 {
     self = [super init];
     if (self) {
@@ -42,10 +38,8 @@
         _name = [name copy];
         _startDate = [startDate copy];
         _endDate = [endDate copy];
-        _logoImageName = [logoImageName copy];
+        _logoImageNumber = [logoImageNumber copy];
         _descriptionText = [descriptionText copy];
-        _creationDate = [creationDate copy];
-        _modificationDate = [modificationDate copy];
         _creatorID = [creatorID copy];
         _latitude = [latitude copy];
         _longtitude = [longtitude copy];
@@ -61,10 +55,8 @@
         _name = [aDecoder decodeObjectForKey:@"name"];
         _startDate = [aDecoder decodeObjectForKey:@"startDate"];
         _endDate = [aDecoder decodeObjectForKey:@"endDate"];
-        _logoImageName = [aDecoder decodeObjectForKey:@"logoImageName"];
+        _logoImageNumber = [aDecoder decodeObjectForKey:@"logoImageNumber"];
         _descriptionText = [aDecoder decodeObjectForKey:@"descriptionText"];
-        _creationDate = [aDecoder decodeObjectForKey:@"creationDate"];
-        _modificationDate = [aDecoder decodeObjectForKey:@"modificationDate"];
         _creatorID = [aDecoder decodeObjectForKey:@"creatorID"];
         _latitude = [aDecoder decodeObjectForKey:@"latitude"];
         _longtitude = [aDecoder decodeObjectForKey:@"longtitude"];
@@ -78,10 +70,8 @@
     [aCoder encodeObject:self.name forKey:@"name"];
     [aCoder encodeObject:self.startDate forKey:@"startDate"];
     [aCoder encodeObject:self.endDate forKey:@"endDate"];
-    [aCoder encodeObject:self.logoImageName forKey:@"logoImageName"];
+    [aCoder encodeObject:self.logoImageNumber forKey:@"logoImageNumber"];
     [aCoder encodeObject:self.descriptionText forKey:@"descriptionText"];
-    [aCoder encodeObject:self.creationDate forKey:@"creationDate"];
-    [aCoder encodeObject:self.modificationDate forKey:@"modificationDate"];
     [aCoder encodeObject:self.creatorID forKey:@"creatorID"];
     [aCoder encodeObject:self.latitude forKey:@"latitude"];
     [aCoder encodeObject:self.longtitude forKey:@"longtitude"];

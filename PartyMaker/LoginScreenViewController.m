@@ -7,6 +7,7 @@
 //
 
 #import "LoginScreenViewController.h"
+#import "HTTPManager+Requests.h"
 
 @interface LoginScreenViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *labelHello;
@@ -92,11 +93,11 @@
 }
 
 - (IBAction)onSignInButtonClicked:(UIButton *)sender {
-    NSString *login = self.textFieldLogin.text;
+    NSString *email = self.textFieldLogin.text;
     NSString *password = self.textFieldPassword.text;
     
     [[HTTPManager sharedInstance] setLoginScreenVC:self];
-    [[HTTPManager sharedInstance] sendTheLoginRequestWithName:login password:password];
+    [[HTTPManager sharedInstance] sendLoginRequestWithEmail:email password:password];
 }
 
 - (void)setLabelIncorrectInoutText:(NSString *)text {

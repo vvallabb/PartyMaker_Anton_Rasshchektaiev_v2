@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "NSNotification+Utility.h"
-#import "TestHTTPManager.h"
+#import "HTTPManager+Requests.h"
 
 @interface AppDelegate ()
 
@@ -27,8 +27,8 @@
     
     [NSNotification setUpLocalNotifications];
     
-    TestHTTPManager *test = [[TestHTTPManager alloc] init];
-    [test testHTTP];
+    HTTPManager *httpmanager = [HTTPManager sharedInstance];
+    [httpmanager sendGetAllUsersRequest];
     
     return YES;
 }
