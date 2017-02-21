@@ -10,6 +10,7 @@
 
 @interface PartyInfoViewController ()
 
+# pragma mark - Labels outlets
 @property (weak, nonatomic) IBOutlet UILabel *labelDate;
 @property (weak, nonatomic) IBOutlet UILabel *labelStartTime;
 @property (weak, nonatomic) IBOutlet UILabel *labelEndTime;
@@ -17,12 +18,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelName;
 @property (weak, nonatomic) IBOutlet UILabel *labelDescription;
 
-
-
+# pragma mark - Related to Logo properies
 @property (weak, nonatomic) IBOutlet UIView *viewCircle;
 @property (strong, nonatomic) UIImageView *imageViewLogo;
 
-
+# pragma mark - Constraints outlets
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintTopSpaceToAddPhoto;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintAddPhotoHeight;
 
@@ -34,17 +34,16 @@
     [super viewDidLoad];
     
     [self setUpBackButton];
+    
+    // set text to labels
     [self setUpLabels];
+    
     
     self.imageViewLogo = [[UIImageView alloc] init];
     [self.viewCircle addSubview:self.imageViewLogo];
     
+    // special spaces and button heights for iPhone5 case
     [self configureSizeForSmallScreen];
-    // Do any additional setup after loading the view.
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
 }
 
 // set up the circle
@@ -55,11 +54,6 @@
     UIColor *borderColor = [[UIColor alloc] initWithRed:31/255.f green:34/255.f blue:39/255.f alpha:1.f];
     [self.viewCircle.layer setBorderColor:(borderColor).CGColor];
     [self setUpImageLogo];
-
-}
-
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,7 +73,13 @@
 
 // set up back button
 - (void)setUpBackButton {
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(onBackButtonClicked)];
+    
+    self.navigationItem.leftBarButtonItem = backButton;
+}
+
+- (void)onBackButtonClicked {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Set up labels
@@ -99,16 +99,7 @@
 
 // set up description label
 - (void)setUpDescriptionLabel {
-    
-    self.labelDescription.lineBreakMode = NSLineBreakByWordWrapping;
-    self.labelDescription.numberOfLines = 0;
-    
     NSString *descriptionText = self.party.descriptionText;
-    
-    if (descriptionText.length > 75) {
-        descriptionText = [descriptionText substringToIndex:75];
-        descriptionText = [[@"\"" stringByAppendingString:descriptionText] stringByAppendingString:@"...\""];
-    }
     
     [self.labelDescription setText:descriptionText];
 }
@@ -142,9 +133,26 @@
 
 #pragma mark - Set up image logo
 
+//////////////////////////////////
+// change later! contains crutch//
+//////////////////////////////////
 - (void) setUpImageLogo {
+    // separate handling no alcohol and coconut cocktail images
+    
+    NSString *imageName = self.party.logoImageName;
+    double extraValue = 0;
+    
+    if ([imageName isEqualToString:@"No Alcohol-100.png"] || [imageName isEqualToString:@"Coconut Cocktail-100.png"]) {
+        extraValue = 1;
+    }
+    
+    double xValue = self.viewCircle.frame.size.height / 5.5f;
+    double yValue = self.viewCircle.frame.size.height / (7 - extraValue * 2);
+    double width = self.viewCircle.frame.size.width / (1.5f + (extraValue / 7));
+    double height = self.viewCircle.frame.size.height / (1.5f + (extraValue / 7));
+    
     [self.imageViewLogo setImage:[UIImage imageNamed:self.party.logoImageName]];
-    [self.imageViewLogo setFrame:CGRectMake(self.viewCircle.frame.size.height / 5.5f, self.viewCircle.frame.size.height / 7, self.viewCircle.frame.size.height / 1.5f, self.viewCircle.frame.size.height / 1.5f)];
+    [self.imageViewLogo setFrame:CGRectMake(xValue, yValue, width, height)];
 }
 
 # pragma mark - Handle buttons actions
@@ -155,6 +163,13 @@
 }
 
 - (IBAction)onDeleteButtonClicked:(UIButton *)sender {
+}
+
+#pragma mark - Set up segue to Map
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    ShowLocationViewController *showLocationVC = segue.destinationViewController;
+    showLocationVC.partiesArray = [[NSMutableArray alloc] init];
+    [showLocationVC.partiesArray addObject:self.party];
 }
 
 

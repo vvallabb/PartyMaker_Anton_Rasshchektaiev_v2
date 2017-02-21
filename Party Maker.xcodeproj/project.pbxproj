@@ -24,6 +24,8 @@
 		EC24C1691E44BB79007558B1 /* PLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1681E44BB79007558B1 /* PLViewController.m */; };
 		EC2FEF9C1E3F728E0035F778 /* CreatePartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2FEF9A1E3F728E0035F778 /* CreatePartyViewController.m */; };
 		EC5517C41E5B031A002B3067 /* PartyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5517C31E5B031A002B3067 /* PartyInfoViewController.m */; };
+		EC5517C71E5B7C05002B3067 /* BaseLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5517C61E5B7C05002B3067 /* BaseLocationViewController.m */; };
+		EC5517CA1E5B7D5F002B3067 /* ShowLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5517C91E5B7D5F002B3067 /* ShowLocationViewController.m */; };
 		EC7609681E49D23F001D7BF7 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7609671E49D23F001D7BF7 /* HTTPManager.m */; };
 		EC79FB631E3B80550061B6AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC79FB621E3B80550061B6AC /* AppDelegate.m */; };
 		EC79FB691E3B80550061B6AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB671E3B80550061B6AC /* Main.storyboard */; };
@@ -31,12 +33,6 @@
 		EC79FB6E1E3B80550061B6AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB6C1E3B80550061B6AC /* LaunchScreen.storyboard */; };
 		EC79FB791E3CE7300061B6AC /* leftSliderImg.png in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB781E3CE7300061B6AC /* leftSliderImg.png */; };
 		EC79FB811E3D6FE10061B6AC /* rightSliderImg.png in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB801E3D6FE10061B6AC /* rightSliderImg.png */; };
-		EC79FB881E3E538D0061B6AC /* Beer-100.png in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB821E3E538D0061B6AC /* Beer-100.png */; };
-		EC79FB891E3E538D0061B6AC /* Birthday Cake-100.png in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB831E3E538D0061B6AC /* Birthday Cake-100.png */; };
-		EC79FB8A1E3E538D0061B6AC /* Champagne-100.png in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB841E3E538D0061B6AC /* Champagne-100.png */; };
-		EC79FB8B1E3E538D0061B6AC /* Christmas Tree-100.png in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB851E3E538D0061B6AC /* Christmas Tree-100.png */; };
-		EC79FB8C1E3E538D0061B6AC /* Coconut Cocktail-100.png in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB861E3E538D0061B6AC /* Coconut Cocktail-100.png */; };
-		EC79FB8D1E3E538D0061B6AC /* No Alcohol-100.png in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB871E3E538D0061B6AC /* No Alcohol-100.png */; };
 		EC87B8B81E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = EC87B8B71E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.m */; };
 		ECB2707F1E40DE020032E0EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB2707E1E40DE020032E0EF /* main.m */; };
 		ECB270851E40E2990032E0EF /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB270841E40E2990032E0EF /* settings.png */; };
@@ -81,6 +77,10 @@
 		EC2FEF9A1E3F728E0035F778 /* CreatePartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatePartyViewController.m; sourceTree = "<group>"; };
 		EC5517C21E5B031A002B3067 /* PartyInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyInfoViewController.h; sourceTree = "<group>"; };
 		EC5517C31E5B031A002B3067 /* PartyInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyInfoViewController.m; sourceTree = "<group>"; };
+		EC5517C51E5B7C05002B3067 /* BaseLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLocationViewController.h; sourceTree = "<group>"; };
+		EC5517C61E5B7C05002B3067 /* BaseLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLocationViewController.m; sourceTree = "<group>"; };
+		EC5517C81E5B7D5F002B3067 /* ShowLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowLocationViewController.h; sourceTree = "<group>"; };
+		EC5517C91E5B7D5F002B3067 /* ShowLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowLocationViewController.m; sourceTree = "<group>"; };
 		EC7609661E49D23F001D7BF7 /* HTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPManager.h; sourceTree = "<group>"; };
 		EC7609671E49D23F001D7BF7 /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPManager.m; sourceTree = "<group>"; };
 		EC79FB5B1E3B80550061B6AC /* Party Maker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Party Maker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,12 +92,6 @@
 		EC79FB6F1E3B80550061B6AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC79FB781E3CE7300061B6AC /* leftSliderImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftSliderImg.png; sourceTree = "<group>"; };
 		EC79FB801E3D6FE10061B6AC /* rightSliderImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightSliderImg.png; sourceTree = "<group>"; };
-		EC79FB821E3E538D0061B6AC /* Beer-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Beer-100.png"; sourceTree = "<group>"; };
-		EC79FB831E3E538D0061B6AC /* Birthday Cake-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Birthday Cake-100.png"; sourceTree = "<group>"; };
-		EC79FB841E3E538D0061B6AC /* Champagne-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Champagne-100.png"; sourceTree = "<group>"; };
-		EC79FB851E3E538D0061B6AC /* Christmas Tree-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Christmas Tree-100.png"; sourceTree = "<group>"; };
-		EC79FB861E3E538D0061B6AC /* Coconut Cocktail-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Coconut Cocktail-100.png"; sourceTree = "<group>"; };
-		EC79FB871E3E538D0061B6AC /* No Alcohol-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "No Alcohol-100.png"; sourceTree = "<group>"; };
 		EC87B8B61E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PMRPartyManagedObject+CoreDataProperties.h"; sourceTree = "<group>"; };
 		EC87B8B71E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PMRPartyManagedObject+CoreDataProperties.m"; sourceTree = "<group>"; };
 		ECB2707E1E40DE020032E0EF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -141,8 +135,9 @@
 		EC0E18B91E5329A9001140CA /* Location VC */ = {
 			isa = PBXGroup;
 			children = (
-				EC0E18BA1E5329CF001140CA /* LocationViewController.h */,
-				EC0E18BB1E5329CF001140CA /* LocationViewController.m */,
+				EC5517CD1E5B7D8D002B3067 /* Party Info Location */,
+				EC5517CC1E5B7D78002B3067 /* Create Party Location */,
+				EC5517CB1E5B7D65002B3067 /* Base Class */,
 			);
 			name = "Location VC";
 			sourceTree = "<group>";
@@ -272,12 +267,6 @@
 			isa = PBXGroup;
 			children = (
 				EC0E18CB1E5357D7001140CA /* Icons */,
-				EC79FB871E3E538D0061B6AC /* No Alcohol-100.png */,
-				EC79FB861E3E538D0061B6AC /* Coconut Cocktail-100.png */,
-				EC79FB851E3E538D0061B6AC /* Christmas Tree-100.png */,
-				EC79FB841E3E538D0061B6AC /* Champagne-100.png */,
-				EC79FB831E3E538D0061B6AC /* Birthday Cake-100.png */,
-				EC79FB821E3E538D0061B6AC /* Beer-100.png */,
 				EC79FB801E3D6FE10061B6AC /* rightSliderImg.png */,
 				EC79FB781E3CE7300061B6AC /* leftSliderImg.png */,
 				ECB270841E40E2990032E0EF /* settings.png */,
@@ -296,6 +285,33 @@
 				EC5517C31E5B031A002B3067 /* PartyInfoViewController.m */,
 			);
 			name = "Party Info VC";
+			sourceTree = "<group>";
+		};
+		EC5517CB1E5B7D65002B3067 /* Base Class */ = {
+			isa = PBXGroup;
+			children = (
+				EC5517C51E5B7C05002B3067 /* BaseLocationViewController.h */,
+				EC5517C61E5B7C05002B3067 /* BaseLocationViewController.m */,
+			);
+			name = "Base Class";
+			sourceTree = "<group>";
+		};
+		EC5517CC1E5B7D78002B3067 /* Create Party Location */ = {
+			isa = PBXGroup;
+			children = (
+				EC0E18BA1E5329CF001140CA /* LocationViewController.h */,
+				EC0E18BB1E5329CF001140CA /* LocationViewController.m */,
+			);
+			name = "Create Party Location";
+			sourceTree = "<group>";
+		};
+		EC5517CD1E5B7D8D002B3067 /* Party Info Location */ = {
+			isa = PBXGroup;
+			children = (
+				EC5517C81E5B7D5F002B3067 /* ShowLocationViewController.h */,
+				EC5517C91E5B7D5F002B3067 /* ShowLocationViewController.m */,
+			);
+			name = "Party Info Location";
 			sourceTree = "<group>";
 		};
 		EC7609651E49D222001D7BF7 /* HTTP */ = {
@@ -446,7 +462,6 @@
 				EC79FB811E3D6FE10061B6AC /* rightSliderImg.png in Resources */,
 				EC79FB691E3B80550061B6AC /* Main.storyboard in Resources */,
 				ECB270871E40E2A20032E0EF /* cocktail.png in Resources */,
-				EC79FB8C1E3E538D0061B6AC /* Coconut Cocktail-100.png in Resources */,
 				EC0E18E51E535A21001140CA /* PartyMakerIcon_87.png in Resources */,
 				EC0E18E11E535A21001140CA /* PartyMakerIcon_40.png in Resources */,
 				ECD9C2341E475E4D008A7BD7 /* add.png in Resources */,
@@ -455,12 +470,7 @@
 				EC0E18B81E532019001140CA /* Splash.png in Resources */,
 				EC79FB791E3CE7300061B6AC /* leftSliderImg.png in Resources */,
 				EC0E18E21E535A21001140CA /* PartyMakerIcon_58.png in Resources */,
-				EC79FB8B1E3E538D0061B6AC /* Christmas Tree-100.png in Resources */,
 				EC0E18E61E535A21001140CA /* PartyMakerIcon_120.png in Resources */,
-				EC79FB8D1E3E538D0061B6AC /* No Alcohol-100.png in Resources */,
-				EC79FB891E3E538D0061B6AC /* Birthday Cake-100.png in Resources */,
-				EC79FB8A1E3E538D0061B6AC /* Champagne-100.png in Resources */,
-				EC79FB881E3E538D0061B6AC /* Beer-100.png in Resources */,
 				ECBC9EDB1E51F15100E40610 /* login_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,6 +489,7 @@
 				ECE0FFC21E4BD8AA00BE5FB1 /* PMRCoreDataManager.m in Sources */,
 				EC0E18CA1E53475C001140CA /* CLLocationManager+Utility.m in Sources */,
 				ECDFE3C81E4E0F700007FBB8 /* NSNotification+Utility.m in Sources */,
+				EC5517C71E5B7C05002B3067 /* BaseLocationViewController.m in Sources */,
 				ECE0FFC51E4BD8AA00BE5FB1 /* PMRParty+initWithDictionary.m in Sources */,
 				EC0E18B61E51FAD3001140CA /* TestHTTPManager.m in Sources */,
 				ECE0FFD41E4BDA9A00BE5FB1 /* PMRPartyManagedObject.m in Sources */,
@@ -487,6 +498,7 @@
 				ECBF52A51E4CA37A00E0D7B1 /* Model.xcdatamodeld in Sources */,
 				EC5517C41E5B031A002B3067 /* PartyInfoViewController.m in Sources */,
 				ECE0FFC61E4BD8AA00BE5FB1 /* PMRParty+initWithManagedObject.m in Sources */,
+				EC5517CA1E5B7D5F002B3067 /* ShowLocationViewController.m in Sources */,
 				EC87B8B81E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.m in Sources */,
 				EC0E18C61E533F5A001140CA /* LocationManagerDelegate.m in Sources */,
 				EC24C1691E44BB79007558B1 /* PLViewController.m in Sources */,

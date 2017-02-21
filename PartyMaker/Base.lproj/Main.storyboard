@@ -173,6 +173,10 @@
                                             <constraint firstItem="BGJ-l9-9og" firstAttribute="top" secondItem="yRx-Qf-ldK" secondAttribute="bottom" constant="-10" id="uko-yZ-rRt"/>
                                             <constraint firstAttribute="bottom" secondItem="6ow-am-Hx2" secondAttribute="bottom" constant="25" id="vA9-kz-AOx"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="3"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.borderColor" value="[UIColor whiteColor]"/>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -777,6 +781,35 @@
             </objects>
             <point key="canvasLocation" x="1044" y="-448"/>
         </scene>
+        <!--Show Location View Controller-->
+        <scene sceneID="V6Y-mV-L2F">
+            <objects>
+                <viewController id="0dw-pJ-JL6" customClass="ShowLocationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2c6-oN-7ST"/>
+                        <viewControllerLayoutGuide type="bottom" id="HMY-Es-RMY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FBo-I0-LZa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4oh-65-GnN">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4oh-65-GnN" firstAttribute="leading" secondItem="FBo-I0-LZa" secondAttribute="leading" id="Ego-2K-VGb"/>
+                            <constraint firstAttribute="trailing" secondItem="4oh-65-GnN" secondAttribute="trailing" id="PqZ-cw-0Ku"/>
+                            <constraint firstItem="HMY-Es-RMY" firstAttribute="top" secondItem="4oh-65-GnN" secondAttribute="bottom" id="hSz-E0-l6k"/>
+                            <constraint firstItem="4oh-65-GnN" firstAttribute="top" secondItem="2c6-oN-7ST" secondAttribute="bottom" id="nz5-Ba-CZY"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oOx-Ij-1wg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1748" y="-1211"/>
+        </scene>
         <!--Choose party location-->
         <scene sceneID="VPU-Fw-vAq">
             <objects>
@@ -980,7 +1013,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3b-C3-aJ0" userLabel="Description Label">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3b-C3-aJ0" userLabel="Description Label">
                                         <rect key="frame" x="55" y="207" width="170" height="13.5"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="11"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1048,8 +1081,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5.4f"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="onAddPhotoButtonClicked:" destination="h49-pR-L3f" eventType="touchUpInside" id="EyY-Jw-mqu"/>
-                                    <action selector="onLocationButtonClicked:" destination="h49-pR-L3f" eventType="touchUpInside" id="aTo-zr-ISE"/>
+                                    <action selector="onLocationButtonClicked:" destination="h49-pR-L3f" eventType="touchUpInside" id="m1N-Gq-Kzk"/>
+                                    <segue destination="0dw-pJ-JL6" kind="show" id="Vvn-x3-tv6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1085,7 +1118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pXk-wT-F85" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9.375" y="-1236.9718309859154"/>
+            <point key="canvasLocation" x="801" y="-1210"/>
         </scene>
         <!--PARTY MAKER-->
         <scene sceneID="DPW-kE-lRA">

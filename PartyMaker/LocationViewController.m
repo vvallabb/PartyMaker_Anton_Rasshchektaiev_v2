@@ -16,7 +16,6 @@ static double SOFTHEME_LONGTITUDE = 30.518234f;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
-@property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLGeocoder *geocoder;
 @property (strong, nonatomic) NSString *address;
 @property (strong, nonatomic) CLLocation *currentUserLocation;
@@ -35,14 +34,6 @@ static double SOFTHEME_LONGTITUDE = 30.518234f;
     [self setUpNavigationItem];
 }
 
-// set up the location manager
-- (void) setUpLocationManager {
-    self.locationManager = [[CLLocationManager alloc] init];
-    [self.locationManager setDelegate:self];
-    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
-    
-    [self.locationManager startUpdatingLocation];
-}
 
 #pragma mark - CLLocationManagerDelegate
 
@@ -253,7 +244,6 @@ didChangeDragState:(MKAnnotationViewDragState)newState
 }
 
 - (CLLocationCoordinate2D) getPinLocation {
-    NSLog(@"%lu", (unsigned long)self.mapView.annotations.count);
     return [[self.mapView.annotations lastObject] coordinate];
 }
 

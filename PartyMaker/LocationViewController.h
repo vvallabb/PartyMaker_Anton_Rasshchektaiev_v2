@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "BaseLocationViewController.h"
 
-@interface LocationViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+@interface LocationViewController : BaseLocationViewController
 
 @end
