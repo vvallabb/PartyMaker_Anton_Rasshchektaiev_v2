@@ -11,6 +11,7 @@
 #import "PMRCoreDataManager.h"
 #import "PMRCoreDataManager+Party.h"
 #import "NSNotification+Utility.h"
+#import "HTTPManager+Utility.h"
 
 @interface XIBViewController : UIViewController <UIScrollViewDelegate, UITextFieldDelegate, UITextViewDelegate>
 

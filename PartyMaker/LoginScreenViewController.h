@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HTTPManager.h"
+//#import "HTTPManager+Requests.h"
 
 @interface LoginScreenViewController : UIViewController <UITextFieldDelegate>
 

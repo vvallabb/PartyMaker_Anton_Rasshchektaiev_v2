@@ -7,7 +7,7 @@
 //
 
 #import "LoginScreenViewController.h"
-#import "HTTPManager+Requests.h"
+#import "HTTPManager+Utility.h"
 
 @interface LoginScreenViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *labelHello;

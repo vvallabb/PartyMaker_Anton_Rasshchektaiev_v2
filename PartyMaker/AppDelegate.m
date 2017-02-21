@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "NSNotification+Utility.h"
-#import "HTTPManager+Requests.h"
+#import "HTTPManager+Utility.h"
 
 @interface AppDelegate ()
 
@@ -27,8 +27,8 @@
     
     [NSNotification setUpLocalNotifications];
     
-    HTTPManager *httpmanager = [HTTPManager sharedInstance];
-    [httpmanager sendGetAllUsersRequest];
+    HTTPManager *httpManager = [HTTPManager sharedInstance];
+    [httpManager sendDeletePartyRequestWith:@"244"];
     
     return YES;
 }

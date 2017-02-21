@@ -16,8 +16,10 @@
                             name:managedObject.name
                        startDate:managedObject.startDate
                          endDate:managedObject.endDate
-                 logoImageNumber:managedObject.logoImageNumber
+                   logoImageName:managedObject.logoImageName
                  descriptionText:managedObject.descriptionText
+                    creationDate:managedObject.creationDate
+                modificationDate:managedObject.modificationDate
                        creatorID:managedObject.creatorID
                         latitude:managedObject.latitude
                       longtitude:managedObject.longtitude];

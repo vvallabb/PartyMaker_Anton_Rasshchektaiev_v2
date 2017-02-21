@@ -18,8 +18,10 @@
 @dynamic partyID;
 @dynamic startDate;
 @dynamic endDate;
-@dynamic logoImageNumber;
+@dynamic logoImageName;
 @dynamic descriptionText;
+@dynamic creationDate;
+@dynamic modificationDate;
 @dynamic creatorID;
 @dynamic latitude;
 @dynamic longtitude;

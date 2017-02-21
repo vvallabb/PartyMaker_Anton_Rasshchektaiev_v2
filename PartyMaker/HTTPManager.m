@@ -93,10 +93,40 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
     return accessToken;
 }
 
-
-
-
-
+-(NSDictionary *)convertPartyForRequest:(PMRParty *)party {
+    double startDateTimeInterval = [party.startDate timeIntervalSince1970];
+    NSNumber *numberStartDate = [NSNumber numberWithDouble:startDateTimeInterval];
+    
+    double endDateTimeInterval = [party.endDate timeIntervalSince1970];
+    NSNumber *numberEndDate = [NSNumber numberWithDouble:endDateTimeInterval];
+    
+    double latitude = [party.latitude doubleValue];
+    NSNumber *numberLatitude = [NSNumber numberWithDouble:latitude];
+    
+    double longtitude = [party.longtitude doubleValue];
+    NSNumber *numberLongtitude = [NSNumber numberWithDouble:longtitude];
+    
+    int logoID = 0;
+    
+    NSArray *imageLogoNames = @[@"No Alcohol-100.png", @"Coconut cocktail-100.png", @"Christmas Tree-100.png",
+                                @"Champagne-100.png", @"Birthday Cake-100.png", @"Beer-100.png"];
+    
+    for (int i = 0; i < imageLogoNames.count; i++) {
+        if ([party.logoImageName isEqualToString:imageLogoNames[i]]) {
+            logoID = i;
+        }
+    }
+    
+    NSNumber *numberLogoID = [NSNumber numberWithInt:logoID];
+    
+    NSArray *keys = @[@"name", @"start_time", @"end_time", @"logo_id", @"comment", @"latitude", @"longtitude"];
+    NSArray *objects = @[party.name, numberStartDate, numberEndDate, numberLogoID,
+                         party.descriptionText, numberLatitude, numberLongtitude];
+    
+    NSDictionary *convertedParty = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
+    
+    return convertedParty;
+}
 
 
 @end

@@ -278,6 +278,9 @@
     
     }];
     
+    HTTPManager *httpManager = [HTTPManager sharedInstance];
+    [httpManager sendAddPartyRequestWithParty:party];
+    
     [NSNotification createLocalNotification:party];
 
     [self performSegueWithIdentifier:@"segueToPartyList" sender:self];

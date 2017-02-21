@@ -7,7 +7,6 @@
 //
 
 #import "PartyInfoViewController.h"
-#import "NSString+Utility.h"
 
 @interface PartyInfoViewController ()
 
@@ -110,10 +109,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd.MM.yyyy"];
     
-    NSInteger startDateSecondsAmount = [self.party.startDate integerValue];
-    NSDate *startDate = [NSDate dateWithTimeIntervalSince1970:startDateSecondsAmount];
-    
-    NSString *stringFromDate = [formatter stringFromDate:startDate];
+    NSString *stringFromDate = [formatter stringFromDate:self.party.startDate];
     [self.labelDate setText:stringFromDate];
 }
 
@@ -122,10 +118,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"hh:mm"];
     
-    NSInteger startDateSecondsAmount = [self.party.startDate integerValue];
-    NSDate *startDate = [NSDate dateWithTimeIntervalSince1970:startDateSecondsAmount];
-    
-    NSString *stringFromDate = [formatter stringFromDate:startDate];
+    NSString *stringFromDate = [formatter stringFromDate:self.party.startDate];
     [self.labelStartTime setText:stringFromDate];
 }
 
@@ -134,10 +127,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"hh:mm"];
     
-    NSInteger endDateSecondsAmount = [self.party.endDate integerValue];
-    NSDate *endDate = [NSDate dateWithTimeIntervalSince1970:endDateSecondsAmount];
-    
-    NSString *stringFromDate = [formatter stringFromDate:endDate];
+    NSString *stringFromDate = [formatter stringFromDate:self.party.endDate];
     [self.labelEndTime setText:stringFromDate];
 }
 
@@ -149,7 +139,7 @@
 - (void) setUpImageLogo {
     // separate handling no alcohol and coconut cocktail images
     
-    NSString *imageName = [NSString getLogoImageNameWithNumber:self.party.logoImageNumber];
+    NSString *imageName = self.party.logoImageName;
     double extraValue = 0;
     
     if ([imageName isEqualToString:@"No Alcohol-100.png"] || [imageName isEqualToString:@"Coconut Cocktail-100.png"]) {
@@ -161,7 +151,7 @@
     double width = self.viewCircle.frame.size.width / (1.5f + (extraValue / 7));
     double height = self.viewCircle.frame.size.height / (1.5f + (extraValue / 7));
     
-    [self.imageViewLogo setImage:[UIImage imageNamed:imageName]];
+    [self.imageViewLogo setImage:[UIImage imageNamed:self.party.logoImageName]];
     [self.imageViewLogo setFrame:CGRectMake(xValue, yValue, width, height)];
 }
 

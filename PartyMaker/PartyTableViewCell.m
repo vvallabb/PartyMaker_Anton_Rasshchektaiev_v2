@@ -7,7 +7,6 @@
 //
 
 #import "PartyTableViewCell.h"
-#import "NSString+Utility.h"
 
 @interface PartyTableViewCell()
 
@@ -33,16 +32,13 @@
 - (void)configureWithParty:(PMRParty *)party {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd.MM.yyyy  hh:mm"];
-    
-    NSInteger startDateSecondsAmount = [party.startDate integerValue];
-    NSDate *startDate = [NSDate dateWithTimeIntervalSince1970:startDateSecondsAmount];
-    NSString *stringFromDate = [formatter stringFromDate:startDate];
+    NSString *stringFromDate = [formatter stringFromDate:party.startDate];
     
     UIView *bgColorView = [[UIView alloc] init];
     bgColorView.backgroundColor = [[UIColor alloc] initWithRed:68/255.f green:73/255.f blue:83/255.f alpha:1.f];
     [self setSelectedBackgroundView:bgColorView];
     
-    self.imageViewPartyLogo.image = [UIImage imageNamed:[NSString getLogoImageNameWithNumber:party.logoImageNumber]];
+    self.imageViewPartyLogo.image = [UIImage imageNamed:party.logoImageName];
     self.labelPartyName.text = party.name;
     self.labelPartyStartTime.text = stringFromDate;
     

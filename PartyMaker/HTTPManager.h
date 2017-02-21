@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LoginScreenViewController.h"
+#import "PMRParty.h"
 
 @interface HTTPManager : NSObject
 
@@ -28,5 +29,6 @@
 
 - (NSString*) getAccessToken;
 
+- (NSDictionary*)convertPartyForRequest:(PMRParty*) party;
 
 @end

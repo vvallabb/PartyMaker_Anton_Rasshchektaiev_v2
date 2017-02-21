@@ -17,8 +17,6 @@
 		EC5517C41E5B031A002B3067 /* PartyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5517C31E5B031A002B3067 /* PartyInfoViewController.m */; };
 		EC5517C71E5B7C05002B3067 /* BaseLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5517C61E5B7C05002B3067 /* BaseLocationViewController.m */; };
 		EC5517CA1E5B7D5F002B3067 /* ShowLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5517C91E5B7D5F002B3067 /* ShowLocationViewController.m */; };
-		EC5517D01E5C72ED002B3067 /* HTTPManager+Requests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5517CF1E5C72ED002B3067 /* HTTPManager+Requests.m */; };
-		EC5517D91E5C974F002B3067 /* NSString+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5517D81E5C974F002B3067 /* NSString+Utility.m */; };
 		EC7609681E49D23F001D7BF7 /* HTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC7609671E49D23F001D7BF7 /* HTTPManager.m */; };
 		EC79FB631E3B80550061B6AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC79FB621E3B80550061B6AC /* AppDelegate.m */; };
 		EC79FB691E3B80550061B6AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB671E3B80550061B6AC /* Main.storyboard */; };
@@ -28,6 +26,7 @@
 		ECB2707F1E40DE020032E0EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB2707E1E40DE020032E0EF /* main.m */; };
 		ECBC9EDE1E51F36C00E40610 /* LoginScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBC9EDD1E51F36C00E40610 /* LoginScreenViewController.m */; };
 		ECBF52A51E4CA37A00E0D7B1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECBF52A21E4CA35300E0D7B1 /* Model.xcdatamodeld */; };
+		ECDBD3A31E5CD52F00F6143E /* HTTPManager+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3A21E5CD52F00F6143E /* HTTPManager+Utility.m */; };
 		ECDFE3C81E4E0F700007FBB8 /* NSNotification+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDFE3C71E4E0F700007FBB8 /* NSNotification+Utility.m */; };
 		ECE0FFC21E4BD8AA00BE5FB1 /* PMRCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFB51E4BD8AA00BE5FB1 /* PMRCoreDataManager.m */; };
 		ECE0FFC31E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFB71E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.m */; };
@@ -58,10 +57,6 @@
 		EC5517C61E5B7C05002B3067 /* BaseLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLocationViewController.m; sourceTree = "<group>"; };
 		EC5517C81E5B7D5F002B3067 /* ShowLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowLocationViewController.h; sourceTree = "<group>"; };
 		EC5517C91E5B7D5F002B3067 /* ShowLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowLocationViewController.m; sourceTree = "<group>"; };
-		EC5517CE1E5C72ED002B3067 /* HTTPManager+Requests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPManager+Requests.h"; sourceTree = "<group>"; };
-		EC5517CF1E5C72ED002B3067 /* HTTPManager+Requests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPManager+Requests.m"; sourceTree = "<group>"; };
-		EC5517D71E5C974F002B3067 /* NSString+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utility.h"; sourceTree = "<group>"; };
-		EC5517D81E5C974F002B3067 /* NSString+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utility.m"; sourceTree = "<group>"; };
 		EC7609661E49D23F001D7BF7 /* HTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPManager.h; sourceTree = "<group>"; };
 		EC7609671E49D23F001D7BF7 /* HTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPManager.m; sourceTree = "<group>"; };
 		EC79FB5B1E3B80550061B6AC /* Party Maker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Party Maker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +72,8 @@
 		ECBC9EDC1E51F36C00E40610 /* LoginScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginScreenViewController.h; sourceTree = "<group>"; };
 		ECBC9EDD1E51F36C00E40610 /* LoginScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginScreenViewController.m; sourceTree = "<group>"; };
 		ECBF52A31E4CA35300E0D7B1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		ECDBD3A11E5CD52F00F6143E /* HTTPManager+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPManager+Utility.h"; sourceTree = "<group>"; };
+		ECDBD3A21E5CD52F00F6143E /* HTTPManager+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPManager+Utility.m"; sourceTree = "<group>"; };
 		ECDFE3C61E4E0F700007FBB8 /* NSNotification+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotification+Utility.h"; sourceTree = "<group>"; };
 		ECDFE3C71E4E0F700007FBB8 /* NSNotification+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotification+Utility.m"; sourceTree = "<group>"; };
 		ECE0FFB41E4BD8AA00BE5FB1 /* PMRCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMRCoreDataManager.h; sourceTree = "<group>"; };
@@ -265,8 +262,8 @@
 			children = (
 				EC7609661E49D23F001D7BF7 /* HTTPManager.h */,
 				EC7609671E49D23F001D7BF7 /* HTTPManager.m */,
-				EC5517CE1E5C72ED002B3067 /* HTTPManager+Requests.h */,
-				EC5517CF1E5C72ED002B3067 /* HTTPManager+Requests.m */,
+				ECDBD3A11E5CD52F00F6143E /* HTTPManager+Utility.h */,
+				ECDBD3A21E5CD52F00F6143E /* HTTPManager+Utility.m */,
 			);
 			name = HTTP;
 			sourceTree = "<group>";
@@ -328,8 +325,6 @@
 			isa = PBXGroup;
 			children = (
 				ECB2707E1E40DE020032E0EF /* main.m */,
-				EC5517D71E5C974F002B3067 /* NSString+Utility.h */,
-				EC5517D81E5C974F002B3067 /* NSString+Utility.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -417,8 +412,8 @@
 			files = (
 				ECBC9EDE1E51F36C00E40610 /* LoginScreenViewController.m in Sources */,
 				EC79FB631E3B80550061B6AC /* AppDelegate.m in Sources */,
+				ECDBD3A31E5CD52F00F6143E /* HTTPManager+Utility.m in Sources */,
 				ECB2707F1E40DE020032E0EF /* main.m in Sources */,
-				EC5517D01E5C72ED002B3067 /* HTTPManager+Requests.m in Sources */,
 				EC24C1651E44B13C007558B1 /* PartyTableViewCell.m in Sources */,
 				ECE0FFC21E4BD8AA00BE5FB1 /* PMRCoreDataManager.m in Sources */,
 				EC0E18CA1E53475C001140CA /* CLLocationManager+Utility.m in Sources */,
@@ -433,7 +428,6 @@
 				ECE0FFC61E4BD8AA00BE5FB1 /* PMRParty+initWithManagedObject.m in Sources */,
 				EC5517CA1E5B7D5F002B3067 /* ShowLocationViewController.m in Sources */,
 				EC87B8B81E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.m in Sources */,
-				EC5517D91E5C974F002B3067 /* NSString+Utility.m in Sources */,
 				EC0E18C61E533F5A001140CA /* LocationManagerDelegate.m in Sources */,
 				EC24C1691E44BB79007558B1 /* PLViewController.m in Sources */,
 				EC2FEF9C1E3F728E0035F778 /* CreatePartyViewController.m in Sources */,
