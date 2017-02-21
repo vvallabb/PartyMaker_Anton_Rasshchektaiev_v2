@@ -8,18 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		EC0E18B61E51FAD3001140CA /* TestHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0E18B51E51FAD3001140CA /* TestHTTPManager.m */; };
-		EC0E18B81E532019001140CA /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0E18B71E532019001140CA /* Splash.png */; };
 		EC0E18BC1E5329CF001140CA /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0E18BB1E5329CF001140CA /* LocationViewController.m */; };
 		EC0E18BF1E532CA4001140CA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0E18BE1E532CA4001140CA /* MapKit.framework */; };
 		EC0E18C61E533F5A001140CA /* LocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0E18C51E533F5A001140CA /* LocationManagerDelegate.m */; };
 		EC0E18CA1E53475C001140CA /* CLLocationManager+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0E18C91E53475C001140CA /* CLLocationManager+Utility.m */; };
-		EC0E18E11E535A21001140CA /* PartyMakerIcon_40.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0E18DA1E535A21001140CA /* PartyMakerIcon_40.png */; };
-		EC0E18E21E535A21001140CA /* PartyMakerIcon_58.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0E18DB1E535A21001140CA /* PartyMakerIcon_58.png */; };
-		EC0E18E31E535A21001140CA /* PartyMakerIcon_60.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0E18DC1E535A21001140CA /* PartyMakerIcon_60.png */; };
-		EC0E18E41E535A21001140CA /* PartyMakerIcon_80.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0E18DD1E535A21001140CA /* PartyMakerIcon_80.png */; };
-		EC0E18E51E535A21001140CA /* PartyMakerIcon_87.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0E18DE1E535A21001140CA /* PartyMakerIcon_87.png */; };
-		EC0E18E61E535A21001140CA /* PartyMakerIcon_120.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0E18DF1E535A21001140CA /* PartyMakerIcon_120.png */; };
-		EC0E18E71E535A21001140CA /* PartyMakerIcon_180.png in Resources */ = {isa = PBXBuildFile; fileRef = EC0E18E01E535A21001140CA /* PartyMakerIcon_180.png */; };
 		EC24C1651E44B13C007558B1 /* PartyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1641E44B13C007558B1 /* PartyTableViewCell.m */; };
 		EC24C1691E44BB79007558B1 /* PLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1681E44BB79007558B1 /* PLViewController.m */; };
 		EC2FEF9C1E3F728E0035F778 /* CreatePartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2FEF9A1E3F728E0035F778 /* CreatePartyViewController.m */; };
@@ -31,16 +23,10 @@
 		EC79FB691E3B80550061B6AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB671E3B80550061B6AC /* Main.storyboard */; };
 		EC79FB6B1E3B80550061B6AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB6A1E3B80550061B6AC /* Assets.xcassets */; };
 		EC79FB6E1E3B80550061B6AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB6C1E3B80550061B6AC /* LaunchScreen.storyboard */; };
-		EC79FB791E3CE7300061B6AC /* leftSliderImg.png in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB781E3CE7300061B6AC /* leftSliderImg.png */; };
-		EC79FB811E3D6FE10061B6AC /* rightSliderImg.png in Resources */ = {isa = PBXBuildFile; fileRef = EC79FB801E3D6FE10061B6AC /* rightSliderImg.png */; };
 		EC87B8B81E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = EC87B8B71E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.m */; };
 		ECB2707F1E40DE020032E0EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB2707E1E40DE020032E0EF /* main.m */; };
-		ECB270851E40E2990032E0EF /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB270841E40E2990032E0EF /* settings.png */; };
-		ECB270871E40E2A20032E0EF /* cocktail.png in Resources */ = {isa = PBXBuildFile; fileRef = ECB270861E40E2A20032E0EF /* cocktail.png */; };
-		ECBC9EDB1E51F15100E40610 /* login_background.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBC9EDA1E51F15100E40610 /* login_background.png */; };
 		ECBC9EDE1E51F36C00E40610 /* LoginScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBC9EDD1E51F36C00E40610 /* LoginScreenViewController.m */; };
 		ECBF52A51E4CA37A00E0D7B1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECBF52A21E4CA35300E0D7B1 /* Model.xcdatamodeld */; };
-		ECD9C2341E475E4D008A7BD7 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = ECD9C2331E475E4D008A7BD7 /* add.png */; };
 		ECDFE3C81E4E0F700007FBB8 /* NSNotification+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDFE3C71E4E0F700007FBB8 /* NSNotification+Utility.m */; };
 		ECE0FFC21E4BD8AA00BE5FB1 /* PMRCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFB51E4BD8AA00BE5FB1 /* PMRCoreDataManager.m */; };
 		ECE0FFC31E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFB71E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.m */; };
@@ -54,7 +40,6 @@
 /* Begin PBXFileReference section */
 		EC0E18B41E51FAD3001140CA /* TestHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHTTPManager.h; sourceTree = "<group>"; };
 		EC0E18B51E51FAD3001140CA /* TestHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHTTPManager.m; sourceTree = "<group>"; };
-		EC0E18B71E532019001140CA /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
 		EC0E18BA1E5329CF001140CA /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		EC0E18BB1E5329CF001140CA /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		EC0E18BE1E532CA4001140CA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -62,13 +47,6 @@
 		EC0E18C51E533F5A001140CA /* LocationManagerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManagerDelegate.m; sourceTree = "<group>"; };
 		EC0E18C81E53475C001140CA /* CLLocationManager+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocationManager+Utility.h"; sourceTree = "<group>"; };
 		EC0E18C91E53475C001140CA /* CLLocationManager+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocationManager+Utility.m"; sourceTree = "<group>"; };
-		EC0E18DA1E535A21001140CA /* PartyMakerIcon_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PartyMakerIcon_40.png; sourceTree = "<group>"; };
-		EC0E18DB1E535A21001140CA /* PartyMakerIcon_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PartyMakerIcon_58.png; sourceTree = "<group>"; };
-		EC0E18DC1E535A21001140CA /* PartyMakerIcon_60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PartyMakerIcon_60.png; sourceTree = "<group>"; };
-		EC0E18DD1E535A21001140CA /* PartyMakerIcon_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PartyMakerIcon_80.png; sourceTree = "<group>"; };
-		EC0E18DE1E535A21001140CA /* PartyMakerIcon_87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PartyMakerIcon_87.png; sourceTree = "<group>"; };
-		EC0E18DF1E535A21001140CA /* PartyMakerIcon_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PartyMakerIcon_120.png; sourceTree = "<group>"; };
-		EC0E18E01E535A21001140CA /* PartyMakerIcon_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PartyMakerIcon_180.png; sourceTree = "<group>"; };
 		EC24C1631E44B13C007558B1 /* PartyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyTableViewCell.h; sourceTree = "<group>"; };
 		EC24C1641E44B13C007558B1 /* PartyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyTableViewCell.m; sourceTree = "<group>"; };
 		EC24C1671E44BB79007558B1 /* PLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLViewController.h; sourceTree = "<group>"; };
@@ -90,18 +68,12 @@
 		EC79FB6A1E3B80550061B6AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC79FB6D1E3B80550061B6AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC79FB6F1E3B80550061B6AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC79FB781E3CE7300061B6AC /* leftSliderImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftSliderImg.png; sourceTree = "<group>"; };
-		EC79FB801E3D6FE10061B6AC /* rightSliderImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightSliderImg.png; sourceTree = "<group>"; };
 		EC87B8B61E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PMRPartyManagedObject+CoreDataProperties.h"; sourceTree = "<group>"; };
 		EC87B8B71E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PMRPartyManagedObject+CoreDataProperties.m"; sourceTree = "<group>"; };
 		ECB2707E1E40DE020032E0EF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		ECB270841E40E2990032E0EF /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
-		ECB270861E40E2A20032E0EF /* cocktail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cocktail.png; sourceTree = "<group>"; };
-		ECBC9EDA1E51F15100E40610 /* login_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_background.png; sourceTree = "<group>"; };
 		ECBC9EDC1E51F36C00E40610 /* LoginScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginScreenViewController.h; sourceTree = "<group>"; };
 		ECBC9EDD1E51F36C00E40610 /* LoginScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginScreenViewController.m; sourceTree = "<group>"; };
 		ECBF52A31E4CA35300E0D7B1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		ECD9C2331E475E4D008A7BD7 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		ECDFE3C61E4E0F700007FBB8 /* NSNotification+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotification+Utility.h"; sourceTree = "<group>"; };
 		ECDFE3C71E4E0F700007FBB8 /* NSNotification+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotification+Utility.m"; sourceTree = "<group>"; };
 		ECE0FFB41E4BD8AA00BE5FB1 /* PMRCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMRCoreDataManager.h; sourceTree = "<group>"; };
@@ -167,20 +139,6 @@
 				EC0E18C51E533F5A001140CA /* LocationManagerDelegate.m */,
 			);
 			name = "Location Manager Delegate";
-			sourceTree = "<group>";
-		};
-		EC0E18CB1E5357D7001140CA /* Icons */ = {
-			isa = PBXGroup;
-			children = (
-				EC0E18DA1E535A21001140CA /* PartyMakerIcon_40.png */,
-				EC0E18DB1E535A21001140CA /* PartyMakerIcon_58.png */,
-				EC0E18DC1E535A21001140CA /* PartyMakerIcon_60.png */,
-				EC0E18DD1E535A21001140CA /* PartyMakerIcon_80.png */,
-				EC0E18DE1E535A21001140CA /* PartyMakerIcon_87.png */,
-				EC0E18DF1E535A21001140CA /* PartyMakerIcon_120.png */,
-				EC0E18E01E535A21001140CA /* PartyMakerIcon_180.png */,
-			);
-			name = Icons;
 			sourceTree = "<group>";
 		};
 		EC1716351E4C9E57005FFC61 /* View Controllers */ = {
@@ -263,21 +221,6 @@
 			name = "Party Managed Object";
 			sourceTree = "<group>";
 		};
-		EC2FEF961E3F71400035F778 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				EC0E18CB1E5357D7001140CA /* Icons */,
-				EC79FB801E3D6FE10061B6AC /* rightSliderImg.png */,
-				EC79FB781E3CE7300061B6AC /* leftSliderImg.png */,
-				ECB270841E40E2990032E0EF /* settings.png */,
-				ECB270861E40E2A20032E0EF /* cocktail.png */,
-				ECD9C2331E475E4D008A7BD7 /* add.png */,
-				ECBC9EDA1E51F15100E40610 /* login_background.png */,
-				EC0E18B71E532019001140CA /* Splash.png */,
-			);
-			name = Images;
-			sourceTree = "<group>";
-		};
 		EC5517C11E5B02EA002B3067 /* Party Info VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,7 +300,6 @@
 				EC79FB6A1E3B80550061B6AC /* Assets.xcassets */,
 				EC79FB6C1E3B80550061B6AC /* LaunchScreen.storyboard */,
 				EC79FB6F1E3B80550061B6AC /* Info.plist */,
-				EC2FEF961E3F71400035F778 /* Images */,
 				ECDFE3C61E4E0F700007FBB8 /* NSNotification+Utility.h */,
 				ECDFE3C71E4E0F700007FBB8 /* NSNotification+Utility.m */,
 			);
@@ -455,23 +397,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC0E18E41E535A21001140CA /* PartyMakerIcon_80.png in Resources */,
 				EC79FB6E1E3B80550061B6AC /* LaunchScreen.storyboard in Resources */,
 				EC79FB6B1E3B80550061B6AC /* Assets.xcassets in Resources */,
-				ECB270851E40E2990032E0EF /* settings.png in Resources */,
-				EC79FB811E3D6FE10061B6AC /* rightSliderImg.png in Resources */,
 				EC79FB691E3B80550061B6AC /* Main.storyboard in Resources */,
-				ECB270871E40E2A20032E0EF /* cocktail.png in Resources */,
-				EC0E18E51E535A21001140CA /* PartyMakerIcon_87.png in Resources */,
-				EC0E18E11E535A21001140CA /* PartyMakerIcon_40.png in Resources */,
-				ECD9C2341E475E4D008A7BD7 /* add.png in Resources */,
-				EC0E18E31E535A21001140CA /* PartyMakerIcon_60.png in Resources */,
-				EC0E18E71E535A21001140CA /* PartyMakerIcon_180.png in Resources */,
-				EC0E18B81E532019001140CA /* Splash.png in Resources */,
-				EC79FB791E3CE7300061B6AC /* leftSliderImg.png in Resources */,
-				EC0E18E21E535A21001140CA /* PartyMakerIcon_58.png in Resources */,
-				EC0E18E61E535A21001140CA /* PartyMakerIcon_120.png in Resources */,
-				ECBC9EDB1E51F15100E40610 /* login_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
