@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC0E18B61E51FAD3001140CA /* TestHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0E18B51E51FAD3001140CA /* TestHTTPManager.m */; };
 		EC0E18BC1E5329CF001140CA /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0E18BB1E5329CF001140CA /* LocationViewController.m */; };
 		EC0E18BF1E532CA4001140CA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0E18BE1E532CA4001140CA /* MapKit.framework */; };
 		EC0E18C61E533F5A001140CA /* LocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0E18C51E533F5A001140CA /* LocationManagerDelegate.m */; };
@@ -38,8 +37,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EC0E18B41E51FAD3001140CA /* TestHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHTTPManager.h; sourceTree = "<group>"; };
-		EC0E18B51E51FAD3001140CA /* TestHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHTTPManager.m; sourceTree = "<group>"; };
 		EC0E18BA1E5329CF001140CA /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		EC0E18BB1E5329CF001140CA /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		EC0E18BE1E532CA4001140CA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -262,8 +259,6 @@
 			children = (
 				EC7609661E49D23F001D7BF7 /* HTTPManager.h */,
 				EC7609671E49D23F001D7BF7 /* HTTPManager.m */,
-				EC0E18B41E51FAD3001140CA /* TestHTTPManager.h */,
-				EC0E18B51E51FAD3001140CA /* TestHTTPManager.m */,
 			);
 			name = HTTP;
 			sourceTree = "<group>";
@@ -419,7 +414,6 @@
 				ECDFE3C81E4E0F700007FBB8 /* NSNotification+Utility.m in Sources */,
 				EC5517C71E5B7C05002B3067 /* BaseLocationViewController.m in Sources */,
 				ECE0FFC51E4BD8AA00BE5FB1 /* PMRParty+initWithDictionary.m in Sources */,
-				EC0E18B61E51FAD3001140CA /* TestHTTPManager.m in Sources */,
 				ECE0FFD41E4BDA9A00BE5FB1 /* PMRPartyManagedObject.m in Sources */,
 				EC7609681E49D23F001D7BF7 /* HTTPManager.m in Sources */,
 				ECE0FFC81E4BD8AA00BE5FB1 /* PMRPersistanceStore.m in Sources */,
