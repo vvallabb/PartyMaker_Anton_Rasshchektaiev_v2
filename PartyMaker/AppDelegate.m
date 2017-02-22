@@ -27,9 +27,6 @@
     
     [NSNotification setUpLocalNotifications];
     
-    HTTPManager *httpManager = [HTTPManager sharedInstance];
-    [httpManager sendDeletePartyRequestWith:@"244"];
-    
     return YES;
 }
 

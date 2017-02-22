@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BasePartyConfigVC : UIViewController
+@interface BasePartyConfigVC : UIViewController <UIScrollViewDelegate, UITextFieldDelegate, UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *focusCircle;
 
@@ -53,9 +53,11 @@
 @property (weak, nonatomic) IBOutlet UIView *leftPanelView;
 
 @property (strong, nonatomic) NSString *currDescriptionValue;
+@property (nonatomic, strong) NSDateFormatter *formatter;
 
 - (void)subscribeForKeyboardNotifications;
 - (void) moveFocusCircleOnY: (NSInteger) y;
 - (NSArray *)getImageNamesArray;
+- (NSString*) getTimeStringForSliderLabel: (float) sliderValue;
 
 @end

@@ -14,7 +14,7 @@
 #import "NSNotification+Utility.h"
 #import "HTTPManager+Utility.h"
 
-@interface XIBViewController : BasePartyConfigVC <UIScrollViewDelegate, UITextFieldDelegate, UITextViewDelegate>
+@interface XIBViewController : BasePartyConfigVC 
 
 @property PMRParty *party;
 

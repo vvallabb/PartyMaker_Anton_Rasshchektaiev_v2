@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PMRParty.h"
 #import "ShowLocationViewController.h"
+#import "EditPartyViewController.h"
 
 @interface PartyInfoViewController : UIViewController
 

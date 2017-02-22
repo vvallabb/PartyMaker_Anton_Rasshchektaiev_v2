@@ -167,9 +167,17 @@
 
 #pragma mark - Set up segue to Map
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    ShowLocationViewController *showLocationVC = segue.destinationViewController;
-    showLocationVC.partiesArray = [[NSMutableArray alloc] init];
-    [showLocationVC.partiesArray addObject:self.party];
+    
+    if ([segue.destinationViewController isKindOfClass:[EditPartyViewController class]]) {
+        EditPartyViewController *editPartyVC = segue.destinationViewController;
+        editPartyVC.party = self.party;
+    }
+    else if ([segue.destinationViewController isKindOfClass:[ShowLocationViewController class]]) {
+        ShowLocationViewController *showLocationVC = segue.destinationViewController;
+        showLocationVC.partiesArray = [[NSMutableArray alloc] init];
+        [showLocationVC.partiesArray addObject:self.party];
+    }
+    
 }
 
 

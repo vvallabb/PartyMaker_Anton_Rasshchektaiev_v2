@@ -113,7 +113,7 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
     
     int logoID = 0;
     
-    NSArray *imageLogoNames = @[@"No Alcohol-100.png", @"Coconut cocktail-100.png", @"Christmas Tree-100.png",
+    NSArray *imageLogoNames = @[@"No Alcohol-100.png", @"Coconut Cocktail-100.png", @"Christmas Tree-100.png",
                                 @"Champagne-100.png", @"Birthday Cake-100.png", @"Beer-100.png"];
     
     for (int i = 0; i < imageLogoNames.count; i++) {

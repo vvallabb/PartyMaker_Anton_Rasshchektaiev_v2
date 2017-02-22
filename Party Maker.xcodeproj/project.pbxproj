@@ -26,6 +26,7 @@
 		ECBF52A51E4CA37A00E0D7B1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECBF52A21E4CA35300E0D7B1 /* Model.xcdatamodeld */; };
 		ECDBD3A31E5CD52F00F6143E /* HTTPManager+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3A21E5CD52F00F6143E /* HTTPManager+Utility.m */; };
 		ECDBD3A91E5DC39500F6143E /* BasePartyConfigVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3A81E5DC39500F6143E /* BasePartyConfigVC.m */; };
+		ECDBD3AC1E5DC81500F6143E /* EditPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3AB1E5DC81500F6143E /* EditPartyViewController.m */; };
 		ECDFE3C81E4E0F700007FBB8 /* NSNotification+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDFE3C71E4E0F700007FBB8 /* NSNotification+Utility.m */; };
 		ECE0FFC21E4BD8AA00BE5FB1 /* PMRCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFB51E4BD8AA00BE5FB1 /* PMRCoreDataManager.m */; };
 		ECE0FFC31E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFB71E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.m */; };
@@ -71,6 +72,8 @@
 		ECDBD3A21E5CD52F00F6143E /* HTTPManager+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPManager+Utility.m"; sourceTree = "<group>"; };
 		ECDBD3A71E5DC39500F6143E /* BasePartyConfigVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePartyConfigVC.h; sourceTree = "<group>"; };
 		ECDBD3A81E5DC39500F6143E /* BasePartyConfigVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePartyConfigVC.m; sourceTree = "<group>"; };
+		ECDBD3AA1E5DC81500F6143E /* EditPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPartyViewController.h; sourceTree = "<group>"; };
+		ECDBD3AB1E5DC81500F6143E /* EditPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPartyViewController.m; sourceTree = "<group>"; };
 		ECDFE3C61E4E0F700007FBB8 /* NSNotification+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotification+Utility.h"; sourceTree = "<group>"; };
 		ECDFE3C71E4E0F700007FBB8 /* NSNotification+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotification+Utility.m"; sourceTree = "<group>"; };
 		ECE0FFB41E4BD8AA00BE5FB1 /* PMRCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMRCoreDataManager.h; sourceTree = "<group>"; };
@@ -125,7 +128,7 @@
 				EC1716361E4C9E5F005FFC61 /* Login Screen VC */,
 				EC1716381E4C9EA8005FFC61 /* Party List VC */,
 				EC5517C11E5B02EA002B3067 /* Party Info VC */,
-				EC1716371E4C9E7A005FFC61 /* Create Party VC */,
+				EC1716371E4C9E7A005FFC61 /* Create/Edit Party */,
 				EC0E18B91E5329A9001140CA /* Location VC */,
 			);
 			name = "View Controllers";
@@ -140,15 +143,14 @@
 			name = "Login Screen VC";
 			sourceTree = "<group>";
 		};
-		EC1716371E4C9E7A005FFC61 /* Create Party VC */ = {
+		EC1716371E4C9E7A005FFC61 /* Create/Edit Party */ = {
 			isa = PBXGroup;
 			children = (
-				EC2FEF991E3F728E0035F778 /* CreatePartyViewController.h */,
-				EC2FEF9A1E3F728E0035F778 /* CreatePartyViewController.m */,
-				ECDBD3A71E5DC39500F6143E /* BasePartyConfigVC.h */,
-				ECDBD3A81E5DC39500F6143E /* BasePartyConfigVC.m */,
+				ECDBD3AD1E5DC82A00F6143E /* Create Party */,
+				ECDBD3AE1E5DC83E00F6143E /* Edit Party */,
+				ECDBD3AF1E5DC84F00F6143E /* Base Class */,
 			);
-			name = "Create Party VC";
+			name = "Create/Edit Party";
 			sourceTree = "<group>";
 		};
 		EC1716381E4C9EA8005FFC61 /* Party List VC */ = {
@@ -279,8 +281,7 @@
 				EC79FB6A1E3B80550061B6AC /* Assets.xcassets */,
 				EC79FB6C1E3B80550061B6AC /* LaunchScreen.storyboard */,
 				EC79FB6F1E3B80550061B6AC /* Info.plist */,
-				ECDFE3C61E4E0F700007FBB8 /* NSNotification+Utility.h */,
-				ECDFE3C71E4E0F700007FBB8 /* NSNotification+Utility.m */,
+				ECDBD3B01E5DE86000F6143E /* Categories */,
 			);
 			name = "Party Maker";
 			path = PartyMaker;
@@ -306,6 +307,42 @@
 				ECB2707E1E40DE020032E0EF /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ECDBD3AD1E5DC82A00F6143E /* Create Party */ = {
+			isa = PBXGroup;
+			children = (
+				EC2FEF991E3F728E0035F778 /* CreatePartyViewController.h */,
+				EC2FEF9A1E3F728E0035F778 /* CreatePartyViewController.m */,
+			);
+			name = "Create Party";
+			sourceTree = "<group>";
+		};
+		ECDBD3AE1E5DC83E00F6143E /* Edit Party */ = {
+			isa = PBXGroup;
+			children = (
+				ECDBD3AA1E5DC81500F6143E /* EditPartyViewController.h */,
+				ECDBD3AB1E5DC81500F6143E /* EditPartyViewController.m */,
+			);
+			name = "Edit Party";
+			sourceTree = "<group>";
+		};
+		ECDBD3AF1E5DC84F00F6143E /* Base Class */ = {
+			isa = PBXGroup;
+			children = (
+				ECDBD3A71E5DC39500F6143E /* BasePartyConfigVC.h */,
+				ECDBD3A81E5DC39500F6143E /* BasePartyConfigVC.m */,
+			);
+			name = "Base Class";
+			sourceTree = "<group>";
+		};
+		ECDBD3B01E5DE86000F6143E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				ECDFE3C61E4E0F700007FBB8 /* NSNotification+Utility.h */,
+				ECDFE3C71E4E0F700007FBB8 /* NSNotification+Utility.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		ECE0FFB31E4BD89000BE5FB1 /* Core Data */ = {
@@ -398,6 +435,7 @@
 				ECDFE3C81E4E0F700007FBB8 /* NSNotification+Utility.m in Sources */,
 				EC5517C71E5B7C05002B3067 /* BaseLocationViewController.m in Sources */,
 				ECE0FFC51E4BD8AA00BE5FB1 /* PMRParty+initWithDictionary.m in Sources */,
+				ECDBD3AC1E5DC81500F6143E /* EditPartyViewController.m in Sources */,
 				ECE0FFD41E4BDA9A00BE5FB1 /* PMRPartyManagedObject.m in Sources */,
 				EC7609681E49D23F001D7BF7 /* HTTPManager.m in Sources */,
 				ECDBD3A91E5DC39500F6143E /* BasePartyConfigVC.m in Sources */,

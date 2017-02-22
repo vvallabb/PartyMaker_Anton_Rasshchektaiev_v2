@@ -17,8 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.party = [[PMRParty alloc] init];
-    
-    [self subscribeForKeyboardNotifications];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -64,7 +62,7 @@
 - (void) doTheSaveAction {
     NSString *logoImageName = [[self getImageNamesArray] objectAtIndex:self.pageControlLogo.currentPage];
     
-    PMRParty *party = [[PMRParty alloc] initWithPartyID:@"234" name:self.textFieldPartyName.text startDate:[self getDateWithSlider:self.sliderStartTime] endDate:[self getDateWithSlider:self.sliderEndTime] logoImageName:logoImageName descriptionText:self.textViewDescription.text creationDate:[[NSDate alloc] init] modificationDate:nil creatorID:@"my id" latitude:@"latitude" longtitude:@"longtitude"];
+    PMRParty *party = [[PMRParty alloc] initWithPartyID:@"234" name:self.textFieldPartyName.text startDate:[self getDateWithSlider:self.sliderStartTime] endDate:[self getDateWithSlider:self.sliderEndTime] logoImageName:logoImageName descriptionText:self.textViewDescription.text creationDate:[[NSDate alloc] init] modificationDate:nil creatorID:self.buttonChooseLocation.titleLabel.text latitude:@"latitude" longtitude:@"longtitude"];
     
     PMRCoreDataManager *coreDataManager = [PMRCoreDataManager sharedStore];
     [coreDataManager addNewParty:party completion:^(BOOL success) {
