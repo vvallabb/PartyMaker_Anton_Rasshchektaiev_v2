@@ -40,6 +40,11 @@ NSString *APIURLLink;
         }
         req.URL = [NSURL URLWithString:GetBaseEncodedUrlWithPath(str)];
     }
+//    if (_params) {
+//        NSData *data = [NSJSONSerialization dataWithJSONObject:_params options:0 error:nil];
+//        [req setHTTPBody:data];
+//    }
+    
     return req;
 }
 
@@ -119,12 +124,13 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
     
     NSNumber *numberLogoID = [NSNumber numberWithInt:logoID];
     
-    NSArray *keys = @[@"name", @"start_time", @"end_time", @"logo_id", @"comment", @"latitude", @"longtitude"];
-    NSArray *objects = @[party.name, numberStartDate, numberEndDate, numberLogoID,
-                         party.descriptionText, numberLatitude, numberLongtitude];
-    
-    NSDictionary *convertedParty = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
-    
+    NSDictionary *convertedParty = @{ @"name": party.name,
+                                      @"start_time": numberStartDate,
+                                      @"end_time": numberEndDate,
+                                      @"logo_id": numberLogoID,
+                                      @"comment": party.descriptionText,
+                                      @"latitude": numberLatitude,
+                                      @"longitude": numberLongtitude };
     return convertedParty;
 }
 

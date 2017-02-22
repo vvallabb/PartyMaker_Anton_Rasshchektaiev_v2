@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		EC0E18BC1E5329CF001140CA /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0E18BB1E5329CF001140CA /* LocationViewController.m */; };
 		EC0E18BF1E532CA4001140CA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0E18BE1E532CA4001140CA /* MapKit.framework */; };
-		EC0E18C61E533F5A001140CA /* LocationManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0E18C51E533F5A001140CA /* LocationManagerDelegate.m */; };
-		EC0E18CA1E53475C001140CA /* CLLocationManager+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0E18C91E53475C001140CA /* CLLocationManager+Utility.m */; };
 		EC24C1651E44B13C007558B1 /* PartyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1641E44B13C007558B1 /* PartyTableViewCell.m */; };
 		EC24C1691E44BB79007558B1 /* PLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1681E44BB79007558B1 /* PLViewController.m */; };
 		EC2FEF9C1E3F728E0035F778 /* CreatePartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2FEF9A1E3F728E0035F778 /* CreatePartyViewController.m */; };
@@ -41,10 +39,6 @@
 		EC0E18BA1E5329CF001140CA /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		EC0E18BB1E5329CF001140CA /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		EC0E18BE1E532CA4001140CA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		EC0E18C41E533F5A001140CA /* LocationManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManagerDelegate.h; sourceTree = "<group>"; };
-		EC0E18C51E533F5A001140CA /* LocationManagerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManagerDelegate.m; sourceTree = "<group>"; };
-		EC0E18C81E53475C001140CA /* CLLocationManager+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocationManager+Utility.h"; sourceTree = "<group>"; };
-		EC0E18C91E53475C001140CA /* CLLocationManager+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocationManager+Utility.m"; sourceTree = "<group>"; };
 		EC24C1631E44B13C007558B1 /* PartyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyTableViewCell.h; sourceTree = "<group>"; };
 		EC24C1641E44B13C007558B1 /* PartyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyTableViewCell.m; sourceTree = "<group>"; };
 		EC24C1671E44BB79007558B1 /* PLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLViewController.h; sourceTree = "<group>"; };
@@ -120,25 +114,6 @@
 				EC0E18BE1E532CA4001140CA /* MapKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EC0E18C01E533B0B001140CA /* Location */ = {
-			isa = PBXGroup;
-			children = (
-				EC0E18C81E53475C001140CA /* CLLocationManager+Utility.h */,
-				EC0E18C91E53475C001140CA /* CLLocationManager+Utility.m */,
-				EC0E18C71E533FB3001140CA /* Location Manager Delegate */,
-			);
-			name = Location;
-			sourceTree = "<group>";
-		};
-		EC0E18C71E533FB3001140CA /* Location Manager Delegate */ = {
-			isa = PBXGroup;
-			children = (
-				EC0E18C41E533F5A001140CA /* LocationManagerDelegate.h */,
-				EC0E18C51E533F5A001140CA /* LocationManagerDelegate.m */,
-			);
-			name = "Location Manager Delegate";
 			sourceTree = "<group>";
 		};
 		EC1716351E4C9E57005FFC61 /* View Controllers */ = {
@@ -290,7 +265,6 @@
 			children = (
 				EC1716351E4C9E57005FFC61 /* View Controllers */,
 				ECE0FFB31E4BD89000BE5FB1 /* Core Data */,
-				EC0E18C01E533B0B001140CA /* Location */,
 				EC7609651E49D222001D7BF7 /* HTTP */,
 				EC9C02D51E48BBB3006E1A65 /* Party Model */,
 				ECB2707D1E40DCAE0032E0EF /* Supporting Files */,
@@ -416,7 +390,6 @@
 				ECB2707F1E40DE020032E0EF /* main.m in Sources */,
 				EC24C1651E44B13C007558B1 /* PartyTableViewCell.m in Sources */,
 				ECE0FFC21E4BD8AA00BE5FB1 /* PMRCoreDataManager.m in Sources */,
-				EC0E18CA1E53475C001140CA /* CLLocationManager+Utility.m in Sources */,
 				ECDFE3C81E4E0F700007FBB8 /* NSNotification+Utility.m in Sources */,
 				EC5517C71E5B7C05002B3067 /* BaseLocationViewController.m in Sources */,
 				ECE0FFC51E4BD8AA00BE5FB1 /* PMRParty+initWithDictionary.m in Sources */,
@@ -428,7 +401,6 @@
 				ECE0FFC61E4BD8AA00BE5FB1 /* PMRParty+initWithManagedObject.m in Sources */,
 				EC5517CA1E5B7D5F002B3067 /* ShowLocationViewController.m in Sources */,
 				EC87B8B81E4C60EC003A9629 /* PMRPartyManagedObject+CoreDataProperties.m in Sources */,
-				EC0E18C61E533F5A001140CA /* LocationManagerDelegate.m in Sources */,
 				EC24C1691E44BB79007558B1 /* PLViewController.m in Sources */,
 				EC2FEF9C1E3F728E0035F778 /* CreatePartyViewController.m in Sources */,
 				ECE0FFC41E4BD8AA00BE5FB1 /* PMRParty.m in Sources */,
