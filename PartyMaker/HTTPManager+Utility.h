@@ -1,5 +1,5 @@
 //
-//  HTTPManager+Requests.h
+//  HTTPManager+Utility.h
 //  Party Maker
 //
 //  Created by intern on 2/21/17.
@@ -8,33 +8,35 @@
 
 #import <Foundation/Foundation.h>
 #import "HTTPManager.h"
-#import "PMRParty.h"
 
-@interface HTTPManager(Requests)
+@interface HTTPManager(Utility)
 
 // send the login request
 - (void)sendLoginRequestWithEmail: (NSString*) email
-                            password: (NSString*) password;
+                         password: (NSString*) password;
 
 // send the register request
 - (void)sendTheRegisterRequestWithEmail: (NSString*) email
-                                password: (NSString*) password
-                                    name: (NSString*) name;
+                               password: (NSString*) password
+                                   name: (NSString*) name;
 
 // send the party request
 - (void)sendTheGetPartyRequestWithCreatorID: (NSString*) creator_id;
 
-// add party request
+// add party
 - (void)sendAddPartyRequestWithParty: (PMRParty*) party;
 
-// send the deleteParty request
-- (void)sendTheDeletePartyRequestWithParty_id: (NSString*) party_id
-                                    creator_id: (NSString*) creator_id;
+// delete party
+- (void)sendDeletePartyRequestWith:(NSString*) partyID;
 
-// get user request
+// update party
+- (void)sendUpdatePartyRequestWith:(PMRParty*) party;
+
+// get user
 - (void)sendGetUserRequestWith:(NSString*) userID;
 
-// get all users request
+// get all users
 - (void)sendGetAllUsersRequest;
+
 
 @end
