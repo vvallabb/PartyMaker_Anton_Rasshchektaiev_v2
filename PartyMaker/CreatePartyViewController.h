@@ -7,15 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BasePartyConfigVC.h"
 #import "PMRParty.h"
 #import "PMRCoreDataManager.h"
 #import "PMRCoreDataManager+Party.h"
 #import "NSNotification+Utility.h"
 #import "HTTPManager+Utility.h"
 
-@interface XIBViewController : UIViewController <UIScrollViewDelegate, UITextFieldDelegate, UITextViewDelegate>
+@interface XIBViewController : BasePartyConfigVC <UIScrollViewDelegate, UITextFieldDelegate, UITextViewDelegate>
 
-@property (nonatomic, strong) PMRParty *party;
+@property PMRParty *party;
 
 - (void) setPartyLatitude:(float) latitude
        andLongtitude:(float) longtitude;

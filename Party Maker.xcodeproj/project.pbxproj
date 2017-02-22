@@ -25,6 +25,7 @@
 		ECBC9EDE1E51F36C00E40610 /* LoginScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBC9EDD1E51F36C00E40610 /* LoginScreenViewController.m */; };
 		ECBF52A51E4CA37A00E0D7B1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECBF52A21E4CA35300E0D7B1 /* Model.xcdatamodeld */; };
 		ECDBD3A31E5CD52F00F6143E /* HTTPManager+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3A21E5CD52F00F6143E /* HTTPManager+Utility.m */; };
+		ECDBD3A91E5DC39500F6143E /* BasePartyConfigVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3A81E5DC39500F6143E /* BasePartyConfigVC.m */; };
 		ECDFE3C81E4E0F700007FBB8 /* NSNotification+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDFE3C71E4E0F700007FBB8 /* NSNotification+Utility.m */; };
 		ECE0FFC21E4BD8AA00BE5FB1 /* PMRCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFB51E4BD8AA00BE5FB1 /* PMRCoreDataManager.m */; };
 		ECE0FFC31E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFB71E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.m */; };
@@ -68,6 +69,8 @@
 		ECBF52A31E4CA35300E0D7B1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		ECDBD3A11E5CD52F00F6143E /* HTTPManager+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPManager+Utility.h"; sourceTree = "<group>"; };
 		ECDBD3A21E5CD52F00F6143E /* HTTPManager+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPManager+Utility.m"; sourceTree = "<group>"; };
+		ECDBD3A71E5DC39500F6143E /* BasePartyConfigVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePartyConfigVC.h; sourceTree = "<group>"; };
+		ECDBD3A81E5DC39500F6143E /* BasePartyConfigVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePartyConfigVC.m; sourceTree = "<group>"; };
 		ECDFE3C61E4E0F700007FBB8 /* NSNotification+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotification+Utility.h"; sourceTree = "<group>"; };
 		ECDFE3C71E4E0F700007FBB8 /* NSNotification+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotification+Utility.m"; sourceTree = "<group>"; };
 		ECE0FFB41E4BD8AA00BE5FB1 /* PMRCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMRCoreDataManager.h; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 			children = (
 				EC2FEF991E3F728E0035F778 /* CreatePartyViewController.h */,
 				EC2FEF9A1E3F728E0035F778 /* CreatePartyViewController.m */,
+				ECDBD3A71E5DC39500F6143E /* BasePartyConfigVC.h */,
+				ECDBD3A81E5DC39500F6143E /* BasePartyConfigVC.m */,
 			);
 			name = "Create Party VC";
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 				ECE0FFC51E4BD8AA00BE5FB1 /* PMRParty+initWithDictionary.m in Sources */,
 				ECE0FFD41E4BDA9A00BE5FB1 /* PMRPartyManagedObject.m in Sources */,
 				EC7609681E49D23F001D7BF7 /* HTTPManager.m in Sources */,
+				ECDBD3A91E5DC39500F6143E /* BasePartyConfigVC.m in Sources */,
 				ECE0FFC81E4BD8AA00BE5FB1 /* PMRPersistanceStore.m in Sources */,
 				ECBF52A51E4CA37A00E0D7B1 /* Model.xcdatamodeld in Sources */,
 				EC5517C41E5B031A002B3067 /* PartyInfoViewController.m in Sources */,
