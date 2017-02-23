@@ -120,99 +120,62 @@ NSString *APIURLLink;
 
 #pragma mark - Add party
 - (void)sendAddPartyRequestWithParty: (PMRParty*) party {
-    NSDictionary *headers = @{ @"content-type": @"application/json",
-                               @"accesstoken": @"f3c5a8c4d0e27928906a262f0985b293",
-                               @"cache-control": @"no-cache" };
     NSDictionary *parameters = [self convertPartyForRequest:party];
     
-    NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://partymaker-softheme.herokuapp.com/party"]
-                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                       timeoutInterval:10.0];
-    [request setHTTPMethod:@"POST"];
-    [request setAllHTTPHeaderFields:headers];
-    [request setHTTPBody:postData];
+    NSMutableURLRequest *request = [self getRequestWithType:@"POST" address:@"/party" params:parameters];
     
     NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
-                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                    if (error) {
-                                                        NSLog(@"%@", error);
-                                                    } else {
-                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                                                        NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
-                                                        
-                                                         NSLog(@"%@", httpResponse);
-                                                        
-                                                        XIBViewController *createPartyVC = (XIBViewController*) self.createPartyVC;
-                                                        
-                                                        [createPartyVC setParty:[self convertDictionaryToParty:dictionaryFromResponse]];
-                                                        
-                                                        [createPartyVC savePartyToCoreData];
-                                                    }
-                                                }];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
+            
+            NSLog(@"%@", httpResponse);
+            
+            XIBViewController *createPartyVC = (XIBViewController*) self.createPartyVC;
+            
+            [createPartyVC setParty:[self convertDictionaryToParty:dictionaryFromResponse]];
+            
+            [createPartyVC savePartyToCoreData];
+        }
+    }];
+    
     [dataTask resume];
 }
 
 #pragma mark - Delete party
 - (void)sendDeletePartyRequestWith:(NSString *)partyID {
-    NSDictionary *headers = @{ @"content-type": @"application/json",
-                               @"accesstoken": [self getAccessToken],
-                               @"cache-control": @"no-cache" };
-    NSString *completedURL = [APIURLLink stringByAppendingString:[@"/party/" stringByAppendingString:partyID]];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:completedURL]
-                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                       timeoutInterval:10.0];
-    [request setHTTPMethod:@"DELETE"];
-    [request setAllHTTPHeaderFields:headers];
+    NSMutableURLRequest *request = [self getRequestWithType:@"DELETE" address:[@"/party/" stringByAppendingString:partyID] params:[[NSDictionary alloc] init]];
     
     NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
-                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                    if (error) {
-                                                        NSLog(@"%@", error);
-                                                    } else {
-                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                                                        NSLog(@"Method completed!");
-                                                        
-                                                        NSLog(@"%@", httpResponse);
-                                                    }
-                                                }];
-    [dataTask resume];}
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            NSLog(@"%@", httpResponse);
+        }
+    }];
+    
+    [dataTask resume];
+}
 
 #pragma mark - Update party
 - (void)sendUpdatePartyRequestWith:(PMRParty *)party {
-    
-    NSDictionary *headers = @{ @"content-type": @"application/json",
-                               @"accesstoken": @"f3c5a8c4d0e27928906a262f0985b293",
-                               @"cache-control": @"no-cache" };
-    NSDictionary *parameters = [self convertPartyForRequest:party];
-    
-    NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
-    
-    NSString *completeURL = [[APIURLLink stringByAppendingString:@"/party/"] stringByAppendingString:party.partyID];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:completeURL]
-                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                       timeoutInterval:10.0];
-    [request setHTTPMethod:@"PATCH"];
-    [request setAllHTTPHeaderFields:headers];
-    [request setHTTPBody:postData];
+    NSMutableURLRequest *request = [self getRequestWithType:@"PATCH" address:[@"/party/" stringByAppendingString:party.partyID] params:[self convertPartyForRequest:party]];
     
     NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
-                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                    if (error) {
-                                                        NSLog(@"%@", error);
-                                                    } else {
-                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                                                        NSLog(@"%@", httpResponse);
-                                                        
-                                                        
-                                                    }
-                                                }];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            NSLog(@"%@", httpResponse);
+        }
+    }];
+    
     [dataTask resume];
 }
 
@@ -221,7 +184,7 @@ NSString *APIURLLink;
                                    address:(NSString*) address
                                     params:(NSDictionary*) params {
     NSDictionary *headers = @{ @"content-type": @"application/json",
-                               @"accesstoken": @"f3c5a8c4d0e27928906a262f0985b293",
+                               @"accesstoken": [self getAccessToken],
                                @"cache-control": @"no-cache" };
     
     NSData *postData = [NSJSONSerialization dataWithJSONObject:params options:0 error:nil];
