@@ -35,5 +35,68 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PartyMaker/HTTPManager.m"
+            timestampString = "509575925.174426"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "-sendRegisterRequestWithEmail:password:name:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__58-[HTTPManager sendRegisterRequestWithEmail:password:name:]_block_invoke.81"
+                  moduleName = "Party Maker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/intern/Desktop/PMR/PartyMaker/HTTPManager.m"
+                  timestampString = "509575926.196941"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "534">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_.92"
+                  moduleName = "Party Maker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/intern/Desktop/PMR/PartyMaker/HTTPManager.m"
+                  timestampString = "509575926.198799"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "51">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.93"
+                  moduleName = "Party Maker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/intern/Desktop/PMR/PartyMaker/HTTPManager.m"
+                  timestampString = "509575926.20109"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "29">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

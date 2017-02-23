@@ -26,9 +26,7 @@
     //[[UINavigationBar appearance] setTranslucent:NO];
     
     [NSNotification setUpLocalNotifications];
-    
-    [[HTTPManager sharedInstance] sendDeletePartyRequestWith:@"764"];
-    
+        
     return YES;
 }
 

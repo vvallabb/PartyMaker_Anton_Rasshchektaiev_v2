@@ -17,7 +17,6 @@
 @property (nonatomic, strong) UIViewController *registerScreenVC;
 @property (nonatomic, strong) UIViewController *createPartyVC;
 
-
 @property (nonatomic, strong) NSURLSession *defaultSession;
 
 #pragma mark - Requests
@@ -31,9 +30,6 @@
                                password: (NSString*) password
                                    name: (NSString*) name;
 
-// send the party request
-- (void)sendTheGetPartyRequestWithCreatorID: (NSString*) creator_id;
-
 // add party
 - (void)sendAddPartyRequestWithParty: (PMRParty*) party;
 
@@ -43,19 +39,9 @@
 // update party
 - (void)sendUpdatePartyRequestWith:(PMRParty*) party;
 
-// get user
-- (void)sendGetUserRequestWith:(NSString*) userID;
-
-// get all users
-- (void)sendGetAllUsersRequest;
-
 #pragma mark - Supporting methods
 
 +(instancetype) sharedInstance;
-
-- (NSMutableURLRequest*) getRequestWithType:(NSString*) type headers:(NSArray*) headers method:(NSString*) _method params:(NSDictionary*) _params;
-
-- (NSString*) makeDateRepresentationForAPICall:(NSDate*) _date;
 
 // serialization
 - (NSData*) serializationWithDictionary: (NSDictionary *) dictionary;
@@ -70,7 +56,5 @@
 // party convertion
 - (NSDictionary*)convertPartyForRequest:(PMRParty*) party;
 - (PMRParty*)convertDictionaryToParty:(NSDictionary*)dictionary;
-
-
 
 @end
