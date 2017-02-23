@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "NSNotification+Utility.h"
-#import "HTTPManager+Utility.h"
+#import "HTTPManager.h"
 
 @interface AppDelegate ()
 

@@ -12,7 +12,7 @@
 #import "PMRCoreDataManager.h"
 #import "PMRCoreDataManager+Party.h"
 #import "NSNotification+Utility.h"
-#import "HTTPManager+Utility.h"
+#import "HTTPManager.h"
 
 @interface XIBViewController : BasePartyConfigVC 
 
