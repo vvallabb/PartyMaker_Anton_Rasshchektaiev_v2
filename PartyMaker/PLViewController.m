@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableViewPartyList;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *rightBarButtonItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *deleteButton;
+@property (strong, nonatomic) TableViewDataSource *dataSource;
 
 @end
 
@@ -27,6 +28,14 @@
     
     //[self setUpAddBarButtonItem];
     [self.navigationItem setHidesBackButton:YES];
+    
+    self.dataSource = [[TableViewDataSource alloc] initWithTableView:self.tableViewPartyList context:[[PMRCoreDataManager sharedStore] mainThreadContext] reuseIdentifier:[PartyTableViewCell reuseIdentifier] cellConfigurationBlock:^(UITableViewCell *cell, NSManagedObject *item) {
+        PMRParty *party = [[PMRParty alloc] initWithManagedObject:(PMRPartyManagedObject *)item];
+        PartyTableViewCell *partyCell = (PartyTableViewCell *)cell;
+        [partyCell configureWithParty:party];
+    }];
+    
+    self.tableViewPartyList.dataSource = self.dataSource;
 }
 
 - (void)didReceiveMemoryWarning {

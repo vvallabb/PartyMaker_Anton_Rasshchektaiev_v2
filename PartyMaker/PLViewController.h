@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "PartyTableViewCell.h"
 #import "PartyInfoViewController.h"
+#import "TableViewDataSource.h"
+#import "PMRCoreDataManager.h"
+#import "PMRParty+initWithManagedObject.h"
 
 @interface PLViewController : UIViewController
 
