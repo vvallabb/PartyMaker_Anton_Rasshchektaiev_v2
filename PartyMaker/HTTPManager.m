@@ -179,35 +179,8 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
 
 #pragma mark - Login
 - (void)sendLoginRequestWithEmail: (NSString*) email password: (NSString*) password {
-//    email = @"anton11131113@gmail.com";
-//    password = @"gg11131113";
-//    NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:email, @"email", password, @"password", nil];
-//    
-//    NSMutableURLRequest *request = [self getRequestWithType:@"POST" headers:nil method:@"user/login" params:params];
-//    
-//    NSURLSessionDataTask *postDataTask = [self.defaultSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//        
-//        NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
-//        
-//        BOOL isCorrectEmail = [[dictionaryFromResponse objectForKey:@"email"] isEqualToString:[params objectForKey:@"email"]];
-//        
-//        // save access token to NSUserDefaults
-//        NSData *accessTokenData = [NSKeyedArchiver archivedDataWithRootObject:[dictionaryFromResponse objectForKey:@"accessToken"]];
-//        [[NSUserDefaults standardUserDefaults] setObject:accessTokenData forKey:@"accessToken"];
-//        
-//        // save creator id to NSUserDefaults
-//        NSData *creator_idData = [NSKeyedArchiver archivedDataWithRootObject:[dictionaryFromResponse objectForKey:@"id"]];
-//        [[NSUserDefaults standardUserDefaults] setObject:creator_idData forKey:@"id"];
-//        
-//        // perform a segue in LoginScreenVC in case of success request
-//        if (isCorrectEmail) {
-//            dispatch_async(dispatch_get_main_queue(), ^(void){
-//                [self.loginScreenVC performSegueWithIdentifier:@"SegueFromLoginScreen" sender:self];
-//            });
-//        }
-//    }];
-//    
-//    [postDataTask resume];
+    email = @"anton11131113@gmail.com";
+    password = @"gg11131113";
     
     NSDictionary *headers = @{ @"content-type": @"application/json",
                                @"cache-control": @"no-cache"};
@@ -255,19 +228,37 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
     [dataTask resume];
 }
 
-// send the register reguest
+#pragma mark - Register request
 - (void)sendTheRegisterRequestWithEmail: (NSString*) email
                                password: (NSString*) password
                                    name: (NSString*) name {
     
-    NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:email, @"email", password, @"password", name, @"name", nil];
-    NSMutableURLRequest *request = [self getRequestWithType:@"POST" headers:nil method:@"register" params:params];
-    NSURLSessionDataTask *postDataTask = [self.defaultSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
-        NSLog(@"%@", dictionaryFromResponse);
-    }];
+    NSDictionary *headers = @{ @"content-type": @"application/json",
+                               @"cache-control": @"no-cache"};
+    NSDictionary *parameters = @{ @"email": email,
+                                  @"password": password,
+                                  @"name": name};
     
-    [postDataTask resume];
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://partymaker-softheme.herokuapp.com/user/signup"]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"POST"];
+    [request setAllHTTPHeaderFields:headers];
+    [request setHTTPBody:postData];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                    } else {
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                    }
+                                                }];
+    [dataTask resume];
 }
 
 // send the creator_id request
