@@ -27,6 +27,7 @@
 		ECDBD3A91E5DC39500F6143E /* BasePartyConfigVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3A81E5DC39500F6143E /* BasePartyConfigVC.m */; };
 		ECDBD3AC1E5DC81500F6143E /* EditPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3AB1E5DC81500F6143E /* EditPartyViewController.m */; };
 		ECDBD3C61E5EF9D200F6143E /* RegisterScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3C51E5EF9D200F6143E /* RegisterScreenViewController.m */; };
+		ECDBD3CD1E5F373500F6143E /* TableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3CB1E5F373500F6143E /* TableViewDataSource.m */; };
 		ECDFE3C81E4E0F700007FBB8 /* NSNotification+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDFE3C71E4E0F700007FBB8 /* NSNotification+Utility.m */; };
 		ECE0FFC21E4BD8AA00BE5FB1 /* PMRCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFB51E4BD8AA00BE5FB1 /* PMRCoreDataManager.m */; };
 		ECE0FFC31E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFB71E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.m */; };
@@ -74,6 +75,8 @@
 		ECDBD3AB1E5DC81500F6143E /* EditPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPartyViewController.m; sourceTree = "<group>"; };
 		ECDBD3C41E5EF9D200F6143E /* RegisterScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterScreenViewController.h; sourceTree = "<group>"; };
 		ECDBD3C51E5EF9D200F6143E /* RegisterScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterScreenViewController.m; sourceTree = "<group>"; };
+		ECDBD3CB1E5F373500F6143E /* TableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewDataSource.m; path = ../../../Downloads/TableViewDataSource/TableViewDataSource.m; sourceTree = "<group>"; };
+		ECDBD3CC1E5F373500F6143E /* TableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewDataSource.h; path = ../../../Downloads/TableViewDataSource/TableViewDataSource.h; sourceTree = "<group>"; };
 		ECDFE3C61E4E0F700007FBB8 /* NSNotification+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotification+Utility.h"; sourceTree = "<group>"; };
 		ECDFE3C71E4E0F700007FBB8 /* NSNotification+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotification+Utility.m"; sourceTree = "<group>"; };
 		ECE0FFB41E4BD8AA00BE5FB1 /* PMRCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMRCoreDataManager.h; sourceTree = "<group>"; };
@@ -353,9 +356,19 @@
 			name = "Register Screen VC";
 			sourceTree = "<group>";
 		};
+		ECDBD3CA1E5F371200F6143E /* Table View DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				ECDBD3CB1E5F373500F6143E /* TableViewDataSource.m */,
+				ECDBD3CC1E5F373500F6143E /* TableViewDataSource.h */,
+			);
+			name = "Table View DataSource";
+			sourceTree = "<group>";
+		};
 		ECE0FFB31E4BD89000BE5FB1 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				ECDBD3CA1E5F371200F6143E /* Table View DataSource */,
 				EC17163A1E4C9F1B005FFC61 /* Core Data Manager */,
 				EC17163B1E4C9F2D005FFC61 /* Persistance Store */,
 				EC17163C1E4C9F3E005FFC61 /* Party Managed Object */,
@@ -443,6 +456,7 @@
 				EC5517C71E5B7C05002B3067 /* BaseLocationViewController.m in Sources */,
 				ECE0FFC51E4BD8AA00BE5FB1 /* PMRParty+initWithDictionary.m in Sources */,
 				ECDBD3AC1E5DC81500F6143E /* EditPartyViewController.m in Sources */,
+				ECDBD3CD1E5F373500F6143E /* TableViewDataSource.m in Sources */,
 				ECE0FFD41E4BDA9A00BE5FB1 /* PMRPartyManagedObject.m in Sources */,
 				EC7609681E49D23F001D7BF7 /* HTTPManager.m in Sources */,
 				ECDBD3A91E5DC39500F6143E /* BasePartyConfigVC.m in Sources */,
