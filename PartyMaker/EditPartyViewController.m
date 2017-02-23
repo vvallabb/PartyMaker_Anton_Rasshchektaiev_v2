@@ -33,6 +33,22 @@
 
 #pragma mark - Save Button action
 - (IBAction)onSaveButtonClicked:(UIBarButtonItem *)sender {
+    NSString *logoImageName = [[self getImageNamesArray] objectAtIndex:self.pageControlLogo.currentPage];
+        
+    self.party = [[PMRParty alloc] initWithPartyID:self.party.partyID name:self.textFieldPartyName.text startDate:[self getDateWithSlider:self.sliderStartTime] endDate:[self getDateWithSlider:self.sliderEndTime] logoImageName:logoImageName descriptionText:self.textViewDescription.text creationDate:[[NSDate alloc] init] modificationDate:nil creatorID:self.buttonChooseLocation.titleLabel.text latitude:@"latitude" longtitude:@"longtitude"];
+    
+    [[HTTPManager sharedInstance] sendUpdatePartyRequestWith:self.party];
+    
+    PMRPartyManagedObject *currentParty = [PMRPartyManagedObject fetchPartyWithPartyID:self.party.partyID inContext:[[PMRCoreDataManager sharedStore] mainThreadContext]];
+    
+    [currentParty setName:self.party.name];
+    [currentParty setStartDate:self.party.startDate];
+    [currentParty setEndDate:self.party.endDate];
+    [currentParty setLogoImageName:self.party.logoImageName];
+    [currentParty setDescriptionText:self.party.descriptionText];
+    [currentParty setLatitude:self.party.latitude];
+    [currentParty setLongtitude:self.party.longtitude];
+
 }
 
 #pragma mark - Back Button Action
@@ -79,7 +95,6 @@
     CGPoint contentOffset = CGPointMake(self.pageControlLogo.currentPage * self.scrollViewLogo.frame.size.width, 0);
     [self.scrollViewLogo setContentOffset:contentOffset animated:YES];
 }
-
 
 /*
 #pragma mark - Navigation

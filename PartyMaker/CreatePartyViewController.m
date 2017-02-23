@@ -66,19 +66,21 @@
 - (void) doTheSaveAction {
     NSString *logoImageName = [[self getImageNamesArray] objectAtIndex:self.pageControlLogo.currentPage];
     
-    PMRParty *party = [[PMRParty alloc] initWithPartyID:@"234" name:self.textFieldPartyName.text startDate:[self getDateWithSlider:self.sliderStartTime] endDate:[self getDateWithSlider:self.sliderEndTime] logoImageName:logoImageName descriptionText:self.textViewDescription.text creationDate:[[NSDate alloc] init] modificationDate:nil creatorID:self.buttonChooseLocation.titleLabel.text latitude:@"latitude" longtitude:@"longtitude"];
+    self.party = [[PMRParty alloc] initWithPartyID:@"234" name:self.textFieldPartyName.text startDate:[self getDateWithSlider:self.sliderStartTime] endDate:[self getDateWithSlider:self.sliderEndTime] logoImageName:logoImageName descriptionText:self.textViewDescription.text creationDate:[[NSDate alloc] init] modificationDate:nil creatorID:self.buttonChooseLocation.titleLabel.text latitude:@"latitude" longtitude:@"longtitude"];
     
-    [[HTTPManager sharedInstance] sendAddPartyRequestWithParty:party];
+    [[HTTPManager sharedInstance] sendAddPartyRequestWithParty:self.party];
     
     
-    PMRCoreDataManager *coreDataManager = [PMRCoreDataManager sharedStore];
-    [coreDataManager addNewParty:party completion:^(BOOL success) {
-        
-    }];
-    
-    [NSNotification createLocalNotification:party];
+    [NSNotification createLocalNotification:self.party];
 
     [self performSegueWithIdentifier:@"segueToPartyList" sender:self];
+}
+
+- (void) savePartyToCoreData {
+    PMRCoreDataManager *coreDataManager = [PMRCoreDataManager sharedStore];
+    [coreDataManager addNewParty:self.party completion:^(BOOL success) {
+        
+    }];
 }
 
 # pragma mark - Set up the Choose Location Button action
@@ -87,18 +89,6 @@
     [self performSegueWithIdentifier:@"SequeFromCreatePartyToLocation" sender:self];
 }
 
-// supporting method to get NSDate according to the slider value of time
-- (NSDate*) getDateWithSlider:(UISlider*) slider {
-    NSDate *date = self.datePicker.date;
-    
-    unsigned int flags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
-    NSCalendar* calendar = [NSCalendar currentCalendar];
-    NSDateComponents* components = [calendar components:flags fromDate:date];
-    date = [calendar dateFromComponents:components];
-    
-    NSDate *dateWithTimeFromSlider = [date dateByAddingTimeInterval:slider.value * 60];
-    return dateWithTimeFromSlider;
-}
 
 -(void)setPartyLatitude:(float)latitude andLongtitude:(float)longtitude {
     self.party.latitude = [NSString stringWithFormat:@"%f", latitude];

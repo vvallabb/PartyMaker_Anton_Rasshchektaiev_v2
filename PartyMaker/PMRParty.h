@@ -9,15 +9,15 @@
 
 @interface PMRParty : NSObject <NSCoding>
 
-@property (nonatomic, readonly) NSString *partyID;
-@property (nonatomic, readonly) NSDate *startDate;
-@property (nonatomic, readonly) NSDate *endDate;
-@property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) NSString *logoImageName;
-@property (nonatomic, readonly) NSString *descriptionText;
-@property (nonatomic, readonly) NSDate *creationDate;
-@property (nonatomic, readonly) NSDate *modificationDate;
-@property (nonatomic, readonly) NSString *creatorID;
+@property (nonatomic, readwrite) NSString *partyID;
+@property (nonatomic, readwrite) NSDate *startDate;
+@property (nonatomic, readwrite) NSDate *endDate;
+@property (nonatomic, readwrite) NSString *name;
+@property (nonatomic, readwrite) NSString *logoImageName;
+@property (nonatomic, readwrite) NSString *descriptionText;
+@property (nonatomic, readwrite) NSDate *creationDate;
+@property (nonatomic, readwrite) NSDate *modificationDate;
+@property (nonatomic, readwrite) NSString *creatorID;
 @property (nonatomic, readwrite) NSString *latitude;
 @property (nonatomic, readwrite) NSString *longtitude;
 

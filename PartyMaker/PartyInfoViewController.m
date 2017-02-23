@@ -101,7 +101,7 @@
 - (void)setUpDescriptionLabel {
     NSString *descriptionText = self.party.descriptionText;
     
-    [self.labelDescription setText:descriptionText];
+    [self.labelDescription setText:[descriptionText  stringByAppendingString:self.party.partyID]];
 }
 
 // set up date label
@@ -163,6 +163,12 @@
 }
 
 - (IBAction)onDeleteButtonClicked:(UIButton *)sender {
+    [[HTTPManager sharedInstance] sendDeletePartyRequestWith:self.party.partyID];
+    [self performSegueWithIdentifier:@"SegueFromPartyInfoToPartyList" sender:nil];
+    
+    [[PMRCoreDataManager sharedStore] deletePartyWithName:self.party.name completion:^(BOOL success) {
+        
+    }];
 }
 
 #pragma mark - Set up segue to Map

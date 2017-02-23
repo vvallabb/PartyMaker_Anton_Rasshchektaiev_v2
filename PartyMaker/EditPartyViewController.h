@@ -8,6 +8,9 @@
 
 #import "BasePartyConfigVC.h"
 #import "PMRParty.h"
+#import "HTTPManager.h"
+#import "PMRCoreDataManager+Party.h"
+#import "PMRPartyManagedObject.h"
 
 @interface EditPartyViewController : BasePartyConfigVC
 

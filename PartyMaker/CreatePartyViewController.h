@@ -23,4 +23,6 @@
 
 - (void) setChooseLocationButtonTitle:(NSString*) title;
 
+- (void) savePartyToCoreData;
+
 @end

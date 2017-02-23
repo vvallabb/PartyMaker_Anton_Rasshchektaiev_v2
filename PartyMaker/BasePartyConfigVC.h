@@ -59,5 +59,6 @@
 - (void) moveFocusCircleOnY: (NSInteger) y;
 - (NSArray *)getImageNamesArray;
 - (NSString*) getTimeStringForSliderLabel: (float) sliderValue;
+- (NSDate*) getDateWithSlider:(UISlider*) slider;
 
 @end

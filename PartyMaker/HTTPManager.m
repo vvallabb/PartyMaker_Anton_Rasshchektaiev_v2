@@ -176,6 +176,9 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
 }
 
 #pragma mark - Requests
+/////////////////////////////////////////        /////////////////////////////////////
+///////////   REQUESTS   ////////////////        ///////////   REQUESTS   ////////////
+/////////////////////////////////////////        /////////////////////////////////////
 
 #pragma mark - Login
 - (void)sendLoginRequestWithEmail: (NSString*) email password: (NSString*) password {
@@ -338,10 +341,15 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
                                                         NSLog(@"%@", error);
                                                     } else {
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                                                        NSLog(@"%@", httpResponse);
+                                                        NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
                                                         
-                                                        if ([self.createPartyVC isKindOfClass:[XIBViewController class]]) {
-                                                        }
+                                                         NSLog(@"%@", httpResponse);
+                                                        
+                                                        XIBViewController *createPartyVC = (XIBViewController*) self.createPartyVC;
+                                                        
+                                                        [createPartyVC setParty:[self convertDictionaryToParty:dictionaryFromResponse]];
+                                                        
+                                                        [createPartyVC savePartyToCoreData];
                                                     }
                                                 }];
     [dataTask resume];
@@ -349,19 +357,30 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
 
 #pragma mark - Delete party
 - (void)sendDeletePartyRequestWith:(NSString *)partyID {
-    NSString *method = [@"party/" stringByAppendingString:partyID];
+    NSDictionary *headers = @{ @"content-type": @"application/json",
+                               @"accesstoken": [self getAccessToken],
+                               @"cache-control": @"no-cache" };
+    NSString *completedURL = [APIURLLink stringByAppendingString:[@"/party/" stringByAppendingString:partyID]];
     
-    NSMutableURLRequest *request = [self getRequestWithType:@"DELETE" headers:nil method:method params:nil];
-    [request setValue:[self getAccessToken] forHTTPHeaderField:@"accessToken"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:completedURL]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"DELETE"];
+    [request setAllHTTPHeaderFields:headers];
     
-    NSURLSessionDataTask *deleteDataTask = [self.defaultSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
-        NSLog(@"%@", dictionaryFromResponse);
-    }];
-    
-    [deleteDataTask resume];
-}
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                    } else {
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"Method completed!");
+                                                        
+                                                        NSLog(@"%@", httpResponse);
+                                                    }
+                                                }];
+    [dataTask resume];}
 
 #pragma mark - Update party
 - (void)sendUpdatePartyRequestWith:(PMRParty *)party {
@@ -373,7 +392,9 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
     
     NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://partymaker-softheme.herokuapp.com/party/234"]
+    NSString *completeURL = [[APIURLLink stringByAppendingString:@"/party/"] stringByAppendingString:party.partyID];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:completeURL]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
     [request setHTTPMethod:@"PATCH"];
@@ -388,8 +409,8 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
                                                     } else {
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                                                         NSLog(@"%@", httpResponse);
-                                                        NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
-                                                        NSLog(@"%@", dictionaryFromResponse);
+                                                        
+                                                        
                                                     }
                                                 }];
     [dataTask resume];

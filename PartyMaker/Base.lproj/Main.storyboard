@@ -1378,7 +1378,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="plM-b7-7Uj" userLabel="Save BarButtonItem">
                             <connections>
-                                <action selector="onSaveButtonClicked:" destination="Rwa-X8-36C" id="GOa-Yw-a5J"/>
+                                <action selector="onSaveButtonClicked:" destination="Rwa-X8-36C" id="vYx-ca-jKW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1702,6 +1702,7 @@
                         <outlet property="labelName" destination="cYW-JM-7gP" id="RpT-40-yPg"/>
                         <outlet property="labelStartTime" destination="F3r-5D-TRs" id="2Ks-9B-CfE"/>
                         <outlet property="viewCircle" destination="O6O-2a-gk2" id="HD9-vO-Bhu"/>
+                        <segue destination="84u-SP-8UL" kind="show" identifier="SegueFromPartyInfoToPartyList" id="4cJ-hY-ULt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pXk-wT-F85" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2167,7 +2168,7 @@
         <image name="settings.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xjl-xw-hNH"/>
+        <segue reference="4cJ-hY-ULt"/>
         <segue reference="gWj-qs-N9b"/>
     </inferredMetricsTieBreakers>
 </document>

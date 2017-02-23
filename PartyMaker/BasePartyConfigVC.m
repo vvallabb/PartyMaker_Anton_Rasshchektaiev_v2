@@ -226,6 +226,20 @@
     return imageNamesArray;
 }
 
+// supporting method to get NSDate according to the slider value of time
+- (NSDate*) getDateWithSlider:(UISlider*) slider {
+    NSDate *date = self.datePicker.date;
+    
+    unsigned int flags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* components = [calendar components:flags fromDate:date];
+    date = [calendar dateFromComponents:components];
+    
+    NSDate *dateWithTimeFromSlider = [date dateByAddingTimeInterval:slider.value * 60];
+    return dateWithTimeFromSlider;
+}
+
+
 /*
 #pragma mark - Navigation
 

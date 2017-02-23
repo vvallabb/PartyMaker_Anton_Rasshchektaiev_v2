@@ -10,6 +10,7 @@
 #import "PMRParty.h"
 #import "ShowLocationViewController.h"
 #import "EditPartyViewController.h"
+#import "HTTPManager.h"
 
 @interface PartyInfoViewController : UIViewController
 

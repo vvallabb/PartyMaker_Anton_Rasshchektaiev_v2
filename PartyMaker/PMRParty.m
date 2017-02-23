@@ -10,16 +10,6 @@
 
 @interface PMRParty()
 
-@property (nonatomic, readwrite) NSString *partyID;
-@property (nonatomic, readwrite) NSDate *startDate;
-@property (nonatomic, readwrite) NSDate *endDate;
-@property (nonatomic, readwrite) NSString *name;
-@property (nonatomic, readwrite) NSString *logoImageName;
-@property (nonatomic, readwrite) NSString *descriptionText;
-@property (nonatomic, readwrite) NSDate *creationDate;
-@property (nonatomic, readwrite) NSDate *modificationDate;
-@property (nonatomic, readwrite) NSString *creatorID;
-
 @end
 
 @implementation PMRParty

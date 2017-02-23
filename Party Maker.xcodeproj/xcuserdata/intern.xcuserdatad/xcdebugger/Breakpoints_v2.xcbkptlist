@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PartyMaker/HTTPManager.m"
-            timestampString = "509548295.92244"
+            filePath = "PartyMaker/EditPartyViewController.m"
+            timestampString = "509556342.615406"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "291"
-            endingLineNumber = "291"
-            landmarkName = "-sendRegisterRequestWithEmail:password:name:"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "-onSaveButtonClicked:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
