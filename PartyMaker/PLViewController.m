@@ -12,8 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewPartyList;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *rightBarButtonItem;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *deleteButton;
 @property (strong, nonatomic) TableViewDataSource *dataSource;
+
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -36,7 +37,25 @@
     }];
     
     self.tableViewPartyList.dataSource = self.dataSource;
-    self.tableViewPartyList.dataSource = self;
+    //self.tableViewPartyList.dataSource = self;
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self
+                            action:@selector(refreshControlAction:)
+                  forControlEvents:UIControlEventValueChanged];
+    self.tableViewPartyList.refreshControl = self.refreshControl;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.dataSource.paused = NO;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    self.dataSource.paused = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,6 +109,25 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"SegueFromPartyListToPartyInfo" sender:nil];
+}
+
+#pragma mark - Control actions
+
+- (void)refreshControlAction:(UIRefreshControl *)refreshControl {
+    [[PMRCoreDataManager sharedStore] performWriteOperation:^(NSManagedObjectContext * _Nonnull context) {
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Thing" inManagedObjectContext:context];
+        [fetchRequest setEntity:entity];
+        
+        NSError *error = nil;
+        NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+        if (fetchedObjects == nil) {
+            NSLog(@"error %@", error);
+        }
+        
+    } completion:^{
+        [refreshControl endRefreshing];
+    }];
 }
 
 /*
