@@ -14,8 +14,42 @@
 @interface HTTPManager : NSObject
 
 @property (nonatomic, strong) UIViewController *loginScreenVC;
+@property (nonatomic, strong) UIViewController *registerScreenVC;
 @property (nonatomic, strong) UIViewController *createPartyVC;
+
+
 @property (nonatomic, strong) NSURLSession *defaultSession;
+
+#pragma mark - Requests
+
+// login
+- (void)sendLoginRequestWithEmail: (NSString*) email
+                         password: (NSString*) password;
+
+// register
+- (void)sendRegisterRequestWithEmail: (NSString*) email
+                               password: (NSString*) password
+                                   name: (NSString*) name;
+
+// send the party request
+- (void)sendTheGetPartyRequestWithCreatorID: (NSString*) creator_id;
+
+// add party
+- (void)sendAddPartyRequestWithParty: (PMRParty*) party;
+
+// delete party
+- (void)sendDeletePartyRequestWith:(NSString*) partyID;
+
+// update party
+- (void)sendUpdatePartyRequestWith:(PMRParty*) party;
+
+// get user
+- (void)sendGetUserRequestWith:(NSString*) userID;
+
+// get all users
+- (void)sendGetAllUsersRequest;
+
+#pragma mark - Supporting methods
 
 +(instancetype) sharedInstance;
 
@@ -37,32 +71,6 @@
 - (NSDictionary*)convertPartyForRequest:(PMRParty*) party;
 - (PMRParty*)convertDictionaryToParty:(NSDictionary*)dictionary;
 
-// send the login request
-- (void)sendLoginRequestWithEmail: (NSString*) email
-                         password: (NSString*) password;
-
-// send the register request
-- (void)sendTheRegisterRequestWithEmail: (NSString*) email
-                               password: (NSString*) password
-                                   name: (NSString*) name;
-
-// send the party request
-- (void)sendTheGetPartyRequestWithCreatorID: (NSString*) creator_id;
-
-// add party
-- (void)sendAddPartyRequestWithParty: (PMRParty*) party;
-
-// delete party
-- (void)sendDeletePartyRequestWith:(NSString*) partyID;
-
-// update party
-- (void)sendUpdatePartyRequestWith:(PMRParty*) party;
-
-// get user
-- (void)sendGetUserRequestWith:(NSString*) userID;
-
-// get all users
-- (void)sendGetAllUsersRequest;
 
 
 @end

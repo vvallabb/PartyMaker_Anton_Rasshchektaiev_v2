@@ -229,7 +229,7 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
 }
 
 #pragma mark - Register request
-- (void)sendTheRegisterRequestWithEmail: (NSString*) email
+- (void)sendRegisterRequestWithEmail: (NSString*) email
                                password: (NSString*) password
                                    name: (NSString*) name {
     
@@ -256,6 +256,48 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
                                                     } else {
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                                                         NSLog(@"%@", httpResponse);
+                                                        NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
+                                                        
+                                                        BOOL isSuccessfullRegister = [email isEqualToString:[dictionaryFromResponse objectForKey:@"email"]];
+                                                        
+                                                        if (!isSuccessfullRegister) {
+                                                            dispatch_async(dispatch_get_main_queue(), ^{
+                                                                UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Unable to register new user"
+                                                                                                                               message:@"Please check the entered information"
+                                                                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                                                                
+                                                                UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                                                                      handler:^(UIAlertAction * action) {}];
+                                                                
+                                                                [alert addAction:defaultAction];
+                                                                [self.registerScreenVC presentViewController:alert animated:YES completion:nil];
+                                                            });
+                                                        }
+                                                        else {
+                                                            dispatch_async(dispatch_get_main_queue(), ^{
+                                                                __weak UIViewController *weakRegisterScreenVC = self.registerScreenVC;
+                                                                
+                                                                UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Thank you for registration!"
+                                                                                                                               message:@"Please tap OK to contunue."
+                                                                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                                                                
+                                                                UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                                                                      handler:^(UIAlertAction * action) {[weakRegisterScreenVC performSegueWithIdentifier:@"SegueFromRegisterScreenToLoginScreen" sender:nil];}];
+                                                                
+                                                                [alert addAction:defaultAction];
+                                                                [self.registerScreenVC presentViewController:alert animated:YES completion:nil];
+                                                            });
+                                                        }
+                                                        
+                                                        // save access token to NSUserDefaults
+                                                        NSData *accessTokenData = [NSKeyedArchiver archivedDataWithRootObject:[dictionaryFromResponse objectForKey:@"accessToken"]];
+                                                        [[NSUserDefaults standardUserDefaults] setObject:accessTokenData forKey:@"accessToken"];
+                                                        
+                                                        // save creator id to NSUserDefaults
+                                                        NSData *creator_idData = [NSKeyedArchiver archivedDataWithRootObject:[dictionaryFromResponse objectForKey:@"id"]];
+                                                        [[NSUserDefaults standardUserDefaults] setObject:creator_idData forKey:@"id"];
+                                                        
+
                                                     }
                                                 }];
     [dataTask resume];
