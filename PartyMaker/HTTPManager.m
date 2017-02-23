@@ -420,10 +420,24 @@ NSString *  GetBaseEncodedUrlWithPath(NSString * path) {
 /// get request //////
 //////////////////////
 - (NSMutableURLRequest*)getRequestWithType:(NSString*) type
-                                   headers:(NSDictionary*) headers
                                    address:(NSString*) address
                                     params:(NSDictionary*) params {
-    return nil;
+    NSDictionary *headers = @{ @"content-type": @"application/json",
+                               @"accesstoken": @"f3c5a8c4d0e27928906a262f0985b293",
+                               @"cache-control": @"no-cache" };
+    
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:params options:0 error:nil];
+    
+    NSString *completeURL = [APIURLLink stringByAppendingString:address];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:completeURL]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"PATCH"];
+    [request setAllHTTPHeaderFields:headers];
+    [request setHTTPBody:postData];
+
+    return request;
 }
 
 #pragma mark - Get user

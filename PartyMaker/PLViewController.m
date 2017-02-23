@@ -29,13 +29,14 @@
     //[self setUpAddBarButtonItem];
     [self.navigationItem setHidesBackButton:YES];
     
-    self.dataSource = [[TableViewDataSource alloc] initWithTableView:self.tableViewPartyList context:[[PMRCoreDataManager sharedStore] mainThreadContext] reuseIdentifier:[PartyTableViewCell reuseIdentifier] cellConfigurationBlock:^(UITableViewCell *cell, NSManagedObject *item) {
+    self.dataSource = [[PartyTableViewDataSource alloc] initWithTableView:self.tableViewPartyList context:[[PMRCoreDataManager sharedStore] mainThreadContext] reuseIdentifier:[PartyTableViewCell reuseIdentifier] cellConfigurationBlock:^(UITableViewCell *cell, NSManagedObject *item) {
         PMRParty *party = [[PMRParty alloc] initWithManagedObject:(PMRPartyManagedObject *)item];
         PartyTableViewCell *partyCell = (PartyTableViewCell *)cell;
         [partyCell configureWithParty:party];
     }];
     
     self.tableViewPartyList.dataSource = self.dataSource;
+    self.tableViewPartyList.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning {
