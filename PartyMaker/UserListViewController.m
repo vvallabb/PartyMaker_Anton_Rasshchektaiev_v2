@@ -9,6 +9,7 @@
 #import "UserListViewController.h"
 
 @interface UserListViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tableViewUsersList;
 
 @end
 

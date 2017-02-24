@@ -37,7 +37,7 @@
 }
 
 - (void)onSelectFriendButtonClicked:(UIBarButtonItem*) sender {
-    
+    [self performSegueWithIdentifier:@"SegueToUsersList" sender:self];
 }
 
 - (void)onResetButtonClicked:(UIBarButtonItem*) sender {

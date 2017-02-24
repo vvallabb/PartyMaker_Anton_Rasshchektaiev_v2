@@ -31,6 +31,7 @@
 		ECDBD3D01E5F3DC500F6143E /* PartyTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3CF1E5F3DC500F6143E /* PartyTableViewDataSource.m */; };
 		ECDBD3D41E6050E300F6143E /* UserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3D31E6050E300F6143E /* UserListViewController.m */; };
 		ECDBD3D81E60556E00F6143E /* LocationsShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3D71E60556E00F6143E /* LocationsShowViewController.m */; };
+		ECDBD3DC1E60594200F6143E /* UserListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3DB1E60594200F6143E /* UserListTableViewCell.m */; };
 		ECDFE3C81E4E0F700007FBB8 /* NSNotification+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDFE3C71E4E0F700007FBB8 /* NSNotification+Utility.m */; };
 		ECE0FFC21E4BD8AA00BE5FB1 /* PMRCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFB51E4BD8AA00BE5FB1 /* PMRCoreDataManager.m */; };
 		ECE0FFC31E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFB71E4BD8AA00BE5FB1 /* PMRCoreDataManager+Party.m */; };
@@ -86,6 +87,8 @@
 		ECDBD3D31E6050E300F6143E /* UserListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserListViewController.m; sourceTree = "<group>"; };
 		ECDBD3D61E60556E00F6143E /* LocationsShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsShowViewController.h; sourceTree = "<group>"; };
 		ECDBD3D71E60556E00F6143E /* LocationsShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsShowViewController.m; sourceTree = "<group>"; };
+		ECDBD3DA1E60594200F6143E /* UserListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserListTableViewCell.h; sourceTree = "<group>"; };
+		ECDBD3DB1E60594200F6143E /* UserListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserListTableViewCell.m; sourceTree = "<group>"; };
 		ECDFE3C61E4E0F700007FBB8 /* NSNotification+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotification+Utility.h"; sourceTree = "<group>"; };
 		ECDFE3C71E4E0F700007FBB8 /* NSNotification+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotification+Utility.m"; sourceTree = "<group>"; };
 		ECE0FFB41E4BD8AA00BE5FB1 /* PMRCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMRCoreDataManager.h; sourceTree = "<group>"; };
@@ -139,6 +142,7 @@
 			children = (
 				ECDBD3D51E60553600F6143E /* Locations Show VC */,
 				ECDBD3D11E6050C300F6143E /* UserListVC */,
+				ECDBD3D91E60591D00F6143E /* UserListTableViewCell */,
 				ECDBD3C31E5EF9AB00F6143E /* Register Screen VC */,
 				EC1716361E4C9E5F005FFC61 /* Login Screen VC */,
 				EC1716381E4C9EA8005FFC61 /* Party List VC */,
@@ -396,6 +400,15 @@
 			name = "Locations Show VC";
 			sourceTree = "<group>";
 		};
+		ECDBD3D91E60591D00F6143E /* UserListTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				ECDBD3DA1E60594200F6143E /* UserListTableViewCell.h */,
+				ECDBD3DB1E60594200F6143E /* UserListTableViewCell.m */,
+			);
+			name = UserListTableViewCell;
+			sourceTree = "<group>";
+		};
 		ECE0FFB31E4BD89000BE5FB1 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -494,6 +507,7 @@
 				ECE0FFD41E4BDA9A00BE5FB1 /* PMRPartyManagedObject.m in Sources */,
 				EC7609681E49D23F001D7BF7 /* HTTPManager.m in Sources */,
 				ECDBD3A91E5DC39500F6143E /* BasePartyConfigVC.m in Sources */,
+				ECDBD3DC1E60594200F6143E /* UserListTableViewCell.m in Sources */,
 				ECE0FFC81E4BD8AA00BE5FB1 /* PMRPersistanceStore.m in Sources */,
 				ECDBD3C61E5EF9D200F6143E /* RegisterScreenViewController.m in Sources */,
 				ECBF52A51E4CA37A00E0D7B1 /* Model.xcdatamodeld in Sources */,
