@@ -179,15 +179,56 @@ NSString *APIURLLink;
     [dataTask resume];
 }
 
+#pragma mark - Get all Parties
+- (void)sendGetAllPartiesRequest {
+    NSMutableURLRequest *request = [self getRequestWithType:@"GET" address:@"/party/" params:nil];
+    [request setTimeoutInterval:60.0];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            NSLog(@"%@", httpResponse);
+            
+            NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
+            
+            NSArray *allParties = [dictionaryFromResponse objectForKey:@"data"];
+            NSMutableArray *currentUserParties = [[NSMutableArray alloc] init];
+            
+            for (int i = 0; i < allParties.count; i++) {
+                NSString *currentPartyCreatorID = [[allParties[i] objectForKey:@"creator_id"] stringValue];
+                if ([currentPartyCreatorID isEqualToString:[self getCreatorID]]) {
+                    PMRParty *currentParty = [self convertDictionaryToParty:allParties[i]];
+                    
+                    [currentUserParties addObject:currentParty];
+                }
+            }
+            
+            for (int i = 0; i < currentUserParties.count; i++) {
+                [[PMRCoreDataManager sharedStore] addNewParty:currentUserParties[i] completion:^(BOOL success) {
+                    
+                }];
+            }
+        }
+
+    }];
+    
+    [dataTask resume];
+}
+
 # pragma mark - Get Request with parameters
 - (NSMutableURLRequest*)getRequestWithType:(NSString*) type
                                    address:(NSString*) address
                                     params:(NSDictionary*) params {
     NSDictionary *headers = @{ @"content-type": @"application/json",
-                               @"accesstoken": [self getAccessToken],
-                               @"cache-control": @"no-cache" };
+                               @"accesstoken": [self getAccessToken] };
     
-    NSData *postData = [NSJSONSerialization dataWithJSONObject:params options:0 error:nil];
+    NSData *postData = [[NSData alloc] init];
+    if (params) {
+        postData = [NSJSONSerialization dataWithJSONObject:params options:0 error:nil];
+    }
     
     NSString *completeURL = [APIURLLink stringByAppendingString:address];
     
@@ -218,6 +259,10 @@ NSString *APIURLLink;
     NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"accessToken"];
     NSString *accessToken = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     
+    if (!accessToken) {
+        accessToken = @"Token undefined";
+    }
+    
     return accessToken;
 }
 
@@ -236,15 +281,34 @@ NSString *APIURLLink;
     NSError *error = nil;
     NSData *postData = [NSJSONSerialization dataWithJSONObject:dictionary options:0 error:&error];
     
+    if (error) {
+        NSLog(@"%@", error);
+    }
+    
     return postData;
 }
 
 // deserialization
 - (NSDictionary*) deserializationWithData: (NSData *) data {
     NSError *error = nil;
-    NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:(NSData *)data options:NSJSONReadingAllowFragments error:&error];
     
-    return dataDictionary;
+    id dataFromResponse = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    
+    if (error) {
+        NSLog(@"%@", error);
+    }
+    
+    NSMutableDictionary *responseDictionary = [[NSMutableDictionary alloc] init];
+    
+    if ([dataFromResponse isKindOfClass:[NSDictionary class]]) {
+        return dataFromResponse;
+    }
+    else {
+        if (dataFromResponse) {
+            [responseDictionary setValue:dataFromResponse forKey:@"data"];
+        }
+    }
+    return responseDictionary;
 }
 
 #pragma mark - Party Convertion

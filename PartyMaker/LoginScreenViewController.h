@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "HTTPManager+Requests.h"
 
 @interface LoginScreenViewController : UIViewController <UITextFieldDelegate>
-
-- (void) setLabelIncorrectInoutText: (NSString*) text;
 
 @end

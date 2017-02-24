@@ -1407,6 +1407,7 @@
                         <outlet property="textFieldPartyName" destination="8o8-Lr-XOE" id="dy2-Tm-I0v"/>
                         <outlet property="textViewDescription" destination="pmZ-Wg-sAB" id="2zO-Hp-fc2"/>
                         <outlet property="textViewDescriptionContainer" destination="bXB-VG-j2D" id="1TB-in-XwP"/>
+                        <segue destination="84u-SP-8UL" kind="show" identifier="SegueFromEditPartyToPartyList" id="FBQ-Ft-U8S"/>
                     </connections>
                 </viewController>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Hjj-1h-BXE">
@@ -2168,7 +2169,7 @@
         <image name="settings.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4cJ-hY-ULt"/>
+        <segue reference="FBQ-Ft-U8S"/>
         <segue reference="gWj-qs-N9b"/>
     </inferredMetricsTieBreakers>
 </document>

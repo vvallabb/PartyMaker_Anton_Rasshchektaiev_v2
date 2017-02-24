@@ -116,7 +116,7 @@
 - (void)refreshControlAction:(UIRefreshControl *)refreshControl {
     [[PMRCoreDataManager sharedStore] performWriteOperation:^(NSManagedObjectContext * _Nonnull context) {
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Thing" inManagedObjectContext:context];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"PMRPartyManagedObject" inManagedObjectContext:context];
         [fetchRequest setEntity:entity];
         
         NSError *error = nil;

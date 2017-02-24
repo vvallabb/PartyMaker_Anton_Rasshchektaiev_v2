@@ -49,6 +49,7 @@
     [currentParty setLatitude:self.party.latitude];
     [currentParty setLongtitude:self.party.longtitude];
 
+    [self performSegueWithIdentifier:@"SegueFromEditPartyToPartyList" sender:nil];
 }
 
 #pragma mark - Back Button Action

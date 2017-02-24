@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "LoginScreenViewController.h"
 #import "CreatePartyViewController.h"
+
 #import "PMRParty.h"
+#import "PMRCoreDataManager+Party.h"
 
 @interface HTTPManager : NSObject
 
@@ -38,6 +40,9 @@
 
 // update party
 - (void)sendUpdatePartyRequestWith:(PMRParty*) party;
+
+// get all parties
+- (void)sendGetAllPartiesRequest;
 
 #pragma mark - Supporting methods
 

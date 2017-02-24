@@ -27,9 +27,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     [self setUpTextFieldLogin];
     [self setUpTextFieldPassword];
+    
+    [[PMRCoreDataManager sharedStore] deleteAllPartiesWithIDcompletion:^(BOOL success) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -100,8 +103,11 @@
     [[HTTPManager sharedInstance] sendLoginRequestWithEmail:email password:password];
 }
 
-- (void)setLabelIncorrectInoutText:(NSString *)text {
-    self.labelIncorrectInput.text = text;
+// send Get All Parties Request in case of access Login
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"SegueFromLoginScreen"]) {
+        [[HTTPManager sharedInstance] sendGetAllPartiesRequest];
+    }
 }
 
 /*
