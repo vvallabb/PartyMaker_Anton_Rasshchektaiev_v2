@@ -11,9 +11,12 @@
 #import "HTTPManager.h"
 #import "PMRCoreDataManager+Party.h"
 #import "PMRPartyManagedObject.h"
+#import "LocationViewController.h"
 
 @interface EditPartyViewController : BasePartyConfigVC
 
 @property PMRParty *party;
+
+
 
 @end

@@ -35,7 +35,7 @@
 - (IBAction)onSaveButtonClicked:(UIBarButtonItem *)sender {
     NSString *logoImageName = [[self getImageNamesArray] objectAtIndex:self.pageControlLogo.currentPage];
         
-    self.party = [[PMRParty alloc] initWithPartyID:self.party.partyID name:self.textFieldPartyName.text startDate:[self getDateWithSlider:self.sliderStartTime] endDate:[self getDateWithSlider:self.sliderEndTime] logoImageName:logoImageName descriptionText:self.textViewDescription.text creationDate:[[NSDate alloc] init] modificationDate:nil creatorID:self.buttonChooseLocation.titleLabel.text latitude:@"latitude" longtitude:@"longtitude"];
+    self.party = [[PMRParty alloc] initWithPartyID:self.party.partyID name:self.textFieldPartyName.text startDate:[self getDateWithSlider:self.sliderStartTime] endDate:[self getDateWithSlider:self.sliderEndTime] logoImageName:logoImageName descriptionText:self.textViewDescription.text creationDate:self.buttonChooseLocation.titleLabel.text modificationDate:nil creatorID:self.buttonChooseLocation.titleLabel.text latitude:self.party.latitude longtitude:self.party.longtitude];
     
     [[HTTPManager sharedInstance] sendUpdatePartyRequestWith:self.party];
     
@@ -87,7 +87,6 @@
     [self.pageControlLogo setCurrentPage:logoID];
     
     [self.textViewDescription setText:self.party.descriptionText];
-    [self.buttonChooseLocation setTitle:self.party.creatorID forState:UIControlStateNormal];
 }
 
 // separate configuration for scroll view
@@ -95,6 +94,20 @@
 - (void)configureScrollView {
     CGPoint contentOffset = CGPointMake(self.pageControlLogo.currentPage * self.scrollViewLogo.frame.size.width, 0);
     [self.scrollViewLogo setContentOffset:contentOffset animated:YES];
+}
+- (IBAction)onButtonChooseLocationClicked:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"SegueFromEditPartyToMap" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.destinationViewController isKindOfClass:[LocationViewController class]]) {
+        LocationViewController *locationVC = (LocationViewController*) segue.destinationViewController;
+        if (locationVC) {
+            locationVC.editPartyVC = self;
+        }
+
+    }
 }
 
 /*

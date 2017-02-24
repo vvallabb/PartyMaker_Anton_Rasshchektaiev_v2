@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "HTTPManager.h"
 #import "UserListTableViewCell.h"
+#import "LocationsShowViewController.h"
 
 @interface UserListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property NSMutableArray *partiesArray;
 
 @property (strong, nonatomic) NSArray* usersArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableViewUsersList;

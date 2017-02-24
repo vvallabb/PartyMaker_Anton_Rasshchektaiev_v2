@@ -28,7 +28,7 @@
             partyObject.endDate = party.endDate;
             partyObject.logoImageName = party.logoImageName;
             partyObject.descriptionText = party.descriptionText;
-            partyObject.creationDate = party.creationDate;
+            partyObject.creationDate = nil;
             partyObject.modificationDate = party.modificationDate;
             partyObject.creatorID = party.creatorID;
             partyObject.longtitude = party.longtitude;

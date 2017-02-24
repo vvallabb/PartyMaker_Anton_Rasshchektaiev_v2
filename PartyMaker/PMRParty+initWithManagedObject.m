@@ -18,7 +18,7 @@
                          endDate:managedObject.endDate
                    logoImageName:managedObject.logoImageName
                  descriptionText:managedObject.descriptionText
-                    creationDate:managedObject.creationDate
+                    creationDate:nil
                 modificationDate:managedObject.modificationDate
                        creatorID:managedObject.creatorID
                         latitude:managedObject.latitude

@@ -68,6 +68,12 @@ static double SOFTHEME_LONGTITUDE = 30.518234f;
     [self setUpLocationManager];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    self.editPartyVC = nil;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -115,14 +121,26 @@ static double SOFTHEME_LONGTITUDE = 30.518234f;
 
 #pragma mark - Handle the Done button
 - (void) onDoneButtonClicked:(UIBarButtonItem*) sender {
-    NSArray *viewControllers = [self.navigationController viewControllers];
-    XIBViewController *createPartyViewController = [viewControllers objectAtIndex:viewControllers.count - 2];
-    
     CLLocationCoordinate2D currentPinLocation = [self getPinLocation];
-    [createPartyViewController setPartyLatitude:currentPinLocation.latitude andLongtitude:currentPinLocation.longitude];
-    [createPartyViewController setChooseLocationButtonTitle:self.address];
     
-    [self.navigationController popToViewController:createPartyViewController animated:YES];
+    if (self.editPartyVC) {
+        EditPartyViewController *editPartyVC = (EditPartyViewController*) self.editPartyVC;
+        editPartyVC.party.latitude = [NSString stringWithFormat:@"%f", currentPinLocation.latitude];
+        editPartyVC.party.longtitude = [NSString stringWithFormat:@"%f", currentPinLocation.longitude];
+        
+        [editPartyVC setChooseLocationButtonTitle:self.address];
+        
+        [self.navigationController popToViewController:editPartyVC animated:YES];
+    }
+    else {
+        NSArray *viewControllers = [self.navigationController viewControllers];
+        XIBViewController *createPartyViewController = [viewControllers objectAtIndex:viewControllers.count - 2];
+        [createPartyViewController setPartyLatitude:currentPinLocation.latitude andLongtitude:currentPinLocation.longitude];
+        [createPartyViewController setChooseLocationButtonTitle:self.address];
+        
+        [self.navigationController popToViewController:createPartyViewController animated:YES];
+    }
+    
 }
 
 #pragma mark - Handle the pin drag

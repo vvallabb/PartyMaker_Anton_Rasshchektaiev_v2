@@ -1262,7 +1262,7 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5.4"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="onButtonChooseLocationClicked:" destination="ivh-N7-rzJ" eventType="touchUpInside" id="1se-Ir-in2"/>
+                                            <action selector="onButtonChooseLocationClicked:" destination="Rwa-X8-36C" eventType="touchUpInside" id="iuQ-ll-llT"/>
                                         </connections>
                                     </button>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzG-nK-eKe">
@@ -1386,7 +1386,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="buttonChooseDate" destination="a3y-hG-OlE" id="L3b-eV-o9o"/>
-                        <outlet property="buttonChooseLocation" destination="ORP-na-CIm" id="yxQ-Px-Obj"/>
+                        <outlet property="buttonChooseLocation" destination="ORP-na-CIm" id="XQv-3W-pN9"/>
                         <outlet property="constraintChooseDateButtonTopSpace" destination="iBf-cE-BLH" id="PSv-Gx-ORJ"/>
                         <outlet property="constraintDescriptionViewContainerBottomSpace" destination="sHd-pk-Cbc" id="FhG-6W-Cg7"/>
                         <outlet property="constraintFocusCircleTopSpace" destination="j6P-bC-Scr" id="rOa-TP-lsr"/>
@@ -1410,6 +1410,7 @@
                         <outlet property="textViewDescription" destination="pmZ-Wg-sAB" id="2zO-Hp-fc2"/>
                         <outlet property="textViewDescriptionContainer" destination="bXB-VG-j2D" id="1TB-in-XwP"/>
                         <segue destination="84u-SP-8UL" kind="show" identifier="SegueFromEditPartyToPartyList" id="FBQ-Ft-U8S"/>
+                        <segue destination="0pJ-yR-LqI" kind="show" identifier="SegueFromEditPartyToMap" id="tMt-fk-Off"/>
                     </connections>
                 </viewController>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Hjj-1h-BXE">
@@ -2153,7 +2154,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dQa-XS-0Yd">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="-44" width="320" height="612"/>
                                 <color key="backgroundColor" red="0.17984494566917419" green="0.19568666815757751" blue="0.22064140439033508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.17984494566917419" green="0.19568666815757751" blue="0.22064140439033508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -2190,12 +2191,13 @@
                         <constraints>
                             <constraint firstItem="Xvr-QU-lue" firstAttribute="top" secondItem="dQa-XS-0Yd" secondAttribute="bottom" id="13V-GW-bsd"/>
                             <constraint firstAttribute="trailing" secondItem="dQa-XS-0Yd" secondAttribute="trailing" id="HAx-bN-QqX"/>
-                            <constraint firstItem="dQa-XS-0Yd" firstAttribute="top" secondItem="GP2-ue-ZEa" secondAttribute="bottom" id="J8M-Sk-tji"/>
+                            <constraint firstItem="dQa-XS-0Yd" firstAttribute="top" secondItem="GP2-ue-ZEa" secondAttribute="bottom" constant="-64" id="J8M-Sk-tji"/>
                             <constraint firstItem="dQa-XS-0Yd" firstAttribute="leading" secondItem="zdD-52-uYX" secondAttribute="leading" id="Kmy-om-bDA"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="tableViewUsersList" destination="dQa-XS-0Yd" id="Ijc-Xr-t1o"/>
+                        <segue destination="BXa-Nr-R5Q" kind="show" identifier="SegueFromUserListToMap" id="X7R-Dz-e9R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUq-XJ-LNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2215,7 +2217,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Pcw-oH-I76">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BXa-Nr-R5Q" id="fku-oi-h3G"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2228,6 +2233,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="P73-fh-ANT"/>
                     <connections>
+                        <outlet property="mapView" destination="Pcw-oH-I76" id="UPs-iP-RsQ"/>
                         <segue destination="dHr-cI-ImW" kind="show" identifier="SegueToUsersList" id="eZI-El-M2Q"/>
                     </connections>
                 </viewController>
@@ -2284,7 +2290,9 @@
         <image name="settings.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="tMt-fk-Off"/>
         <segue reference="FBQ-Ft-U8S"/>
         <segue reference="gWj-qs-N9b"/>
+        <segue reference="X7R-Dz-e9R"/>
     </inferredMetricsTieBreakers>
 </document>

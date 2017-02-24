@@ -21,7 +21,7 @@
 - (void) setPartyLatitude:(float) latitude
        andLongtitude:(float) longtitude;
 
-- (void) setChooseLocationButtonTitle:(NSString*) title;
+//- (void) setChooseLocationButtonTitle:(NSString*) title;
 
 - (void) savePartyToCoreData;
 

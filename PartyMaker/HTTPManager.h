@@ -49,6 +49,9 @@
 // get all users
 - (void)sendGetAllUsersRequest;
 
+// get all parties with creatorID
+- (void)getSendGetAllPartiesWithCreatorIDRequest:(NSNumber*) creatorID;
+
 #pragma mark - Supporting methods
 
 +(instancetype) sharedInstance;

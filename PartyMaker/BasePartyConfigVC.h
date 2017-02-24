@@ -61,4 +61,6 @@
 - (NSString*) getTimeStringForSliderLabel: (float) sliderValue;
 - (NSDate*) getDateWithSlider:(UISlider*) slider;
 
+- (void) setChooseLocationButtonTitle:(NSString*) title;
+
 @end

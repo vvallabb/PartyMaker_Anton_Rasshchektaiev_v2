@@ -17,7 +17,7 @@
                          endDate:[NSDate dateWithTimeIntervalSince1970:([dictionary[@"end_time"] doubleValue])]
                    logoImageName:dictionary[@"logo_id"]
                  descriptionText:dictionary[@"comment"]
-                    creationDate:[NSDate date]//dictionary[@"creationDate"]
+                    creationDate:nil//dictionary[@"creationDate"]
                 modificationDate:[NSDate date]//dictionary[@"modificationDate"]
                        creatorID:dictionary[@"creator_id"]
                         latitude:dictionary[@"latitude"]

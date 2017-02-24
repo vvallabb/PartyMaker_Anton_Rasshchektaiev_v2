@@ -27,8 +27,13 @@
     // Configure the view for the selected state
 }
 
-- (void)configureWithUserName:(NSString*) userName {
+- (void)configureWithUserName:(NSString*) userName creatorID:(NSNumber*) creatorID{
     self.labelUserName.text = userName;
+    self.creatorID = creatorID;
+    
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [[UIColor alloc] initWithRed:68/255.f green:73/255.f blue:83/255.f alpha:1.f];
+    [self setSelectedBackgroundView:bgColorView];
 }
 
 - (void)prepareForReuse {

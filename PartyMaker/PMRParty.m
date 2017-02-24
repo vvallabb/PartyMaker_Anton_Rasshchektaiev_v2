@@ -20,7 +20,7 @@
                         endDate:(NSDate*)endDate
                   logoImageName:(NSString*)logoImageName
                 descriptionText:(NSString*)descriptionText
-                   creationDate:(NSDate*)creationDate
+                   creationDate:(NSString*)creationDate
                modificationDate:(NSDate*)modificationDate
                       creatorID:(NSString*)creatorID
                        latitude:(NSString*)latitude

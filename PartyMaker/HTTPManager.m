@@ -218,6 +218,48 @@ NSString *APIURLLink;
     [dataTask resume];
 }
 
+- (void)getSendGetAllPartiesWithCreatorIDRequest:(NSNumber*) creatorID {
+    NSMutableURLRequest *request = [self getRequestWithType:@"GET" address:@"/party/" params:nil];
+    [request setTimeoutInterval:60.0];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            NSLog(@"%@", httpResponse);
+            
+            NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
+            
+            NSArray *allParties = [dictionaryFromResponse objectForKey:@"data"];
+            NSMutableArray *currentUserParties = [[NSMutableArray alloc] init];
+            
+            for (int i = 0; i < allParties.count; i++) {
+                NSString *currentPartyCreatorID = [[allParties[i] objectForKey:@"creator_id"] stringValue];
+                if ([currentPartyCreatorID isEqualToString:[creatorID stringValue]]) {
+                    PMRParty *currentParty = [self convertDictionaryToParty:allParties[i]];
+                    
+                    [currentUserParties addObject:currentParty];
+                }
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UserListViewController *userListVC = (UserListViewController*) self.userListViewController;
+                
+                for (int i = 0; i < currentUserParties.count; i++) {
+                    [userListVC.partiesArray addObject:currentUserParties[i]];
+                }
+            });
+            
+            
+        }
+        
+    }];
+    
+    [dataTask resume];
+}
+
 #pragma mark - Get all Users
 - (void)sendGetAllUsersRequest {
     NSMutableURLRequest *request = [self getRequestWithType:@"GET" address:@"/user/" params:nil];

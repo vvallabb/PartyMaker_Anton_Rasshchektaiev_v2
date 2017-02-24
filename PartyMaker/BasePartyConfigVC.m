@@ -239,6 +239,10 @@
     return dateWithTimeFromSlider;
 }
 
+- (void) setChooseLocationButtonTitle:(NSString *)title {
+    [self.buttonChooseLocation setTitle:title forState:UIControlStateNormal];
+}
+
 
 /*
 #pragma mark - Navigation

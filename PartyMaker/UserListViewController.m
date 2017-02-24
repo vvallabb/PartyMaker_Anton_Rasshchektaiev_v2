@@ -10,6 +10,8 @@
 
 @interface UserListViewController ()
 
+
+
 @end
 
 @implementation UserListViewController
@@ -18,7 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.tableViewUsersList.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    [self.tableViewUsersList setSeparatorColor:[UIColor colorWithRed:68/255.f green:73/255.f blue:83/255.f alpha:1.f]];
+    [self.tableViewUsersList setSeparatorColor:[UIColor colorWithRed:88/255.f green:93/255.f blue:103/255.f alpha:1.f]];
     self.tableViewUsersList.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     
     [[HTTPManager sharedInstance] setUserListViewController:self];
@@ -26,6 +28,9 @@
     
     self.tableViewUsersList.dataSource = self;
     self.tableViewUsersList.delegate = self;
+    
+    [self setUpBarButtonItems];
+    self.partiesArray = [[NSMutableArray alloc] init];
     
 }
 
@@ -54,8 +59,9 @@
     
     NSDictionary *currentUser = [self.usersArray objectAtIndex:indexPath.row];
     NSString *currentUserName = [currentUser objectForKey:@"name"];
+    NSNumber *currentUserCreatorID = [currentUser objectForKey:@"id"];
     
-    [cell configureWithUserName:currentUserName];
+    [cell configureWithUserName:currentUserName creatorID:currentUserCreatorID];
     
     return cell;
 }
@@ -64,6 +70,41 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return self.view.frame.size.height / 15;
+}
+
+#pragma mark - Set up BarButtonItems
+- (void)setUpBarButtonItems {
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(onCancelButtonClicked:)];
+    
+    self.navigationItem.leftBarButtonItem = cancelButton;
+    
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(onDoneButtonClicked:)];
+    
+    self.navigationItem.rightBarButtonItem = doneButton;
+    
+}
+
+- (void)onCancelButtonClicked:(UIBarButtonItem*) sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)onDoneButtonClicked:(UIBarButtonItem*) sender {
+    NSArray *selectedIndexPaths = [self.tableViewUsersList indexPathsForSelectedRows];
+    
+    for (int i = 0; i < selectedIndexPaths.count; i++) {
+        UserListTableViewCell *cell = [self.tableViewUsersList cellForRowAtIndexPath:selectedIndexPaths[i]];
+        
+        [[HTTPManager sharedInstance] getSendGetAllPartiesWithCreatorIDRequest:cell.creatorID];
+        }
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self performSegueWithIdentifier:@"SegueFromUserListToMap" sender:self];
+    });
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    LocationsShowViewController *locationShowVC = (LocationsShowViewController*) segue.destinationViewController;
+    locationShowVC.partiesArray = self.partiesArray;
 }
 
 /*

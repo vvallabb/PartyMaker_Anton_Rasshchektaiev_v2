@@ -10,7 +10,10 @@
 
 @interface UserListTableViewCell : UITableViewCell
 
-- (void)configureWithUserName:(NSString*) userName;
+@property (nonatomic, strong) NSNumber *creatorID;
+
+- (void)configureWithUserName:(NSString*) userName
+                    creatorID:(NSNumber*) creatorID;
 
 + (NSString*)reuseIdentifier;
 

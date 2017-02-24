@@ -15,7 +15,7 @@
 @property (nonatomic, readwrite) NSString *name;
 @property (nonatomic, readwrite) NSString *logoImageName;
 @property (nonatomic, readwrite) NSString *descriptionText;
-@property (nonatomic, readwrite) NSDate *creationDate;
+@property (nonatomic, readwrite) NSString *creationDate;
 @property (nonatomic, readwrite) NSDate *modificationDate;
 @property (nonatomic, readwrite) NSString *creatorID;
 @property (nonatomic, readwrite) NSString *latitude;
@@ -27,7 +27,7 @@
                         endDate:(NSDate*)endDate
                   logoImageName:(NSString*)logoImageName
                 descriptionText:(NSString*)descriptionText
-                   creationDate:(NSDate*)creationDate
+                   creationDate:(NSString*)creationDate
                modificationDate:(NSDate*)modificationDate
                       creatorID:(NSString*)creatorID
                        latitude:(NSString*)latitude

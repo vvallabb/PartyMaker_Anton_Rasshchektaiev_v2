@@ -66,7 +66,7 @@
 - (void) doTheSaveAction {
     NSString *logoImageName = [[self getImageNamesArray] objectAtIndex:self.pageControlLogo.currentPage];
     
-    self.party = [[PMRParty alloc] initWithPartyID:@"234" name:self.textFieldPartyName.text startDate:[self getDateWithSlider:self.sliderStartTime] endDate:[self getDateWithSlider:self.sliderEndTime] logoImageName:logoImageName descriptionText:self.textViewDescription.text creationDate:[[NSDate alloc] init] modificationDate:nil creatorID:self.buttonChooseLocation.titleLabel.text latitude:@"latitude" longtitude:@"longtitude"];
+    self.party = [[PMRParty alloc] initWithPartyID:@"234" name:self.textFieldPartyName.text startDate:[self getDateWithSlider:self.sliderStartTime] endDate:[self getDateWithSlider:self.sliderEndTime] logoImageName:logoImageName descriptionText:self.textViewDescription.text creationDate:self.buttonChooseLocation.titleLabel.text modificationDate:nil creatorID:self.buttonChooseLocation.titleLabel.text latitude:self.party.latitude longtitude:self.party.longtitude];
     
     [[HTTPManager sharedInstance] sendAddPartyRequestWithParty:self.party];
     
@@ -95,9 +95,9 @@
     self.party.longtitude = [NSString stringWithFormat:@"%f", longtitude];;
 }
 
-- (void) setChooseLocationButtonTitle:(NSString *)title {
-    [self.buttonChooseLocation setTitle:title forState:UIControlStateNormal];
-}
+//- (void) setChooseLocationButtonTitle:(NSString *)title {
+//    [self.buttonChooseLocation setTitle:title forState:UIControlStateNormal];
+//}
 
 
 

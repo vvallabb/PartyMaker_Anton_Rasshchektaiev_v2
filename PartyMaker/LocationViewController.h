@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "BaseLocationViewController.h"
+#import "EditPartyViewController.h"
 
 @interface LocationViewController : BaseLocationViewController
+
+@property (nonatomic, strong) UIViewController *editPartyVC;
 
 @end
