@@ -37,7 +37,6 @@
     }];
     
     self.tableViewPartyList.dataSource = self.dataSource;
-    //self.tableViewPartyList.dataSource = self;
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self

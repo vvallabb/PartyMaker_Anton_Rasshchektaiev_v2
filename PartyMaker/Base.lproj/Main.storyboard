@@ -2140,10 +2140,10 @@
             </objects>
             <point key="canvasLocation" x="-2611.875" y="-88.732394366197184"/>
         </scene>
-        <!--User List View Controller-->
+        <!--Users List-->
         <scene sceneID="RJw-Fn-XIv">
             <objects>
-                <viewController id="dHr-cI-ImW" customClass="UserListViewController" sceneMemberID="viewController">
+                <viewController title="Users List" id="dHr-cI-ImW" customClass="UserListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GP2-ue-ZEa"/>
                         <viewControllerLayoutGuide type="bottom" id="Xvr-QU-lue"/>
@@ -2152,9 +2152,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dQa-XS-0Yd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dQa-XS-0Yd">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.17984494566917419" green="0.19568666815757751" blue="0.22064140439033508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.17984494566917419" green="0.19568666815757751" blue="0.22064140439033508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserListTableViewCell" id="rcy-Gz-nUC" customClass="UserListTableViewCell">
@@ -2178,6 +2178,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="689-Ku-0g7" secondAttribute="trailing" constant="75" id="vuQ-6j-rM2"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.17984494566917419" green="0.19568666815757751" blue="0.22064140439033508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="labelUserName" destination="689-Ku-0g7" id="6mQ-5S-0kg"/>
                                         </connections>

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HTTPManager.h"
+#import "UserListTableViewCell.h"
 
-@interface UserListViewController : UIViewController
+@interface UserListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) NSArray* usersArray;
+@property (weak, nonatomic) IBOutlet UITableView *tableViewUsersList;
 
 @end

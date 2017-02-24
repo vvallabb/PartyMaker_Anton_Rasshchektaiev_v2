@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "LoginScreenViewController.h"
 #import "CreatePartyViewController.h"
+#import "UserListViewController.h"
 
 #import "PMRParty.h"
 #import "PMRCoreDataManager+Party.h"
@@ -18,6 +19,7 @@
 @property (nonatomic, strong) UIViewController *loginScreenVC;
 @property (nonatomic, strong) UIViewController *registerScreenVC;
 @property (nonatomic, strong) UIViewController *createPartyVC;
+@property (nonatomic, strong) UIViewController *userListViewController;
 
 @property (nonatomic, strong) NSURLSession *defaultSession;
 

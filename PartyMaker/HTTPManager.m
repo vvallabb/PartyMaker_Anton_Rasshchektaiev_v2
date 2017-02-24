@@ -229,6 +229,16 @@ NSString *APIURLLink;
         } else {
             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
             NSLog(@"%@", httpResponse);
+            
+            NSDictionary *dictionaryFromResponse = [self deserializationWithData:data];
+            NSArray *usersArray = [dictionaryFromResponse objectForKey:@"data"];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UserListViewController *userListVC = (UserListViewController*) self.userListViewController;
+                [userListVC setUsersArray:usersArray];
+                [[userListVC tableViewUsersList] reloadData];
+                
+            });
         }
     }];
     
