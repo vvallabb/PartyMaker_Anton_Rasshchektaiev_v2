@@ -25,6 +25,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="QLl-0P-8qd" kind="relationship" relationship="viewControllers" id="ECc-h8-pWD"/>
+                        <segue destination="EUR-ys-IVv" kind="relationship" relationship="viewControllers" id="se4-Db-nhY"/>
                         <segue destination="38y-lf-j0h" kind="relationship" relationship="viewControllers" id="jxO-RM-UkN"/>
                     </connections>
                 </tabBarController>
@@ -1981,7 +1982,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53z-qK-hqD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2612" y="-1019"/>
+            <point key="canvasLocation" x="-2612" y="-1067"/>
         </scene>
         <!--Login Screen View Controller-->
         <scene sceneID="XNZ-Oz-1Q9">
@@ -2138,6 +2139,53 @@
             </objects>
             <point key="canvasLocation" x="-2611.875" y="-88.732394366197184"/>
         </scene>
+        <!--Locations Show View Controller-->
+        <scene sceneID="OD5-Du-WfK">
+            <objects>
+                <viewController id="BXa-Nr-R5Q" customClass="LocationsShowViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PHz-Ru-BP3"/>
+                        <viewControllerLayoutGuide type="bottom" id="qTu-Pu-oLH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qst-Fo-H2e">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Pcw-oH-I76">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qTu-Pu-oLH" firstAttribute="top" secondItem="Pcw-oH-I76" secondAttribute="bottom" id="LEm-tL-vYR"/>
+                            <constraint firstItem="Pcw-oH-I76" firstAttribute="top" secondItem="PHz-Ru-BP3" secondAttribute="bottom" id="ZR6-d9-8A4"/>
+                            <constraint firstAttribute="trailing" secondItem="Pcw-oH-I76" secondAttribute="trailing" id="rSs-to-XYF"/>
+                            <constraint firstItem="Pcw-oH-I76" firstAttribute="leading" secondItem="Qst-Fo-H2e" secondAttribute="leading" id="tiB-cH-LQt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="P73-fh-ANT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4TD-05-cdH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-879" y="-1891"/>
+        </scene>
+        <!--Location-->
+        <scene sceneID="ZaP-Ys-Tl2">
+            <objects>
+                <navigationController id="EUR-ys-IVv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Location" image="location.png" id="xX1-c4-kks"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qq6-yz-xqm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BXa-Nr-R5Q" kind="relationship" relationship="rootViewController" id="u9T-NR-1uf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="urV-Og-7gq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-879" y="-1150"/>
+        </scene>
         <!--Create Party-->
         <scene sceneID="HAW-Dx-YMF">
             <objects>
@@ -2164,6 +2212,7 @@
         <image name="add.png" width="24" height="24"/>
         <image name="cocktail.png" width="24" height="24"/>
         <image name="leftSliderImg.png" width="44" height="31"/>
+        <image name="location.png" width="24" height="24"/>
         <image name="login_background.png" width="320" height="568"/>
         <image name="rightSliderImg.png" width="42" height="32"/>
         <image name="settings.png" width="24" height="24"/>

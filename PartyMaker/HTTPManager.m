@@ -218,6 +218,23 @@ NSString *APIURLLink;
     [dataTask resume];
 }
 
+#pragma mark - Get all Users
+- (void)sendGetAllUsersRequest {
+    NSMutableURLRequest *request = [self getRequestWithType:@"GET" address:@"/user/" params:nil];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            NSLog(@"%@", httpResponse);
+        }
+    }];
+    
+    [dataTask resume];
+}
+
 # pragma mark - Get Request with parameters
 - (NSMutableURLRequest*)getRequestWithType:(NSString*) type
                                    address:(NSString*) address

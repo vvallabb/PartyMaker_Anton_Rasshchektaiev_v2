@@ -44,6 +44,9 @@
 // get all parties
 - (void)sendGetAllPartiesRequest;
 
+// get all users
+- (void)sendGetAllUsersRequest;
+
 #pragma mark - Supporting methods
 
 +(instancetype) sharedInstance;
