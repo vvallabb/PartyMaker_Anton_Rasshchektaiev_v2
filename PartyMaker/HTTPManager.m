@@ -27,9 +27,6 @@ NSString *APIURLLink;
 
 #pragma mark - Login
 - (void)sendLoginRequestWithEmail: (NSString*) email password: (NSString*) password {
-    email = @"anton11131113@gmail.com";
-    password = @"gg11131113";
-    
     NSDictionary *parameters = @{ @"email": email,
                                   @"password": password};
     
@@ -53,6 +50,19 @@ NSString *APIURLLink;
             if (isCorrectEmail) {
                 dispatch_async(dispatch_get_main_queue(), ^(void){
                     [self.loginScreenVC performSegueWithIdentifier:@"SegueFromLoginScreen" sender:self];
+                });
+            }
+            else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Unable to log in"
+                                                                                   message:@"Please check your email and password"
+                                                                            preferredStyle:UIAlertControllerStyleAlert];
+                    
+                    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                          handler:^(UIAlertAction * action) {}];
+                    
+                    [alert addAction:defaultAction];
+                    [self.loginScreenVC presentViewController:alert animated:YES completion:nil];
                 });
             }
         }

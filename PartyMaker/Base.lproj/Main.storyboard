@@ -807,6 +807,9 @@
                             <constraint firstItem="4oh-65-GnN" firstAttribute="top" secondItem="2c6-oN-7ST" secondAttribute="bottom" id="nz5-Ba-CZY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="4oh-65-GnN" id="e1d-Aj-y6k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oOx-Ij-1wg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1674,7 +1677,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onLocationButtonClicked:" destination="h49-pR-L3f" eventType="touchUpInside" id="m1N-Gq-Kzk"/>
-                                    <segue destination="0dw-pJ-JL6" kind="show" id="Vvn-x3-tv6"/>
+                                    <segue destination="0dw-pJ-JL6" kind="show" id="8C0-eq-t3H"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2291,7 +2294,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tMt-fk-Off"/>
-        <segue reference="FBQ-Ft-U8S"/>
+        <segue reference="4cJ-hY-ULt"/>
         <segue reference="gWj-qs-N9b"/>
         <segue reference="X7R-Dz-e9R"/>
     </inferredMetricsTieBreakers>

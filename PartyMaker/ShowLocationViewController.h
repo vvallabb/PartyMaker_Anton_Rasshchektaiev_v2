@@ -7,6 +7,7 @@
 //
 
 #import "BaseLocationViewController.h"
+#import "PMRParty.h"
 
 @interface ShowLocationViewController : BaseLocationViewController
 

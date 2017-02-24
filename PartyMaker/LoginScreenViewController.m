@@ -42,7 +42,7 @@
 
 - (void)setUpTextFieldLogin {
     UIColor *placeHolderColor = [[UIColor alloc] initWithRed:76/266.f green:82/255.f blue:92/255.f alpha:1.f];
-    self.textFieldLogin.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Login" attributes:@{NSForegroundColorAttributeName: placeHolderColor}];
+    self.textFieldLogin.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{NSForegroundColorAttributeName: placeHolderColor}];
     
     [self.textFieldLogin setReturnKeyType:UIReturnKeyDone];
 }

@@ -101,7 +101,7 @@
 - (void)setUpDescriptionLabel {
     NSString *descriptionText = self.party.descriptionText;
     
-    [self.labelDescription setText:[descriptionText  stringByAppendingString:self.party.partyID]];
+    [self.labelDescription setText:descriptionText];
 }
 
 // set up date label
@@ -133,9 +133,7 @@
 
 #pragma mark - Set up image logo
 
-//////////////////////////////////
-// change later! contains crutch//
-//////////////////////////////////
+// warning! magic numbers!
 - (void) setUpImageLogo {
     // separate handling no alcohol and coconut cocktail images
     
