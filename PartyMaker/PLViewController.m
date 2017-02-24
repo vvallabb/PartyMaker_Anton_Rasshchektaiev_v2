@@ -8,7 +8,7 @@
 
 #import "PLViewController.h"
 
-@interface PLViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface PLViewController () <UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewPartyList;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *rightBarButtonItem;
@@ -63,7 +63,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-// for UITableViewDelegate protocol
+#pragma mark - UITableViewDelegate protocol
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSArray *parties = [[PMRCoreDataManager sharedStore] getParties];
     return parties.count;
@@ -73,20 +73,7 @@
     return 1;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    // not implemented!!!
-    PartyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[PartyTableViewCell reuseIdentifier]];
-    
-    if (!cell) {
-        cell = [[PartyTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[PartyTableViewCell reuseIdentifier]];
-    }
-    
-    NSArray *parties = [[PMRCoreDataManager sharedStore] getParties];
-    [cell configureWithParty:[parties objectAtIndex:indexPath.row]];
-    
-    return cell;
-}
-
+#pragma mark - Other settings for cells
 // set up the table view cell hight
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
