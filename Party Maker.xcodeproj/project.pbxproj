@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450257281E60D8F40023F72F /* LocationsShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 450257271E60D8F40023F72F /* LocationsShowViewController.m */; };
+		4502572B1E60D9080023F72F /* TableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4502572A1E60D9080023F72F /* TableViewDataSource.m */; };
 		EC0E18BC1E5329CF001140CA /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0E18BB1E5329CF001140CA /* LocationViewController.m */; };
 		EC0E18BF1E532CA4001140CA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0E18BE1E532CA4001140CA /* MapKit.framework */; };
 		EC24C1651E44B13C007558B1 /* PartyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC24C1641E44B13C007558B1 /* PartyTableViewCell.m */; };
@@ -26,11 +28,9 @@
 		ECDBD3A91E5DC39500F6143E /* BasePartyConfigVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3A81E5DC39500F6143E /* BasePartyConfigVC.m */; };
 		ECDBD3AC1E5DC81500F6143E /* EditPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3AB1E5DC81500F6143E /* EditPartyViewController.m */; };
 		ECDBD3C61E5EF9D200F6143E /* RegisterScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3C51E5EF9D200F6143E /* RegisterScreenViewController.m */; };
-		ECDBD3CD1E5F373500F6143E /* TableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3CB1E5F373500F6143E /* TableViewDataSource.m */; };
 		ECDBD3D01E5F3DC500F6143E /* PartyTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3CF1E5F3DC500F6143E /* PartyTableViewDataSource.m */; };
 		ECDBD3D41E6050E300F6143E /* UserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3D31E6050E300F6143E /* UserListViewController.m */; };
 		ECDBD3DC1E60594200F6143E /* UserListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3DB1E60594200F6143E /* UserListTableViewCell.m */; };
-		ECDBD3DF1E607CE200F6143E /* LocationsShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3DE1E607CE200F6143E /* LocationsShowViewController.m */; };
 		ECDBD3E21E608ABE00F6143E /* ShowLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBD3E11E608ABE00F6143E /* ShowLocationViewController.m */; };
 		ECDFE3C81E4E0F700007FBB8 /* NSNotification+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDFE3C71E4E0F700007FBB8 /* NSNotification+Utility.m */; };
 		ECE0FFC21E4BD8AA00BE5FB1 /* PMRCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE0FFB51E4BD8AA00BE5FB1 /* PMRCoreDataManager.m */; };
@@ -43,6 +43,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		450257261E60D8F40023F72F /* LocationsShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsShowViewController.h; sourceTree = "<group>"; };
+		450257271E60D8F40023F72F /* LocationsShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsShowViewController.m; sourceTree = "<group>"; };
+		450257291E60D9080023F72F /* TableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewDataSource.h; sourceTree = "<group>"; };
+		4502572A1E60D9080023F72F /* TableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewDataSource.m; sourceTree = "<group>"; };
 		EC0E18BA1E5329CF001140CA /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		EC0E18BB1E5329CF001140CA /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		EC0E18BE1E532CA4001140CA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -77,16 +81,12 @@
 		ECDBD3AB1E5DC81500F6143E /* EditPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPartyViewController.m; sourceTree = "<group>"; };
 		ECDBD3C41E5EF9D200F6143E /* RegisterScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterScreenViewController.h; sourceTree = "<group>"; };
 		ECDBD3C51E5EF9D200F6143E /* RegisterScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterScreenViewController.m; sourceTree = "<group>"; };
-		ECDBD3CB1E5F373500F6143E /* TableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewDataSource.m; path = ../../../Downloads/TableViewDataSource/TableViewDataSource.m; sourceTree = "<group>"; };
-		ECDBD3CC1E5F373500F6143E /* TableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewDataSource.h; path = ../../../Downloads/TableViewDataSource/TableViewDataSource.h; sourceTree = "<group>"; };
 		ECDBD3CE1E5F3DC500F6143E /* PartyTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyTableViewDataSource.h; sourceTree = "<group>"; };
 		ECDBD3CF1E5F3DC500F6143E /* PartyTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyTableViewDataSource.m; sourceTree = "<group>"; };
 		ECDBD3D21E6050E300F6143E /* UserListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserListViewController.h; sourceTree = "<group>"; };
 		ECDBD3D31E6050E300F6143E /* UserListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserListViewController.m; sourceTree = "<group>"; };
 		ECDBD3DA1E60594200F6143E /* UserListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserListTableViewCell.h; sourceTree = "<group>"; };
 		ECDBD3DB1E60594200F6143E /* UserListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserListTableViewCell.m; sourceTree = "<group>"; };
-		ECDBD3DD1E607CE200F6143E /* LocationsShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationsShowViewController.h; path = ../../../.Trash/LocationsShowViewController.h; sourceTree = "<group>"; };
-		ECDBD3DE1E607CE200F6143E /* LocationsShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationsShowViewController.m; path = ../../../.Trash/LocationsShowViewController.m; sourceTree = "<group>"; };
 		ECDBD3E01E608ABE00F6143E /* ShowLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowLocationViewController.h; sourceTree = "<group>"; };
 		ECDBD3E11E608ABE00F6143E /* ShowLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowLocationViewController.m; sourceTree = "<group>"; };
 		ECDFE3C61E4E0F700007FBB8 /* NSNotification+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotification+Utility.h"; sourceTree = "<group>"; };
@@ -251,10 +251,10 @@
 		EC5517CD1E5B7D8D002B3067 /* Party Info Location */ = {
 			isa = PBXGroup;
 			children = (
+				450257261E60D8F40023F72F /* LocationsShowViewController.h */,
+				450257271E60D8F40023F72F /* LocationsShowViewController.m */,
 				ECDBD3E01E608ABE00F6143E /* ShowLocationViewController.h */,
 				ECDBD3E11E608ABE00F6143E /* ShowLocationViewController.m */,
-				ECDBD3DD1E607CE200F6143E /* LocationsShowViewController.h */,
-				ECDBD3DE1E607CE200F6143E /* LocationsShowViewController.m */,
 			);
 			name = "Party Info Location";
 			sourceTree = "<group>";
@@ -375,8 +375,8 @@
 		ECDBD3CA1E5F371200F6143E /* Table View DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				ECDBD3CB1E5F373500F6143E /* TableViewDataSource.m */,
-				ECDBD3CC1E5F373500F6143E /* TableViewDataSource.h */,
+				450257291E60D9080023F72F /* TableViewDataSource.h */,
+				4502572A1E60D9080023F72F /* TableViewDataSource.m */,
 				ECDBD3CE1E5F3DC500F6143E /* PartyTableViewDataSource.h */,
 				ECDBD3CF1E5F3DC500F6143E /* PartyTableViewDataSource.m */,
 			);
@@ -494,9 +494,9 @@
 				ECE0FFC51E4BD8AA00BE5FB1 /* PMRParty+initWithDictionary.m in Sources */,
 				ECDBD3AC1E5DC81500F6143E /* EditPartyViewController.m in Sources */,
 				ECDBD3D01E5F3DC500F6143E /* PartyTableViewDataSource.m in Sources */,
-				ECDBD3DF1E607CE200F6143E /* LocationsShowViewController.m in Sources */,
-				ECDBD3CD1E5F373500F6143E /* TableViewDataSource.m in Sources */,
+				4502572B1E60D9080023F72F /* TableViewDataSource.m in Sources */,
 				ECE0FFD41E4BDA9A00BE5FB1 /* PMRPartyManagedObject.m in Sources */,
+				450257281E60D8F40023F72F /* LocationsShowViewController.m in Sources */,
 				EC7609681E49D23F001D7BF7 /* HTTPManager.m in Sources */,
 				ECDBD3A91E5DC39500F6143E /* BasePartyConfigVC.m in Sources */,
 				ECDBD3DC1E60594200F6143E /* UserListTableViewCell.m in Sources */,
